@@ -1,0 +1,31 @@
+name: Build PBOS
+
+on:
+  workflow_dispatch:  # manual trigger
+
+jobs:
+  build-pbos:
+    name: Build PBOS (Windows)
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up paths
+        run: |
+          echo "::group::Structure"
+          tree /F
+          echo "::endgroup::"
+
+      - name: Run build.bat
+        working-directory: build
+        run: cmd /c build.bat
+
+
+      - name: Upload PBO artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Built-PBOs
+          path: |
+            build\*.pbo
