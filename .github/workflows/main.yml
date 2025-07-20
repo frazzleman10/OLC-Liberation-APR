@@ -1,30 +1,31 @@
-name: CI
+name: Build Liberation_RX PBOS
 
 on:
-  push:
-    branches:
-      - master
-  pull_request: ~
+  workflow_dispatch:  # manual trigger
 
 jobs:
-  artifacts:
-    runs-on: ubuntu-latest
+  build-pbos:
+    name: Build PBOS (Windows)
+    runs-on: windows-latest
+
     steps:
-      - uses: actions/checkout@master
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v3
 
-      - uses: docker://node:20-alpine
-        name: Setup Node
+      - name: 🧰 Set up paths
+        run: |
+          echo "::group::Structure"
+          tree /F
+          echo "::endgroup::"
 
-      - name: Install dependencies
-        working-directory: _tools/build-tool
-        run: npm install
+      - name: 🛠️ Run build.bat
+        working-directory: build
+        run: |
+          build.bat
 
-      - name: Assemble and pack
-        working-directory: _tools/build-tool
-        run: npx gulp
-
-      - uses: actions/upload-artifact@master
+      - name: 📦 Upload PBO artifacts
+        uses: actions/upload-artifact@v4
         with:
-          name: PBO-Files
-          path: build/pbo
-
+          name: Built-PBOs
+          path: |
+            build\*.pbo
