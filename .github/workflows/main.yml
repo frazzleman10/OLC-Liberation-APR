@@ -1,4 +1,4 @@
-name: Build  PBOS
+name: Build PBOS
 
 on:
   workflow_dispatch:  # manual trigger
