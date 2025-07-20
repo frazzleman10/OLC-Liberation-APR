@@ -1,12 +1,1 @@
-# dev mission.sqm
-/Missionframework/mission.sqm
-
-# Tools local configs
-/_tools/config.ps1
-
-# Build directory
-/build/
-
-# KP-Steam
-steam_appid.txt
-kp_steam*.log
+*pbo
