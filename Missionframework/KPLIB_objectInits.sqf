@@ -24,6 +24,25 @@
 */
 
 KPLIB_objectInits = [
+    // Arsenal Interaction for Arsenal Crates
+    [
+        KPLIB_b_arsenal, // array of classnames, defined elsewhere in Liberation
+        {
+            private _arsenalAction = [
+                "arsenal_action",
+                "Arsenal",
+                "",
+                {
+                    execVM "scripts\client\actions\open_arsenal.sqf";
+                },
+                {
+                    true;
+                }
+            ] call ace_interact_menu_fnc_createAction;
+
+            [_this, ["ACE_MainActions"], _arsenalAction] call ace_interact_menu_fnc_addActionToObject;
+        }
+    ],
     // Set logo on white flag
     [
         ["Flag_White_F"],
