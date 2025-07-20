@@ -5731,6 +5731,10 @@
             <Czech>Použít nastavení z configu</Czech>
             <Japanese>コンフィグ指定のプリセットを使用</Japanese>
         </Key>
+        <Key ID="STR_PARAMS_ARSENAL_WHITELIST">
+            <Original>Arsenal whitelist by role</Original>
+            <Portuguese>Arsenal filtrado por função</Portuguese>
+        </Key>
         <Key ID="STR_ACTION_CRATE_PUSH">
             <Original>-- PUSH CRATE</Original>
             <German>-- KISTE SCHIEBEN</German>
