@@ -136,8 +136,7 @@ execVM "scripts\server\offloading\group_diag.sqf";
     };
 } forEach allUnits;
 
-// Server Restart Script from K4s0
-if (KPLIB_param_restart > 0) then {
+if (true) then {
     execVM "scripts\server\game\server_restart.sqf";
 };
 
