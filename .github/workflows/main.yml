@@ -1,4 +1,4 @@
-name: Build Liberation_RX PBOS
+name: Build  PBOS
 
 on:
   workflow_dispatch:  # manual trigger
