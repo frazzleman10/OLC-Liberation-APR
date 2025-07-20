@@ -1,4 +1,4 @@
-name: Build Liberation_RX PBOS
+name: Build  PBOS
 
 on:
   workflow_dispatch:  # manual trigger
@@ -9,21 +9,21 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: ⬇️ Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: 🧰 Set up paths
+      - name: Set up paths
         run: |
           echo "::group::Structure"
           tree /F
           echo "::endgroup::"
 
-      - name: 🛠️ Run build.bat
+      - name: Run build.bat
         working-directory: build
-        run: |
-          build.bat
+        run: cmd /c build.bat
 
-      - name: 📦 Upload PBO artifacts
+
+      - name: Upload PBO artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Built-PBOs
