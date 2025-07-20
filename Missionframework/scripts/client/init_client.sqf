@@ -34,6 +34,8 @@ execVM "scripts\client\ui\ui_manager.sqf";
 execVM "scripts\client\ui\tutorial_manager.sqf";
 execVM "scripts\client\markers\update_production_sites.sqf";
 
+["USMC_WarfareBVehicleServicePoint"] execVM "scripts\client\spawn\supplyCrateClass.sqf";
+
 player addMPEventHandler ["MPKilled", {
     params ["_unit", "_killer"];
     ["KPLIB_manageKills", [_unit, _killer]] call CBA_fnc_localEvent;
