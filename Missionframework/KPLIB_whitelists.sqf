@@ -33,3 +33,8 @@ KPLIB_whitelist_cmdrActions = [
 KPLIB_whitelist_supportModule = [
 
 ];
+
+curatorLogicGroup = createGroup [sideLogic, false];
+allowed_zeus_curators = [
+    //["", "Name"]
+];

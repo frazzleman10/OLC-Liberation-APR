@@ -42,6 +42,8 @@ execVM "scripts\server\base\startgame.sqf";
 execVM "scripts\server\base\huron_manager.sqf";
 execVM "scripts\server\base\startvehicle_spawn.sqf";
 [] call KPLIB_fnc_createSuppModules;
+[] execVM "scripts\server\curator\init_curators.sqf";
+//curators
 execVM "scripts\server\battlegroup\counter_battlegroup.sqf";
 execVM "scripts\server\battlegroup\random_battlegroups.sqf";
 execVM "scripts\server\battlegroup\readiness_increase.sqf";
