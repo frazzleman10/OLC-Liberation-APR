@@ -11,10 +11,11 @@ private _mainAction = ["supplyMain","Resupply","",{},{true}] call ace_interact_m
 private _nameOfAction = "Basic Medical Crate";
 // Type of create
 private _typeOfCrate = "ACM_MedicalSupplyCrate_Basic";
-// Statement to action
+// Statement to action	
 _code = {
 	params ["_target","_caller","_actionParams"];
 	_actionParams params ["_box"];
+	_supplyCrate addItemCargoGlobal ["ACE_WaterBottle", 20];
 	// Position to spawn
 	private _pos = getPosATL _target;
 	private _supplyCrate = _box createVehicle _pos;
@@ -115,6 +116,8 @@ _code = {
 	_supplyCrate addItemCargoGlobal ["rhs_mag_m714_White", 20];
 	_supplyCrate addItemCargoGlobal ["rhs_mag_M583A1_white", 10];
 	_supplyCrate addItemCargoGlobal ["ACE_SpareBarrel", 20];
+	_supplyCrate addItemCargoGlobal ["ACE_WaterBottle", 20];
+	_supplyCrate addItemCargoGlobal ["ToolKit", 20];
 	[_caller, _supplyCrate] call ace_dragging_fnc_startCarry;
 };
 _condition = {
@@ -135,6 +138,8 @@ _code = {
 	clearMagazineCargoGlobal _supplyCrate;
 	clearItemCargoGlobal _supplyCrate;
 	clearBackpackCargoGlobal _supplyCrate;
+	_supplyCrate addItemCargoGlobal ["ACE_WaterBottle", 20];
+	_supplyCrate addItemCargoGlobal ["ToolKit", 20];
 	_supplyCrate addItemCargoGlobal ["rhsusf_100Rnd_762x51_m62_tracer", 20];
 	_supplyCrate addItemCargoGlobal ["rhsusf_100Rnd_762x51", 20];
 	_supplyCrate addItemCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10];

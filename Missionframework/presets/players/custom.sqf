@@ -244,7 +244,7 @@ KPLIB_b_vehSupport = [
     [KPLIB_b_smallStorage,0,0,0],
     [KPLIB_b_largeStorage,0,0,0],
     [KPLIB_b_logiStation,250,0,0],
-    [KPLIB_b_airControl,1000,0,0],
+    [KPLIB_b_airControl,500,0,0],
     [KPLIB_b_slotHeli,250,0,0],
     [KPLIB_b_slotPlane,500,0,0],
     ["tbd_mortar_82mm_box_cumul",0,100,0],
