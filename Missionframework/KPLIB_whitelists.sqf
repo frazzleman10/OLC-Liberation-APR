@@ -26,7 +26,7 @@ KPLIB_whitelist_cmdrSlot = [
 
 // Access the commander actions (rights, production, etc.), even if the corresponding player is not in the commander slot.
 KPLIB_whitelist_cmdrActions = [
-
+"76561199554867806","76561199007421939"
 ];
 
 // Whitelist for BI support framework access.
@@ -35,7 +35,8 @@ KPLIB_whitelist_supportModule = [
 ];
 
 curatorLogicGroup = createGroup [sideLogic, false];
-allowed_zeus_curators = [
+allowed_zeus_curators = [   
     //["", "Name"]
-    ["76561199007421939","Frazzle"]
+    ["76561199007421939","Frazzle"],
+    ["76561199554867806","Phantom"]
 ];
