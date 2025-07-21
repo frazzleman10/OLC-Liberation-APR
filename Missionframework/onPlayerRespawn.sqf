@@ -3,7 +3,8 @@ waitUntil {!isNil "KPLIB_initServerDone"};
 params ["_newUnit", "_oldUnit"];
 
 if( (uniform _oldUnit) isEqualTo "" ) then {
-    _newUnit addUniform KPLIB_b_basic_uniform;
+    // _newUnit addUniform KPLIB_b_basic_uniform;
+    _newUnit addUniform "U_Simc_DCU";
 } else {
     removeUniform _newUnit;
     _newUnit addUniform (uniform _oldUnit);
