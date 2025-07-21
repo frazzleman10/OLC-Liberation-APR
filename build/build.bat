@@ -1,6 +1,6 @@
 @echo off
 
-echo - Liberation_RX PBO build script -
+echo - Liberation PBO build script -
 del /f *.pbo  > nul 2>&1
 
 for /f %%i in ('dir /B /A:D ..\maps-OLC\kp_liberation*') do (
