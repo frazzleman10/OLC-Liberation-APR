@@ -598,7 +598,6 @@ _uav_terminal = [
    "B_UavTerminal"
 ];
 
-
 // Define roles classnames here
 // For this to work, you will need to change the blufor characters in the editor to match these classnames below
 // Make any chances you want here, just make sure you register them in the switch do command below (after "case")
@@ -623,7 +622,6 @@ _jetpilot = "rhsusf_airforce_jetpilot";
 _journalist = "B_Survivor_F";
 _ammobearer = "rhsusf_army_ocp_rifleman";
 _aa = "rhsusf_army_ocp_aa";
-
 
 // Call the arsenal if the right class is provided
 switch (_classRole) do {
@@ -817,7 +815,7 @@ switch (_classRole) do {
         // Put only backpacks here
         KPLIB_arsenalBackpacks = (_empty);
         };
-         case _ammobearer : {
+        case _ammobearer : {
         // Put all weapons here
         KPLIB_arsenalWeapons = (_rifles);
         // Put all Magazines, and throwable items such as grenades
@@ -837,7 +835,8 @@ switch (_classRole) do {
         // Put only backpacks here
         KPLIB_arsenalBackpacks = (_backpacks);
         };
-        case default {	
+        
+        case default {
         ["This classname doesn't match with a configurated classname from roles_arsenal_config.sqf"] call bis_fnc_error
         }
 };
