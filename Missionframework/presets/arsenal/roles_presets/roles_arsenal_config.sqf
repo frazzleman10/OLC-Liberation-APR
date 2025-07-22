@@ -621,6 +621,9 @@ _engineer = "rhsusf_army_ocp_engineer";
 _helipilot = "rhsusf_army_ocp_helipilot";
 _jetpilot = "rhsusf_airforce_jetpilot";
 _journalist = "B_Survivor_F";
+_ammobearer = "rhsusf_army_ocp_rifleman";
+_aa = "rhsusf_army_ocp_aa";
+
 
 // Call the arsenal if the right class is provided
 switch (_classRole) do {
@@ -814,7 +817,26 @@ switch (_classRole) do {
         // Put only backpacks here
         KPLIB_arsenalBackpacks = (_empty);
         };
-        
+         case _ammobearer : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _aa : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles + _launchers_AA);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2 + _mag_launcher_aa);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
         case default {	
         ["This classname doesn't match with a configurated classname from roles_arsenal_config.sqf"] call bis_fnc_error
         }
