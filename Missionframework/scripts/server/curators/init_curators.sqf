@@ -7,6 +7,12 @@
 		Provides initialization for assigning zeus curators via mission script instead of mission.sqm object
 		Deleting existing zeus curator objects and spawning new ones based on the allowed_zeus_curators variable
 */
+curatorLogicGroup = createGroup [sideLogic, false];
+allowed_zeus_curators = [   
+    //["", "Name"]
+    ["76561199007421939","Frazzle"],
+    ["76561199554867806","Phantom"]
+];
 
 if (isServer) then {
 	diag_log "--- Zeus Curator Init Start ---";
