@@ -28,4 +28,4 @@ switch (true) do {
     case (_sector in KPLIB_sectors_capital):  { _minPlayers = 4; };
 };
 
-_minPlayers;
+_minPlayers
