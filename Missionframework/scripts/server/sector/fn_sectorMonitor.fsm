@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "scriptedFSM.cfg, KPLIB Sector Monitor">*/
+/*%FSM<COMPILE "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, KPLIB Sector Monitor">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Author__KPLIB_Dev",0,250,0.000000,0.000000,100.000000,50.000000,0.000000,"Author:" \n "KPLIB Dev Team"};
@@ -52,7 +52,7 @@ link23[] = {20,21};
 link24[] = {21,15};
 link25[] = {22,23};
 globals[] = {0.000000,0,0,0,0,640,480,1,27,6316128,1,-462.464111,712.458435,919.987671,76.941620,1232,876,1};
-window[] = {2,-1,-1,-1,-1,863,104,1544,104,3,1250};
+window[] = {2,-1,-1,-1,-1,941,182,1622,182,3,1250};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -205,7 +205,8 @@ class FSM
                                         priority = 1.000000;
                                         to="Activate_sector";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"([markerPos _sector, _range, KPLIB_side_player] call KPLIB_fnc_getUnitsCount) > 4"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"([markerPos _sector, _range, KPLIB_side_player] call KPLIB_fnc_getUnitsCount) > [_sector] call KPLIB_fnc_getSectorType" \n
+                                         ""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
