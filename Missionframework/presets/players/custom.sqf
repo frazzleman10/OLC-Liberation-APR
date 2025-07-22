@@ -101,7 +101,7 @@ KPLIB_b_vehAir = [
 	["USAF_C130J_Cargo",800,0,800],                        //C130J (Cargo)
 	["USAF_A10",1200,1200,800],                            //A-10 Thunderbolt II
 	["fza_ah64d_b2e",1400,1200,800],                       //AH-64D Block II
-	["RHS_AH1Z",1400,1200,800],                            //AH-1Z
+	["RHS_AH1Z",1200,1200,800],                            //AH-1Z
 	["USAF_MQ9",1000,600,600]                              //MQ-9 Reaper
 ];
 
@@ -247,16 +247,14 @@ KPLIB_b_vehSupport = [
     [KPLIB_b_airControl,500,0,0],
     [KPLIB_b_slotHeli,250,0,0],
     [KPLIB_b_slotPlane,500,0,0],
-    ["tbd_mortar_82mm_box_cumul",0,100,0],
-    ["tbd_mortar_82mm_box_he",0,100,0],
-    ["tbd_mortar_82mm_box_illum",0,100,0],
-    ["tbd_mortar_82mm_box_smoke",0,100,0],
-    ["tbd_mortars_105mm_box_dpicm",0,250,0],
-    ["tbd_mortars_105mm_box",0,250,0],
-    ["tbd_mortars_105mm_box_laser",0,250,0],
-    ["tbd_mortars_105mm_box_smoke",0,250,0],
-    ["ACE_Wheel",10,0,0],
-    ["ACE_Track",10,0,0],
+    ["tbd_mortar_82mm_box_cumul",0,25,0],
+    ["tbd_mortar_82mm_box_he",0,25,0],
+    ["tbd_mortar_82mm_box_illum",0,25,0],
+    ["tbd_mortar_82mm_box_smoke",0,25,0],
+    ["tbd_mortars_105mm_box_dpicm",0,50,0],
+    ["tbd_mortars_105mm_box",0,50,0],
+    ["tbd_mortars_105mm_box_laser",0,50,0],
+    ["tbd_mortars_105mm_box_smoke",0,50,0],
 	["B_supplyCrate_F",0,0,0],
     ["B_Slingload_01_Repair_F",275,0,0],
     ["B_Slingload_01_Fuel_F",75,0,200],

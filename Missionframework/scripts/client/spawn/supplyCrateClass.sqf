@@ -117,7 +117,7 @@ _code = {
 	_supplyCrate addItemCargoGlobal ["rhs_mag_M583A1_white", 10];
 	_supplyCrate addItemCargoGlobal ["ACE_SpareBarrel", 20];
 	_supplyCrate addItemCargoGlobal ["ACE_WaterBottle", 20];
-	_supplyCrate addItemCargoGlobal ["ToolKit", 20];
+	_supplyCrate addItemCargoGlobal ["ToolKit", 5];
 	[_caller, _supplyCrate] call ace_dragging_fnc_startCarry;
 };
 _condition = {
@@ -149,6 +149,40 @@ _code = {
 	_supplyCrate addItemCargoGlobal ["rhs_fgm148_magazine_AT", 10];
 	_supplyCrate addItemCargoGlobal ["rhs_weap_M136_hedp", 20];
 	_supplyCrate addItemCargoGlobal ["ACE_SpareBarrel", 20];
+	_supplyCrate addItemCargoGlobal ["ACE_WaterBottle", 20];
+	_supplyCrate addItemCargoGlobal ["ToolKit", 5];
+	[_caller, _supplyCrate] call ace_dragging_fnc_startCarry;
+};
+_condition = {
+	true;
+};
+_subAction = ["medicalSupport",_nameOfAction,"",_code,_condition,{},[_typeOfCrate]] call ace_interact_menu_fnc_createAction;
+[_typeOfObject, 0, ["ACE_MainActions", "supplyMain"], _subAction] call ace_interact_menu_fnc_addActionToClass;
+
+_nameOfAction = "Spare Track";
+_typeOfCrate = "ACE_Track";
+_code = {
+	params ["_target","_caller","_actionParams"];
+	_actionParams params ["_box"];
+	// Position to spawn
+	private _pos = getPosATL _target;
+	private _supplyCrate = _box createVehicle  _pos;
+	[_caller, _supplyCrate] call ace_dragging_fnc_startCarry;
+};
+_condition = {
+	true;
+};
+_subAction = ["medicalSupport",_nameOfAction,"",_code,_condition,{},[_typeOfCrate]] call ace_interact_menu_fnc_createAction;
+[_typeOfObject, 0, ["ACE_MainActions", "supplyMain"], _subAction] call ace_interact_menu_fnc_addActionToClass;
+
+_nameOfAction = "Spare Wheel";
+_typeOfCrate = "ACE_Wheel";
+_code = {
+	params ["_target","_caller","_actionParams"];
+	_actionParams params ["_box"];
+	// Position to spawn
+	private _pos = getPosATL _target;
+	private _supplyCrate = _box createVehicle  _pos;
 	[_caller, _supplyCrate] call ace_dragging_fnc_startCarry;
 };
 _condition = {
