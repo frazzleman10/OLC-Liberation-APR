@@ -23,7 +23,7 @@ if (KPLIB_param_useArsenalPreset) then {
     KPLIB_arsenalBlacklist = [];
     KPLIB_arsenalAllowed = [];
     KPLIB_arsenalAllowedExtension = [];
-    if (PIG_param_ArsenalWhitelist) then {
+    if (KPLIB_param_ArsenalWhitelist) then {
         _classRole = typeOf player;
         [_classRole] call compile preprocessFileLineNumbers "presets\arsenal\roles_presets\roles_arsenal_config.sqf";
     } else {
