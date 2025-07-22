@@ -49,7 +49,7 @@
 <Project name="Liberation">
     <Package name="Liberation">
         <Key ID="STR_MISSION_TITLE">
-            <Original>CTI 34 KP Liberation v0.96.8apr</Original>
+            <Original>OLC Liberation Farabad</Original>
         </Key>
         <Key ID="STR_MISSION_VERSION">
             <Original>v0.96.8apr</Original>
@@ -70,16 +70,16 @@
             <Japanese>この地域を敵軍の圧制から解放しろ! 戦略がカギとなるぞ! 兵士よ、幸運を祈る。</Japanese>
         </Key>
         <Key ID="STR_MISSION_PRESENT">
-            <Original>[GREUH] and the Killah Potatoes present</Original>
+            <Original>OLC Development Team Presents</Original>
         </Key>
         <Key ID="STR_MISSION_AUTHOR">
-            <Original>[GREUH] Zbug &amp; McKeewa, KP Liberation Dev Team, Apricot_ale, MoistBois</Original>
+            <Original>OLC Devlopment Team</Original>
         </Key>
         <Key ID="STR_MISSION_OVERVIEW">
-            <Original>APR Tweaked KP Liberation!&lt;br/&gt;Check github.com/Apricot-ale/KP-Liberation-APR to more info.</Original>
+            <Original>OLC Tweak of APR Liberation</Original>
         </Key>
         <Key ID="STR_MISSION_ONLOAD">
-            <Original>github.com/Apricot-ale/KP-Liberation-APR</Original>
+            <Original>https://github.com/frazzleman10/OLC-Liberation-APR</Original>
         </Key>
         <Key ID="STR_HURON01_NAME">
             <Original>Spartan 01</Original>
