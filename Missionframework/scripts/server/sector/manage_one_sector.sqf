@@ -318,8 +318,12 @@ if ((!(_sector in KPLIB_sectors_player)) && (([markerPos _sector, [_opforcount, 
                 // [_player_pos, nil, activate] call BIS_fnc_moduleLightning
                 // [_x, "Not enough players/AI to capture sector! You have been moved to nearest FOB."] remoteExec ["hint", _x];
                 // _x setPosATL _nearestFobPos;
-                cutText ["Don't ruin the fun for the rest of the players, don't solo cap"];
-                sleep 3;
+                [] spawn {
+                    while {true} do {
+                        cutText ["Don't ruin the fun for the rest of the players, don't solo cap"];
+                        sleep 1;
+                    };
+                };
             } forEach _playerUnits;
 
             // Teleport AI silently
