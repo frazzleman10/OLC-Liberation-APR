@@ -13,7 +13,7 @@ class CfgServerTime
 {
     class Settings
     {
-        myPass = "RjXXqcjgmishFdNPMfqqZUmvwMjNTC";  // use getText to access
+        myPass = "don'task";  // use getText to access
         serverTimezone = "GMT";         // optional metadata
     };
 };
