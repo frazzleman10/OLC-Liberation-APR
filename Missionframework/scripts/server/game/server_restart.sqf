@@ -22,32 +22,32 @@ while {true} do {
         private _minute = _parsed select 4;
 
         // === NOTIFICATIONS ===
-        if (_hour == 9 && _minute == 29 && !_notified30) then {
+        if (_hour == 10 && _minute == 29 && !_notified30) then {
             ["lib_restart_30_min"] remoteExecCall ["BIS_fnc_showNotification"];
             ["30 minutes until daily restart (10:59)", "RESTART"] call KPLIB_fnc_log;
             _notified30 = true;
         };
 
-        if (_hour == 9 && _minute == 44 && !_notified15) then {
+        if (_hour == 10 && _minute == 44 && !_notified15) then {
             ["lib_restart_15_min"] remoteExecCall ["BIS_fnc_showNotification"];
             ["15 minutes until daily restart (10:59)", "RESTART"] call KPLIB_fnc_log;
             _notified15 = true;
         };
 
-        if (_hour == 9 && _minute == 54 && !_notified5) then {
+        if (_hour == 10 && _minute == 54 && !_notified5) then {
             ["lib_restart_5_min"] remoteExecCall ["BIS_fnc_showNotification"];
             ["5 minutes until daily restart (10:59)", "RESTART"] call KPLIB_fnc_log;
             _notified5 = true;
         };
 
-        if (_hour == 9 && _minute == 57 && !_notified1) then {
+        if (_hour == 10 && _minute == 57 && !_notified1) then {
             ["lib_restart_60_s"] remoteExecCall ["BIS_fnc_showNotification"];
             ["1 minute until daily restart (10:59)", "RESTART"] call KPLIB_fnc_log;
             _notified1 = true;
         };
 
         // === TRIGGER RESTART AT 11:59 ( CHANGED IT AS WE ARE IN BST) ===
-        if (_hour == 9 && _minute == 58) then {
+        if (_hour == 11 && _minute == 00) then {
             ["Initiating scheduled server shutdown", "RESTART"] call KPLIB_fnc_log;
             sleep 5;
 
@@ -64,7 +64,7 @@ while {true} do {
         };
 
         // === RESET FLAGS after restart ===
-        if (_hour == 10 && _minute == 9) then {
+        if (_hour == 11 && _minute == 10) then {
             _notified30 = false;
             _notified15 = false;
             _notified5  = false;
