@@ -33,3 +33,7 @@ KPLIB_whitelist_cmdrActions = [
 KPLIB_whitelist_supportModule = [
 
 ];
+KPLIB_whitelist_zeus = [
+    "76561199554867806","76561199007421939" // Frazzle,Phantom
+
+]

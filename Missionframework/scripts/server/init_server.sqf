@@ -42,8 +42,6 @@ execVM "scripts\server\base\startgame.sqf";
 execVM "scripts\server\base\huron_manager.sqf";
 execVM "scripts\server\base\startvehicle_spawn.sqf";
 [] call KPLIB_fnc_createSuppModules;
-[] execVM "scripts\server\curators\init_curators.sqf";
-//curators
 execVM "scripts\server\battlegroup\counter_battlegroup.sqf";
 execVM "scripts\server\battlegroup\random_battlegroups.sqf";
 execVM "scripts\server\battlegroup\readiness_increase.sqf";
@@ -147,3 +145,11 @@ if (true) then {
         }
     } foreach allGroups;
 }] call CBA_fnc_addEventHandler;
+//Zeus
+{
+    _curator = (vechicleVarname _x);
+    diag_log("Found Curators Module" + _curator);
+    diag_log("Deleting Zeus Module" + _curator);
+    unassignCurator _x;
+    deleteVehicle _x;
+} foreach allCurators;
