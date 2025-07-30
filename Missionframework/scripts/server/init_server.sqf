@@ -147,9 +147,9 @@ if (true) then {
 }] call CBA_fnc_addEventHandler;
 //Zeus
 {
-    _curator = (vechicleVarname _x);
-    diag_log("Found Curators Module" + _curator);
-    diag_log("Deleting Zeus Module" + _curator);
+    _curator = vehicleVarName _x;
+    diag_log("Found Curators Module " + str _curator);
+    diag_log("Deleting Zeus Module " + str _curator);
     unassignCurator _x;
     deleteVehicle _x;
-} foreach allCurators;
+} forEach allCurators;
