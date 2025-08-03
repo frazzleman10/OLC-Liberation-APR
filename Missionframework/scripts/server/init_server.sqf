@@ -39,7 +39,7 @@ wait_to_spawn_sector = compile preprocessFileLineNumbers "scripts\server\sector\
 KPLIB_sectors_active = []; publicVariable "KPLIB_sectors_active";
 
 execVM "scripts\server\base\startgame.sqf";
-execVM "scripts\server\base\huron_manager.sqf";
+//execVM "scripts\server\base\huron_manager.sqf";
 execVM "scripts\server\base\startvehicle_spawn.sqf";
 [] call KPLIB_fnc_createSuppModules;
 execVM "scripts\server\battlegroup\counter_battlegroup.sqf";
