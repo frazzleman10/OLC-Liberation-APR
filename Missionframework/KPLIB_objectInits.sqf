@@ -185,14 +185,6 @@ KPLIB_objectInits = [
         }
     ],
 
-    // Set MH47 Probe
-    [
-        ["CUP_B_MH47E_USA"],
-        {
-            [_this,nil,["Hide_Probe",0]] call BIS_fnc_initVehicle;
-        }
-    ],
-
     // Disable autocombat (if set in parameters) and fleeing
     [
         ["CAManBase"],
