@@ -116,6 +116,9 @@ corpseLimit = 50;
 // Remove all bodies that have been dead longer than corpseRemovalMinTime when corpseLimit is reached.
 corpseRemovalMinTime = 600;
 
+//Admin Debug
+enableDebugConsole[] = { "76561199554867806","76561199007421939" };
+zeusCompositionScriptLevel = 2;
 // Maximum time a corpse can remain on the ground if total number of corpses is equal or under corpseLimit.
 corpseRemovalMaxTime = 3600;
 
