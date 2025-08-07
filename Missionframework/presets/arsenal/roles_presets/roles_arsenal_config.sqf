@@ -211,7 +211,24 @@ _uniforms = [
 ];
 
 _uniforms_jetpilot = [
-   "U_B_HeliPilotCoveralls"
+   "CSU13BP_Base",
+   "CSU13BPTan_Base_NG",
+   "CSU13BP_Base_NG",
+   "CSU13BPTan_Base_Rolled",
+   "CSU13BP_Base_Rolled",
+   "CSU13BPTan_Base",
+   "CSU15BP_Base_FG",
+   "CSU15BPTan_Base_FG",
+   "CSU15BP_Base_NG",
+   "CSU15BPTan_Base_NG",
+   "CSU15BPTan_Base_Rolled_FG",
+   "CSU15BP_Base_Rolled_FG",
+   "CWU27PTan_Base_NG",
+   "CWU27P_Base",
+   "CWU27P_Base_NG",
+   "CWU27PTan_Base_Rolled",
+   "CWU27P_Base_Rolled",
+   "CWU27PTan_Base"
 ];
 
 _vests = [
@@ -257,6 +274,19 @@ _vests_pilot = [
    "UK3CB_V_Pilot_Vest"
 ];
 
+_vests_jet_pilot = [
+   "SV2B_LPU36P",
+   "SV2B_LPU23P",
+   "SRU21P_Alt",
+   "SRU21P_LPU9P_Alt",
+   "SRU21P",
+   "SRU21P_LPU9P",
+   "SRU21P_LPU9P_PCU15AP_Alt",
+   "SRU21P_LPU9P_PCU15AP",
+   "CMU33PTan",
+   "CMU33P"
+];
+
 _vests_crewman = [
    "V_Simc_vest_pasgt_dcu",
    "V_Simc_vest_pasgt",
@@ -300,7 +330,24 @@ _pilot_helmets = [
 ];
 
 _jetpilot_hemlets = [
-   "RHS_jetpilot_usaf"
+   "HGU55P_Amber",
+   "HGU55P_Clear",
+   "HGU55P_NoVisor",
+   "HGU55P_Tinted",
+   "HGU55P_MBU12P_Amber",
+   "HGU55P_MBU12P_Clear",
+   "HGU55P_MBU12P_NoVisor",
+   "HGU55P_MBU12P_Tinted",
+   "HGU55P_MBU20P_Amber",
+   "HGU55P_MBU20P_Clear",
+   "HGU55P_MBU20P_NoVisor",
+   "HGU55P_MBU20P_Tinted",
+   "HGU68P_MBU14P_Amber",
+   "HGU68P_MBU14P_Clear",
+   "HGU68P_MBU14P_Tinted",
+   "HGU68P_MBU23P_Amber",
+   "HGU68P_MBU23P_Clear",
+   "HGU68P_MBU23P_Tinted"
 ];
 
 _crewman_helmets = [
@@ -350,6 +397,10 @@ _backpacks = [
 
 _empty = [
    ""
+];
+
+_invis_bag = [
+   "UK3CB_B_Invisible"
 ];
 
 _backpacks_radio = [
@@ -582,7 +633,9 @@ _common_items = [
    "ItemMap",
    "ItemCompass",
    "ItemWatch",
-   "tsp_sling"
+   "tsp_sling",
+   "RS_NVG_CR123_4",
+   "RS_NVG_CR123"
 ];
 
 _radio = [ 
@@ -651,7 +704,7 @@ switch (_classRole) do {
         // Put all Magazines, and throwable items such as grenades
         KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _mag_pistol + _grenades_2);
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _muzzle_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _common_binos + _ace_common_tools + _ace_common_medical_items + _common_items + _ace_medic_items);
+        KPLIB_arsenalItems = (_rail_attach + _muzzle_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _common_binos + _ace_common_tools + _ace_common_medical_items + _common_items + _ace_medic_items + _rifles_optics + _radio);
         // Put only backpacks here
         KPLIB_arsenalBackpacks = (_backpacks);
         };
@@ -801,9 +854,9 @@ switch (_classRole) do {
         // Put all Magazines, and throwable items such as grenades
         KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades_2 + _mag_pistol);
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms_jetpilot + _jetpilot_helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items + _vests_pilot);
+        KPLIB_arsenalItems = (_rail_attach + _uniforms_jetpilot + _jetpilot_helmets + _vests_jet_pilot + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items + _vests_pilot);
         // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_empty);
+        KPLIB_arsenalBackpacks = (_invis_bag);
         };
         case _journalist : {
         // Put all weapons here

@@ -9,7 +9,7 @@
     Custom player preset for a 2003 Iraq war setting
 
     Needed Mods:
-    - Generation Kill Era Vehicles
+    - Generation Kill Era Vehicles - Signed
 	- Hatchet H-60
 	- AH-64 Apache Project Classic
 	- RHSUSAF
@@ -18,6 +18,9 @@
 	- USAF Fighters
 	- S&S
 	- S&S New Wave
+    - Firewills F15
+    - Moe Pilot Gear Suite
+    - OLC Extra
 */
 
 /*
@@ -28,7 +31,7 @@
 */
 KPLIB_b_fobBuilding     = "Land_Cargo_HQ_V1_F";                         // This is the main FOB HQ building.
 KPLIB_b_fobBox          = "B_Slingload_01_Cargo_F";                     // This is the FOB Container.
-KPLIB_b_fobTruck        = "rhsusf_M977A4_BKIT_usarmy_d";                // This is the FOB Vehicle.
+KPLIB_b_fobTruck        = "B_Truck_01_box_F";                           // This is the FOB Vehicle.
 KPLIB_b_arsenal         = "B_supplyCrate_F";                            // This is the virtual arsenal as portable supply crates.
 KPLIB_b_mobileRespawn   = ["B_Truck_01_medical_F","B_T_Truck_01_medical_F"];
 KPLIB_b_potato01        = "fza_ah64d_b2e";                              // This is the mobile respawn huron, however it can be defined as anything if the mobile respawn functionality is disabled.
@@ -71,7 +74,10 @@ KPLIB_b_vehLight = [
 	["Combat_M1078A1P2_D_fmtv_usarmy",200,0,200],          //Truck (Covered)
 	["Combat_M1078A1P2_D_flatbed_fmtv_usarmy",200,0,200],  //Flatbed Truck
 	["Combat_M1078A1P2_D2_fmtv_usarmy",200,0,200],         //Truck (No cover)
-	["rhsusf_M977A4_BKIT_usarmy_d",250,0,400]              //HEMTT
+	["B_Truck_01_cargo_F",250,0,400],                      //HEMTT
+    ["B_Truck_01_fuel_F",250,0,1000],                      //HEMTT (Fuel)
+    ["B_Truck_01_ammo_F",250,1000,400],                    //HEMTT (Ammo)
+    ["B_Truck_01_Repair_F",500,0,400]                      //HEMTT (Repair)
 ];
 
 KPLIB_b_vehHeavy = [
@@ -95,11 +101,13 @@ KPLIB_b_vehAir = [
 	["RHS_MELB_AH6M",250,400,200],                         //AH-6M
 	["vtx_MH60M_DAP",650,650,350],                         //UH60M DAP
 	["vtx_HH60",500,100,350],                              //HH60G/M Pavehawk
-	["RHS_CH_47F_10",750,100,750],                         //CH-47F Chinook
-	["RHS_CH_47F_10_cargo",750,100,750],                   //CH-47F Chinook (Cargo)
+	["RHS_CH_47F_10",500,100,500],                         //CH-47F Chinook
+	["RHS_CH_47F_10_cargo",500,100,500],                   //CH-47F Chinook (Cargo)
 	["USAF_C130J",800,0,800],                              //C130J
 	["USAF_C130J_Cargo",800,0,800],                        //C130J (Cargo)
 	["USAF_A10",1200,1200,800],                            //A-10 Thunderbolt II
+    ["FIR_F15C_WA_17WPS",1500,1200,1200],                  //F15C Eagle
+    ["FIR_F15E_WA_17WPS",1800,1500,1200],                   //F15E Strike Eagle
 	["fza_ah64d_b2e",1400,1200,800],                       //AH-64D Block II
 	["RHS_AH1Z",1200,1200,800],                            //AH-1Z
 	["USAF_MQ9",1000,600,600]                              //MQ-9 Reaper
