@@ -4,7 +4,7 @@ params ["_newUnit", "_oldUnit"];
 
 if( (uniform _oldUnit) isEqualTo "" ) then {
     // _newUnit addUniform KPLIB_b_basic_uniform;
-    _newUnit addUniform "U_Simc_DCU";
+    _newUnit addUniform "MCCUU_USMC_Cpants_TU_3_w";
 } else {
     removeUniform _newUnit;
     _newUnit addUniform (uniform _oldUnit);

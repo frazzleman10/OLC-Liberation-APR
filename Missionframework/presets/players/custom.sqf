@@ -34,12 +34,12 @@ KPLIB_b_fobBox          = "B_Slingload_01_Cargo_F";                     // This 
 KPLIB_b_fobTruck        = "B_Truck_01_box_F";                           // This is the FOB Vehicle.
 KPLIB_b_arsenal         = "B_supplyCrate_F";                            // This is the virtual arsenal as portable supply crates.
 KPLIB_b_mobileRespawn   = ["B_Truck_01_medical_F","B_T_Truck_01_medical_F"];
-KPLIB_b_potato01        = "fza_ah64d_b2e";                              // This is the mobile respawn huron, however it can be defined as anything if the mobile respawn functionality is disabled.
+KPLIB_b_potato01        = "rhsusf_CH53E_USMC_D";                        // This is the mobile respawn huron, however it can be defined as anything if the mobile respawn functionality is disabled.
 KPLIB_b_crewUnit        = "B_crew_F";                                   // This defines the crew for vehicles.
 KPLIB_b_heliPilotUnit   = "B_Helipilot_F";                              // This defines the pilot for helicopters.
 KPLIB_b_crewStatic      = "B_Soldier_F";                                // This defines the crew for static weapons and light vehicles.
-KPLIB_b_addHeli         = "UK3CB_CW_US_B_LATE_UH1H_M240";               // This is an additional helicopter
-KPLIB_b_addBoat         = "UK3CB_CW_US_B_LATE_UH1H_M240";               // These are boats, however you can put any vehicle here. Due to multiple starting vehicles being used in the campaign, this is not used.
+KPLIB_b_addHeli         = "RHS_UH1Y_d";                                 // This is an additional helicopter
+KPLIB_b_addBoat         = "rhsusf_m1151_m2_v3_usmc_d";                  // These are boats, however you can put any vehicle here.
 KPLIB_b_logiTruck       = "B_Truck_01_transport_F";                     // These are the trucks which are used in the logistic convoy system. Unused.
 KPLIB_b_smallStorage    = "ContainmentArea_02_sand_F";                  // A small storage area for resources.
 KPLIB_b_largeStorage    = "ContainmentArea_01_sand_F";                  // A large storage area for resources.
@@ -63,17 +63,20 @@ KPLIB_b_infantry = [
 ];
 
 KPLIB_b_vehLight = [
-    ["Combat_m1025_d_m2",200,100,100],                     //M2 Humvee
-	["Combat_m1025_d_mk19",300,200,100],                   //MK19 Humvee
-	["Combat_m1043_d_m2",250,100,100],                     //M2 Humvee (Supplemental Armour)
-	["Combat_m1043_d_mK19",350,200,100],                   //MK19 Humvee (Supplemental Armour)
-	["Combat_m1045_d",500,500,100],                        //TOW Humvee
-	["Combat_m998_d_2dr",100,0,100],                       //Unarmed Humvee
-	["Combat_m998_d_4dr_halftop",100,0,100],               //Unarmed Humvee
-	["Combat_m998_d_4dr",100,0,100],                       //Unarmed Humvee
-	["Combat_M1078A1P2_D_fmtv_usarmy",200,0,200],          //Truck (Covered)
-	["Combat_M1078A1P2_D_flatbed_fmtv_usarmy",200,0,200],  //Flatbed Truck
-	["Combat_M1078A1P2_D2_fmtv_usarmy",200,0,200],         //Truck (No cover)
+    ["rhsusf_m1151_m2_v3_usmc_d",250,250,250],             //M1151A1 MCTAGS/M2
+    ["rhsusf_m1151_m240_v3_usmc_d",250,150,250],           //M1151A1 MCTAGS/M240
+    ["rhsusf_m1151_mk19_v3_usmc_d",250,350,250],           //M1151A1 MCTAGS/MK19
+    ["rhsusf_m1045_d_s",250,500,250],                      //M1045A2 M220A2
+    ["rhsusf_m1151_usmc_d",150,0,250],                     //M1151A1
+    ["rhsusf_CGRCAT1A2_M2_usmc_d",350,250,350],            //CGR CAT1 A2 MCTAGS/M2
+    ["rhsusf_CGRCAT1A2_Mk19_usmc_d",350,350,350],          //CGR CAT1 A2 MCTAGS/MK19
+    ["rhsusf_CGRCAT1A2_usmc_d",250,0,350],                 //CGR CAT1 A2
+    ["rhsusf_m1240a1_m2_usmc_d",350,250,350],              //M1240 O-GPK/M2
+    ["rhsusf_m1240a1_m240_usmc_d",350,150,350],            //M1240 O-GPK/M240
+    ["rhsusf_m1240a1_mk19_usmc_d",350,350,350],            //M1240 O-GPK/MK19
+    ["rhsusf_m1240a1_m2crows_usmc_d",450,250,350],         //M1277 CROWS/M2
+    ["rhsusf_m1240a1_mk19crows_usmc_d",450,350,350],       //M1277 CROWS/MK19
+    ["rhsusf_m1240a1_usmc_d",350,350,350],                 //M1240
 	["B_Truck_01_cargo_F",250,0,400],                      //HEMTT
     ["B_Truck_01_fuel_F",250,0,1000],                      //HEMTT (Fuel)
     ["B_Truck_01_ammo_F",250,1000,400],                    //HEMTT (Ammo)
@@ -81,48 +84,38 @@ KPLIB_b_vehLight = [
 ];
 
 KPLIB_b_vehHeavy = [
-    ["Combat_m113_usarmy_M2_90",350,200,200],              //M2 M113
-	["Combat_m113_usarmy_Mk19_90",500,400,200],            //MK19 M113
-	["WCombat_M2A2",800,600,600],                          //M2A2 Bradley
-	["WCombat_M2A2_BUSKI",900,600,600],                    //M2A2 Bradley BUSKI
-	["Combat_m1a1aimd_usarmy",1200,800,800],               //M1A1 AIM
-	["rhsusf_m109d_usarmy",350,800,600],                   //M109D Paladin
-	["rhsusf_stryker_m1126_m2_d",600,600,600],             //M1126 Stryker M2
-	["rhsusf_stryker_m1126_mk19_d",700,800,600]            //M1126 Stryker MK19
+    ["UK3CB_B_AAV_US_DES",400,550,400],                   //AAVP-7A1
+    ["UK3CB_B_LAV25_US_DES",500,500,500],                 //LAV-25
+    ["rhsusf_m1a1fep_d",650,650,650]                      //M1A1FEP 
+
 ];
 
 KPLIB_b_vehAir = [
-    ["vtx_UH60M",500,100,350],                             //UH60M Blackhawk
-	["UK3CB_CW_US_B_LATE_UH1H",350,0,350],                 //UH-1H (Unarmed)
-	["UK3CB_CW_US_B_LATE_UH1H_MED",350,0,350],             //UH-1H (Medevac)
-	["UK3CB_CW_US_B_LATE_UH1H_GUNSHIP",450,450,350],       //UH-1H (Gunship)
-	["UK3CB_CW_US_B_LATE_UH1H_M240",350,100,350],          //UH-1H (Armed)
-	["RHS_MELB_MH6M",200,0,200],                           //MH-6M
-	["RHS_MELB_AH6M",250,400,200],                         //AH-6M
-	["vtx_MH60M_DAP",650,650,350],                         //UH60M DAP
-	["vtx_HH60",500,100,350],                              //HH60G/M Pavehawk
-	["RHS_CH_47F_10",500,100,500],                         //CH-47F Chinook
-	["RHS_CH_47F_10_cargo",500,100,500],                   //CH-47F Chinook (Cargo)
-	["USAF_C130J",800,0,800],                              //C130J
-	["USAF_C130J_Cargo",800,0,800],                        //C130J (Cargo)
-	["USAF_A10",1200,1200,800],                            //A-10 Thunderbolt II
-    ["FIR_F15C_WA_17WPS",1500,1200,1200],                  //F15C Eagle
-    ["FIR_F15E_WA_17WPS",1800,1500,1200],                   //F15E Strike Eagle
-	["fza_ah64d_b2e",1400,1200,800],                       //AH-64D Block II
-	["RHS_AH1Z",1200,1200,800],                            //AH-1Z
-	["USAF_MQ9",1000,600,600]                              //MQ-9 Reaper
+    ["rhsusf_CH53E_USMC_D",500,0,500],                    //CH-53E Super Stallion
+    ["rhsusf_CH53e_USMC_D_cargo",500,0,500],              //CH-53E Super Stallion (Cargo)
+    ["rhsusf_CH53E_USMC_GAU21_D",500,500,500],            //CH-53E Super Stallion (GAU-21)
+    ["RHS_UH1Y_FFAR_d",350,500,350],                      //UH-1Y Venom
+    ["RHS_UH1Y_FFAR_d",400,550,350],                      //UH-1Y Venom (MG)
+    ["RHS_UH1Y_UNARMED_d",300,0,350],                     //UH-1Y Venom (Unarmed)
+    ["Peral_AH1Z",800,800,800],                           //AH-1Z Viper
+    ["FIR_F18D_VMFAAW533",1200,1200,1200],                //F18D Hornet (Dual Seater)
+    ["FIR_F18C_VMFA251",1200,1200,1200],                  //F18C Hornet
+    ["USAF_A10",750,750,750],                             //A-10C Thunderbolt II
+    ["USAF_MQ9",500,500,500],                             //MQ-9 Reaper
+    ["USAF_C130J",600,0,800],                             //C130J Super Hercules
+    ["USAF_C130J_Cargo",600,0,800]                        //C130J Super Hercules (Cargo) 
 ];
 
 KPLIB_b_vehStatic = [
-    ["RHS_Stinger_AA_pod_D",250,250,0],                   //Stinger Chair
-	["UK3CB_B_Static_M240_Elcan_High_US_D",100,100,0],    //M240 High
-	["UK3CB_B_Static_M240_Elcan_Low_US_D",100,100,0],     //M240 Low
-	["RHS_M2StaticMG_D",150,150,0],                       //M2 High
-	["RHS_M2StaticMG_MiniTripod_D",150,150,0],            //M2 Low
-	["RHS_TOW_TriPod_D",400,400,0],                       //TOW ATGM
-	["RHS_MK19_TriPod_D",200,200,0],                      //MK19
+    ["RHS_Stinger_AA_pod_USMC_D",250,250,0],              //Stinger Chair
+	["UK3CB_B_Static_M240_Elcan_High_USMC_D",100,100,0],  //M240 High
+	["UK3CB_B_Static_M240_Elcan_Low_USMC_D",100,100,0],   //M240 Low
+	["RHS_M2StaticMG_USMC_D",150,150,0],                  //M2 High
+	["RHS_M2StaticMG_MiniTripod_USMC_D",150,150,0],       //M2 Low
+	["RHS_TOW_TriPod_USMC_D",400,400,0],                  //TOW ATGM
+	["RHS_MK19_TriPod_USMC_D",200,200,0],                 //MK19
 	["tbd_m119",650,650,0],                               //M119A3 Howitzer
-	["RHS_M252_D",450,450,0]                              //M252 Mortar
+	["RHS_M252_USMC_D",450,450,0]                         //M252 Mortar
 ];
 
 KPLIB_b_objectsDeco = [

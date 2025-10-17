@@ -6,44 +6,48 @@
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
-        Iraqi Army 2006
+        2011 ISIS
 
     Needed Mods:
-        - Sa'hatra: Army of Saddam
+        - 3CB Factions
+		- RHSUSAF
+		- RHSAFRF
+		- RHSGREF
+		- RHSSAF
 
     Optional Mods:
         - None
 */
 
 // Enemy infantry classes
-KPLIB_o_officer = "COS_IRG_Radio_Telephone_Operator";
-KPLIB_o_squadLeader = "COS_IRG_Squad_Leader";
-KPLIB_o_teamLeader = "COS_IRG_Team_Leader";
-KPLIB_o_sentry = "COS_IRG_Rifleman_Light";
-KPLIB_o_rifleman = "COS_IRG_Rifleman_Light";
-KPLIB_o_riflemanLAT = "COS_IRG_Rifleman_AT";
-KPLIB_o_grenadier = "COS_IRG_Grenadier";
-KPLIB_o_machinegunner = "COS_IRG_Machine_Gunner";
-KPLIB_o_heavyGunner = "COS_IRG_Machine_Gunner";
-KPLIB_o_marksman = "COS_IRG_Marksman";
-KPLIB_o_sharpshooter = "COS_IRG_Marksman";
-KPLIB_o_sniper = "COS_IRG_Marksman";
-KPLIB_o_atSpecialist = "COS_IRG_AT_Specialist";
-KPLIB_o_aaSpecialist = "COS_IRG_AA_Specialist";
-KPLIB_o_medic = "COS_IRG_Medic";
-KPLIB_o_engineer = "COS_IRG_Rifleman_Light";
-KPLIB_o_paratrooper = "COS_IRG_Rifleman_Light";
-KPLIB_o_crewman = "COS_IRG_Crewman";
-KPLIB_o_pilot = "COS_IRG_Helicopter_Pilot";
+KPLIB_o_officer = "UK3CB_TKM_O_WAR";
+KPLIB_o_squadLeader = "UK3CB_TKM_O_SL";
+KPLIB_o_teamLeader = "UK3CB_TKM_O_TL";
+KPLIB_o_sentry = "UK3CB_TKM_O_SPOT";
+KPLIB_o_rifleman = "UK3CB_TKM_O_RIF_1";
+KPLIB_o_riflemanLAT = "UK3CB_TKM_O_LAT";
+KPLIB_o_grenadier = "UK3CB_TKM_O_GL";
+KPLIB_o_machinegunner = "UK3CB_TKM_O_LMG";
+KPLIB_o_heavyGunner = "UK3CB_TKM_O_MG";
+KPLIB_o_marksman = "UK3CB_TKM_O_MK";
+KPLIB_o_sharpshooter = "UK3CB_TKM_O_SPOT";
+KPLIB_o_sniper = "UK3CB_TKM_O_SNI";
+KPLIB_o_atSpecialist = "UK3CB_TKM_O_AT";
+KPLIB_o_aaSpecialist = "UK3CB_TKM_O_AA";
+KPLIB_o_medic = "UK3CB_TKM_O_MD";
+KPLIB_o_engineer = "UK3CB_TKM_O_ENG";
+KPLIB_o_paratrooper = "UK3CB_TKM_O_RIF_2";
+KPLIB_o_crewman = "UK3CB_TKM_O_RIF_2";
+KPLIB_o_pilot = "UK3CB_TKM_O_RIF_2";
 
 // Enemy vehicles used by secondary objectives.
-KPLIB_o_mrap = "COS_IRG_UAZ_3151_Closed";
-KPLIB_o_mrapArmed = "COS_IRG_UAZ_3151_DSHKM";
-KPLIB_o_transportHeli = "COS_IRG_MI_8T";
-KPLIB_o_transportTruck = "COS_IRG_GAZ_66";
-KPLIB_o_transportTruckAmmo = "";
-KPLIB_o_fuelTruck = "UK3CB_TKA_O_Ural_Fuel";
-KPLIB_o_ammoTruck = "UK3CB_TKA_O_Ural_Ammo";
+KPLIB_o_mrap = "UK3CB_TKM_O_Pickup";
+KPLIB_o_mrapArmed = "UK3CB_TKM_O_Pickup_DSHKM";
+KPLIB_o_transportHeli = "";
+KPLIB_o_transportTruck = "UK3CB_TKM_O_Ural_Open";
+KPLIB_o_transportTruckAmmo = "UK3CB_TKM_O_Ural_Open";
+KPLIB_o_fuelTruck = "UK3CB_TKM_O_Ural_Fuel";
+KPLIB_o_ammoTruck = "UK3CB_TKM_O_Ural_Ammo";
 KPLIB_o_fuelContainer = "B_Slingload_01_Fuel_F";
 KPLIB_o_ammoContainer = "B_Slingload_01_Ammo_F";
 KPLIB_o_flag = "Flag_TKA";
@@ -54,154 +58,267 @@ Therefore, adding the same value twice or three times means they are more likely
 /* Militia infantry. Lightweight soldier classnames the game will pick from randomly as sector defenders.
 Think of them like garrison or military police forces, which are more meant to control the local population instead of fighting enemy armies. */
 KPLIB_o_militiaInfantry = [
-    "COS_IRG_AA_Specialist",
-	"COS_IRG_AT_Specialist",
-	"COS_IRG_Grenadier",
-	"COS_IRG_Machine_Gunner",
-	"COS_IRG_Marksman",
-	"COS_IRG_Medic",
-	"COS_IRG_Radio_Telephone_Operator",
-	"COS_IRG_Rifleman_AT",
-	"COS_IRG_Rifleman_Light",
-	"COS_IRG_Squad_Leader",
-	"COS_IRG_Team_Leader"
+    "UK3CB_TKM_O_AA",
+    "UK3CB_TKM_O_AA_ASST",
+    "UK3CB_TKM_O_AT",
+    "UK3CB_TKM_O_AT_ASST",
+    "UK3CB_TKM_O_AR",
+    "UK3CB_TKM_O_DEM",
+    "UK3CB_TKM_O_ENG",
+    "UK3CB_TKM_O_GL",
+    "UK3CB_TKM_O_IED",
+    "UK3CB_TKM_O_LAT",
+    "UK3CB_TKM_O_LMG",
+    "UK3CB_TKM_O_MG",
+    "UK3CB_TKM_O_MG_ASST",
+    "UK3CB_TKM_O_MK",
+    "UK3CB_TKM_O_MD",
+    "UK3CB_TKM_O_RIF_1",
+    "UK3CB_TKM_O_RIF_2",
+    "UK3CB_TKM_O_SL",
+    "UK3CB_TKM_O_SNI",
+    "UK3CB_TKM_O_SPOT",
+    "UK3CB_TKM_O_TL",
+    "UK3CB_TKM_O_WAR"
 ];
 
 // Militia vehicles. Lightweight vehicle classnames the game will pick from randomly as sector defenders. Can also be empty for only infantry milita.
 KPLIB_o_militiaVehicles = [
-    "COS_IRG_UAZ_3151_AGS30",
-	"COS_IRG_UAZ_3151_Closed",
-	"COS_IRG_UAZ_3151_DSHKM",
-	"COS_IRG_UAZ_3151_SPG9"
+    "UK3CB_TKM_O_Hilux_GMG",
+    "UK3CB_TKM_O_Hilux_Rocket_Arty",
+    "UK3CB_TKM_O_Hilux_Dshkm",
+    "UK3CB_TKM_O_Hilux_M2",
+    "UK3CB_TKM_O_Hilux_Mortar",
+    "UK3CB_TKM_O_Hilux_Open",
+    "UK3CB_TKM_O_Hilux_Pkm",
+    "UK3CB_TKM_O_Hilux_Rocket",
+    "UK3CB_TKM_O_Hilux_Spg9",
+    "UK3CB_TKM_O_Hilux_Zu23_Front",
+    "UK3CB_TKM_O_Hilux_Zu23",
+    "UK3CB_TKM_O_LR_Closed",
+    "UK3CB_TKM_O_LR_AGS30",
+    "UK3CB_TKM_O_LR_M2",
+    "UK3CB_TKM_O_LR_Open",
+    "UK3CB_TKM_O_LR_SPG9",
+    "UK3CB_TKM_O_LR_SF_AGS30",
+    "UK3CB_TKM_O_LR_SF_M2",
+    "UK3CB_TKM_O_Pickup",
+    "UK3CB_TKM_O_Pickup_DSHKM",
+    "UK3CB_TKM_O_Pickup_M2",
+    "UK3CB_TKM_O_UAZ_AGS30",
+    "UK3CB_TKM_O_UAZ_Closed",
+    "UK3CB_TKM_O_UAZ_Dshkm",
+    "UK3CB_TKM_O_UAZ_Open",
+    "UK3CB_TKM_O_UAZ_SPG9"
 ];
 
 // All enemy vehicles that can spawn as sector defenders and patrols at high enemy combat readiness (aggression levels).
 KPLIB_o_armyVehicles = [
-    "COS_IRG_UAZ_3151_AGS30",
-	"COS_IRG_UAZ_3151_Closed",
-	"COS_IRG_UAZ_3151_DSHKM",
-	"COS_IRG_UAZ_3151_SPG9",
-	"COS_IRG_ZSU23_4V",
-	"COS_IRG_BTR_70",
-	"COS_IRG_BMP_1",
-	"COS_IRG_BMP_2",
-	"COS_IRG_MTLB_PKT",
-	"COS_IRG_BRDM2",
-	"COS_IRG_BRDM2_9P148",
-	"COS_IRG_FV4201_Chieftain",
-	"COS_IRG_M60A1",
-	"COS_IRG_T34_85M",
-	"COS_IRG_T55A",
-	"COS_IRG_T72B"
+    "UK3CB_TKM_O_Hilux_GMG",
+    "UK3CB_TKM_O_Hilux_Rocket_Arty",
+    "UK3CB_TKM_O_Hilux_Dshkm",
+    "UK3CB_TKM_O_Hilux_M2",
+    "UK3CB_TKM_O_Hilux_Mortar",
+    "UK3CB_TKM_O_Hilux_Open",
+    "UK3CB_TKM_O_Hilux_Pkm",
+    "UK3CB_TKM_O_Hilux_Rocket",
+    "UK3CB_TKM_O_Hilux_Spg9",
+    "UK3CB_TKM_O_Hilux_Zu23_Front",
+    "UK3CB_TKM_O_Hilux_Zu23",
+    "UK3CB_TKM_O_LR_Closed",
+    "UK3CB_TKM_O_LR_AGS30",
+    "UK3CB_TKM_O_LR_M2",
+    "UK3CB_TKM_O_LR_Open",
+    "UK3CB_TKM_O_LR_SPG9",
+    "UK3CB_TKM_O_LR_SF_AGS30",
+    "UK3CB_TKM_O_LR_SF_M2",
+    "UK3CB_TKM_O_Pickup",
+    "UK3CB_TKM_O_Pickup_DSHKM",
+    "UK3CB_TKM_O_Pickup_M2",
+    "UK3CB_TKM_O_UAZ_AGS30",
+    "UK3CB_TKM_O_UAZ_Closed",
+    "UK3CB_TKM_O_UAZ_Dshkm",
+    "UK3CB_TKM_O_UAZ_Open",
+    "UK3CB_TKM_O_UAZ_SPG9",
+    "UK3CB_TKM_O_BRDM2",
+    "UK3CB_TKM_O_BRDM2_ATGM",
+    "UK3CB_TKM_O_BRDM2_HQ",
+    "UK3CB_TKM_O_BRDM2_UM",
+    "UK3CB_TKM_O_MTLB_ZU23",
+    "UK3CB_TKM_O_V3S_Zu23",
+    "UK3CB_TKM_O_Ural_Zu23",
+    "UK3CB_TKM_O_BMP1",
+    "UK3CB_TKM_O_BTR40",
+    "UK3CB_TKM_O_BTR40_MG",
+    "UK3CB_TKM_O_BTR60",
+    "UK3CB_TKM_O_MTLB_BMP",
+    "UK3CB_TKM_O_MTLB_KPVT",
+    "UK3CB_TKM_O_MTLB_PKT"
 ];
 
 // All enemy vehicles that can spawn as sector defenders and patrols but at a lower enemy combat readiness (aggression levels).
 KPLIB_o_armyVehiclesLight = [
-    "COS_IRG_UAZ_3151_AGS30",
-	"COS_IRG_UAZ_3151_Closed",
-	"COS_IRG_UAZ_3151_DSHKM",
-	"COS_IRG_UAZ_3151_SPG9",
-	"COS_IRG_MTLB_PKT",
-	"COS_IRG_BRDM2_9P148",
-	"COS_IRG_BRDM2"
+    "UK3CB_TKM_O_Hilux_Dshkm",
+    "UK3CB_TKM_O_Hilux_M2",
+    "UK3CB_TKM_O_Hilux_Open",
+    "UK3CB_TKM_O_Hilux_Pkm",
+    "UK3CB_TKM_O_Hilux_Spg9",
+    "UK3CB_TKM_O_LR_Closed",
+    "UK3CB_TKM_O_LR_M2",
+    "UK3CB_TKM_O_LR_AGS30",
+    "UK3CB_TKM_O_LR_Open",
+    "UK3CB_TKM_O_LR_SPG9",
+    "UK3CB_TKM_O_LR_SF_AGS30",
+    "UK3CB_TKM_O_LR_SF_M2",
+    "UK3CB_TKM_O_Pickup",
+    "UK3CB_TKM_O_Pickup_DSHKM",
+    "UK3CB_TKM_O_Pickup_M2"
 ];
 
 // All enemy vehicles that can spawn as battlegroups, either assaulting or as reinforcements, at high enemy combat readiness (aggression levels).
 KPLIB_o_battleGrpVehicles = [
-    "COS_IRG_UAZ_3151_AGS30",
-	"COS_FSM_Praga_V3S_Transport_Closed",
-	"COS_FSM_Praga_V3S_Transport_Open",
-	"COS_IRG_UAZ_3151_Closed",
-	"COS_IRG_UAZ_3151_DSHKM",
-	"COS_IRG_UAZ_3151_SPG9",
-	"COS_IRG_ZSU23_4V",
-	"COS_IRG_BTR_70",
-	"COS_IRG_BMP_1",
-	"COS_IRG_BMP_2",
-	"COS_IRG_MTLB_PKT",
-	"COS_IRG_BRDM2",
-	"COS_IRG_BRDM2_9P148",
-	"COS_IRG_FV4201_Chieftain",
-	"COS_IRG_M60A1",
-	"COS_IRG_T34_85M",
-	"COS_IRG_T55A",
-	"COS_IRG_T72B",
-	"COS_IRG_GAZ_66",
-	"COS_IRG_MI_24P",
-	"COS_IRG_MI_8T",
-	"COS_IRG_BTR_70"
+    "UK3CB_TKM_O_Hilux_GMG",
+    "UK3CB_TKM_O_Hilux_Rocket_Arty",
+    "UK3CB_TKM_O_Hilux_Dshkm",
+    "UK3CB_TKM_O_Hilux_M2",
+    "UK3CB_TKM_O_Hilux_Mortar",
+    "UK3CB_TKM_O_Hilux_Open",
+    "UK3CB_TKM_O_Hilux_Pkm",
+    "UK3CB_TKM_O_Hilux_Rocket",
+    "UK3CB_TKM_O_Hilux_Spg9",
+    "UK3CB_TKM_O_Hilux_Zu23_Front",
+    "UK3CB_TKM_O_Hilux_Zu23",
+    "UK3CB_TKM_O_LR_Closed",
+    "UK3CB_TKM_O_LR_AGS30",
+    "UK3CB_TKM_O_LR_M2",
+    "UK3CB_TKM_O_LR_Open",
+    "UK3CB_TKM_O_LR_SPG9",
+    "UK3CB_TKM_O_LR_SF_AGS30",
+    "UK3CB_TKM_O_LR_SF_M2",
+    "UK3CB_TKM_O_Pickup",
+    "UK3CB_TKM_O_Pickup_DSHKM",
+    "UK3CB_TKM_O_Pickup_M2",
+    "UK3CB_TKM_O_UAZ_AGS30",
+    "UK3CB_TKM_O_UAZ_Closed",
+    "UK3CB_TKM_O_UAZ_Dshkm",
+    "UK3CB_TKM_O_UAZ_Open",
+    "UK3CB_TKM_O_UAZ_SPG9",
+    "UK3CB_TKM_O_BRDM2",
+    "UK3CB_TKM_O_BRDM2_ATGM",
+    "UK3CB_TKM_O_BRDM2_HQ",
+    "UK3CB_TKM_O_BRDM2_UM",
+    "UK3CB_TKM_O_MTLB_ZU23",
+    "UK3CB_TKM_O_V3S_Zu23",
+    "UK3CB_TKM_O_Ural_Zu23",
+    "UK3CB_TKM_O_BMP1",
+    "UK3CB_TKM_O_BTR40",
+    "UK3CB_TKM_O_BTR40_MG",
+    "UK3CB_TKM_O_BTR60",
+    "UK3CB_TKM_O_MTLB_BMP",
+    "UK3CB_TKM_O_MTLB_KPVT",
+    "UK3CB_TKM_O_MTLB_PKT",
+	"UK3CB_TKM_O_T34",
+    "UK3CB_TKM_O_T55"
 ];
 
 // All enemy vehicles that can spawn as battlegroups, either assaulting or as reinforcements, at lower enemy combat readiness (aggression levels).
 KPLIB_o_battleGrpVehiclesLight = [
-    "COS_IRG_UAZ_3151_AGS30",
-	"COS_IRG_UAZ_3151_Closed",
-	"COS_IRG_UAZ_3151_DSHKM",
-	"COS_IRG_UAZ_3151_SPG9",
-	"COS_FSM_Praga_V3S_Transport_Closed",
-	"COS_FSM_Praga_V3S_Transport_Open",
-	"COS_IRG_MTLB_PKT",
-	"COS_IRG_BRDM2_9P148",
-	"COS_IRG_BRDM2",
-	"COS_IRG_MI_24P",
-	"COS_IRG_MI_8T"
+    "UK3CB_TKM_O_Hilux_GMG",
+    "UK3CB_TKM_O_Hilux_Rocket_Arty",
+    "UK3CB_TKM_O_Hilux_Dshkm",
+    "UK3CB_TKM_O_Hilux_M2",
+    "UK3CB_TKM_O_Hilux_Mortar",
+    "UK3CB_TKM_O_Hilux_Open",
+    "UK3CB_TKM_O_Hilux_Pkm",
+    "UK3CB_TKM_O_Hilux_Rocket",
+    "UK3CB_TKM_O_Hilux_Spg9",
+    "UK3CB_TKM_O_Hilux_Zu23_Front",
+    "UK3CB_TKM_O_Hilux_Zu23",
+    "UK3CB_TKM_O_LR_Closed",
+    "UK3CB_TKM_O_LR_AGS30",
+    "UK3CB_TKM_O_LR_M2",
+    "UK3CB_TKM_O_LR_Open",
+    "UK3CB_TKM_O_LR_SPG9",
+    "UK3CB_TKM_O_LR_SF_AGS30",
+    "UK3CB_TKM_O_LR_SF_M2",
+    "UK3CB_TKM_O_Pickup",
+    "UK3CB_TKM_O_Pickup_DSHKM",
+    "UK3CB_TKM_O_Pickup_M2",
+    "UK3CB_TKM_O_UAZ_AGS30",
+    "UK3CB_TKM_O_UAZ_Closed",
+    "UK3CB_TKM_O_UAZ_Dshkm",
+    "UK3CB_TKM_O_UAZ_Open",
+    "UK3CB_TKM_O_UAZ_SPG9",
+    "UK3CB_TKM_O_BRDM2",
+    "UK3CB_TKM_O_BRDM2_ATGM",
+    "UK3CB_TKM_O_BRDM2_HQ",
+    "UK3CB_TKM_O_BRDM2_UM",
+    "UK3CB_TKM_O_MTLB_ZU23",
+    "UK3CB_TKM_O_V3S_Zu23",
+    "UK3CB_TKM_O_Ural_Zu23",
+    "UK3CB_TKM_O_BMP1",
+    "UK3CB_TKM_O_BTR40",
+    "UK3CB_TKM_O_BTR40_MG",
+    "UK3CB_TKM_O_BTR60",
+    "UK3CB_TKM_O_MTLB_BMP",
+    "UK3CB_TKM_O_MTLB_KPVT",
+    "UK3CB_TKM_O_MTLB_PKT"
 ];
 
 /* All vehicles that spawn within battlegroups (see the above 2 arrays) and also hold 8 soldiers as passengers.
 If something in this array can't hold all 8 soldiers then buggy behaviours may occur. */
 KPLIB_o_troopTransports = [
-	"COS_FSM_Praga_V3S_Transport_Closed",
-	"COS_FSM_Praga_V3S_Transport_Open",
-	"COS_IRG_MI_24P",
-	"COS_IRG_MI_8T",
-	"COS_IRG_BTR_70"
+    "UK3CB_TKM_O_V3S_Closed",
+    "UK3CB_TKM_O_V3S_Open",
+    "UK3CB_TKM_O_Ural_Covered",
+    "UK3CB_TKM_O_Ural_Open"
 ];
 
 // Enemy rotary-wings that will need to spawn in flight.
 KPLIB_o_helicopters = [
-    "COS_IRG_MI_24P",
-	"COS_IRG_MI_8T"
+	""
 ];
 
 // Enemy fixed-wings that will need to spawn in the air.
 KPLIB_o_planes = [
-    "COS_IRG_MIG_21",
-	"COS_IRG_MIG_29S",
-	"COS_IRG_SU25SM"
+	""
 ];
 
 // Enemy defence turrets that will be spawned in sectors.
 KPLIB_o_turrets_HMG = [
-	"COS_IRG_KORD",
-    "COS_IRG_PKM_Nest"
+    "UK3CB_TKM_O_DSHKM",
+    "UK3CB_TKM_O_DSHkM_Mini_TriPod",
+    "UK3CB_TKM_O_KORD",
+    "UK3CB_TKM_O_KORD_high",
+    "UK3CB_TKM_O_NSV",
+    "UK3CB_TKM_O_PKM_High",
+    "UK3CB_TKM_O_PKM_Low"
 ];
 
 // Enemy defence turrets that will be spawned in sectors.
 KPLIB_o_turrets_GMG = [
-    ""
+    "UK3CB_TKM_O_AGS"
 ];
 
 // Enemy defence turrets that will be spawned in sectors.
 KPLIB_o_turrets_AT = [
-    ""
+    "UK3CB_TKM_O_SPG9"
 ];
 
 // Enemy defence turrets that will be spawned in sectors.
 KPLIB_o_turrets_AA = [
-    "COS_IRG_IGLA_9k38",
-	"COS_IRG_ZU_23"
+    "UK3CB_TKM_O_Igla_AA_pod",
+    "UK3CB_TKM_O_ZU23"
 ];
 
 // Enemy defence turrets that will be spawned in sectors.
 KPLIB_o_turrets_MORTAR = [
-    "COS_IRG_Mortar_82mm",
-	"COS_IRG_D30"
+    "UK3CB_TKM_O_D30",
+    "UK3CB_TKM_O_2b14_82mm"
 ];
 
 // Enemy SAM turrets that will be spawned in the back country
 KPLIB_o_turrets_SAM = [
-    ["COS_IRG_IGLA_9k38"],
-	["COS_IRG_ZU_23"],
-	["COS_IRG_Scud"],
-	["COS_IRG_D30"]
+    ["UK3CB_TKM_O_Igla_AA_pod"],
+    ["UK3CB_TKM_O_ZU23"]
 ];
