@@ -180,7 +180,7 @@ KPLIB_save_interval = 60;
 */
 
 // Build range around the main FOB building.
-KPLIB_range_fob = 650;
+KPLIB_range_fob = 800;
 
 // Altitude in metres for the HALO jump.
 KPLIB_height_halo = 2500;
@@ -202,10 +202,10 @@ KPLIB_range_sectorCapture = 175;
 KPLIB_range_radioTowerScan = 2500;
 
 // Minimum distance to next FOB.
-KPLIB_distance_fob = 1000;
+KPLIB_distance_fob = 0;
 
 // Minimum distance to next sector.
-KPLIB_distance_sector = KPLIB_range_sectorCapture + KPLIB_range_fob;
+KPLIB_distance_sector = 0;
 
 
 /*

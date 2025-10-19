@@ -12,6 +12,7 @@ class KPLIB {
         class checkClass                {};
         class checkCrateValue           {};
         class checkGear                 {};
+        class checkAndAssignZeus        {};
         class checkWeaponCargo          {};
         class cleanOpforVehicle         {};
         class clearCargo                {};
