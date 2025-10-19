@@ -1,161 +1,640 @@
 // ---------------------------------------------------------- Variabes/classification of equipaments to be used for the roles
 // Weapons
 _rifles = [
+   "rhs_weap_m16a4",
+   "rhs_weap_m16a4_carryhandle"
 ];
 
-_rifles_grenadier = [
+_rifles_2 = [
+   "rhs_weap_m4",
+   "rhs_weap_m4_carryhandle"
+];
+
+_rifles_ugl = [
+   "rhs_weap_m16a4_carryhandle_M203"
+];
+
+_marksman_rifles = [
+   "rhs_weap_m14ebrri",
+   "rhs_weap_m27iar",
+   "rhs_weap_sr25"
+];
+
+_sniper_rifles = [
+   "121_USASOC_M2010",
+   "rhs_weap_M107",
+   "rhs_weap_M107_d"
 ];
 
 _lmg = [
+   "rhs_weap_m249_pip_L",
+   "rhs_weap_m249_pip_S"
 ];
 
 _hmg = [
+   "rhs_weap_m240B"
 ];
 
 _pistols = [
+   "rhsusf_weap_m9"
 ];
 
 _ace_metal_detector = [
+   "ACE_VMH3",
+   "ACE_VMM3"
 ];
 
-//Bazookas
-_launchers_HAT = [
+//Launchers
+_launchers_hat = [
+   "rhs_weap_smaw_green",
+   "rhs_weap_smaw",
+   "rhs_weap_maaws",
+   "rhs_weap_fgm148"
 ];
 
-_launchers_LAT = [
-];
-
-_launchers_AA = [
+_launchers_lat = [
+   "rhs_weap_m72a7",
+   "rhs_weap_m136",
+   "rhs_weap_M136_hedp",
+   "rhs_weap_M136_hp"
 ];
 
 // Magazines
-_mag_common = [
+_mag_laserdes = [
+   "Laserbatteries"
 ];
 
 _mag_rifle = [
+   "TOTT_Stanag_Worn_30rnd_A1",
+   "TOTT_Stanag_Worn_30rnd_A1_TM"
 ];
 
-_mag_grenadier = [
+_mag_ugl = [
+   "rhs_mag_M433_HEDP",
+   "rhs_mag_M397_HET",
+   "rhs_mag_m713_red",
+   "rhs_mag_m714_white",
+   "rhs_mag_m715_green",
+   "rhs_mag_m716_yellow",
+   "rhs_mag_M583A1_white",
+   "rhs_mag_m661_green",
+   "rhs_mag_m662_red"
 ];
+
+_mag_marksman = [
+   "rhsusf_20Rnd_762x51_m80_Mag",
+   "rhsusf_20Rnd_762x51_m62_Mag",
+   "rhsusf_20Rnd_762x51_SR25_m118_special_Mag",
+   "rhsusf_20Rnd_762x51_SR25_m62_Mag",
+   "TOTT_Stanag_Worn_30rnd_A1",
+   "TOTT_Stanag_Worn_30rnd_A1_TM"
+];
+
+_mag_sniper = [
+   "121_300WM_Mk248_Mod_1_5rnd",
+   "121_300WM_Mk248_Mod_0_5rnd",
+   "121_300WM_Berger_OTM_5rnd",
+   "rhsusf_mag_10Rnd_STD_50BMG_mk211",
+   "rhsusf_mag_10Rnd_STD_50BMG_M33"
+]
 
 _mag_lmg = [
+   "rhsusf_100Rnd_556x45_soft_pouch",
+   "rhsusf_100Rnd_556x45_soft_pouch_ucp",
+   "rhsusf_100Rnd_556x45_soft_pouch_coyote",
+   "rhsusf_100Rnd_556x45_mixed_soft_pouch",
+   "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote",
+   "rhsusf_100Rnd_556x45_mixed_soft_pouch_ucp",
+   "rhsusf_200Rnd_556x45_box",
+   "rhsusf_200rnd_556x45_mixed_box",
+   "rhsusf_200Rnd_556x45_soft_pouch_coyote",
+   "rhsusf_200Rnd_556x45_soft_pouch_ucp",
+   "rhsusf_200Rnd_556x45_soft_pouch",
+   "rhsusf_200Rnd_556x45_mixed_soft_pouch_ucp",
+   "rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote",
+   "rhsusf_200Rnd_556x45_mixed_soft_pouch"
 ];
 
 _mag_hmg = [
+   "rhsusf_50Rnd_762x51",
+   "rhsusf_50Rnd_762x51_m62_tracer"
 ];
 
-_mag_launcher_at = [
-];
-
-_mag_launcher_aa = [
+_mag_launcher_hat = [
+   "rhs_mag_maaws_HE",
+   "rhs_mag_maaws_HEDP",
+   "rhs_mag_maaws_HEAT",
+   "rhs_fgm148_magazine_AT",
+   "rhs_mag_smaw_HEDP",
+   "rhs_mag_smaw_HEAA"
 ];
 
 _mag_pistol = [
+   "rhsusf_mag_15Rnd_9x19_FMJ"
 ];
 
 // Grenades & explosives
 _grenades = [
+   "HandGrenade",
+   "rhs_mag_an_m8hc",
+   "rhs_mag_m18_green",
+   "rhs_mag_m18_purple",
+   "rhs_mag_m18_red",
+   "rhs_mag_m18_yellow",
+   "Chemlight_blue",
+   "Chemlight_green",
+   "ACE_Chemlight_HiBlue",
+   "ACE_Chemlight_HiGreen",
+   "ACE_Chemlight_HiRed",
+   "ACE_Chemlight_HiWhite",
+   "ACE_Chemlight_HiYellow",
+   "ACE_Chemlight_IR",
+   "ACE_Chemlight_Orange",
+   "Chemlight_red",
+   "ACE_Chemlight_UltraHiOrange",
+   "ACE_Chemlight_White",
+   "Chemlight_yellow"
 ];
 
-_grenades_2 = [
+_flashbang = [
+   "tsp_flashbang_m84"
 ];
 
 _explosives = [
+   "rhsusf_m112x4_mag",
+   "rhsusf_m112_mag"
 ];
 
 // Weapons attachment
-_rifles_optics = [
+_rifle_optics = [
+   "rhsusf_acc_eotech_552",
+   "rhsusf_acc_ACOG",
+   "rhsusf_acc_ACOG2",
+   "rhsusf_acc_ACOG3",
+   "rhsusf_acc_compm4"
 ];
+
+_sniper_optics = [
+   "TOTT_atacr18_nsw",
+   "TOTT_Leu_CQBSS_Geissele",
+   "121_USASOC_PVPS",
+   "121_USASOC_PVPS_ANPVS30",
+   "121_USASOC_RVPS",
+   "121_USASOC_RVPS_ANPVS30",
+   "TOTT_Razor_110_Geissele",
+   "TOTT_Razor_16_Geissele"
+]
 
 _mg_optics = [
+   "rhsusf_acc_ACOG",
+   "rhsusf_acc_ACOG2",
+   "rhsusf_acc_ACOG3",
+   "rhsusf_acc_compm4",
+   "rhsusf_acc_ELCAN",
+   "rhsusf_acc_ELCAN_ard"
 ];
 
-_at_optics = [
+_hat_optics = [
+   "rhs_weap_optic_smaw",
+   "rhs_optic_maaws"
 ];
 
 _rail_attach = [
+   "rhsusf_acc_anpeq15side_bk",
+   "rhsusf_acc_anpeq15_bk_top",
+   "rhsusf_acc_anpeq15_bk",
+   "rhsusf_acc_anpeq15side",
+   "rhsusf_acc_anpeq15_top",
+   "rhsusf_acc_anpeq15",
+   "rhsusf_acc_anpeq15_wmx",
+   "rhsusf_acc_anpeq16a",
+   "rhsusf_acc_anpeq16a_top",
+   "rhsusf_acc_M952V"
 ];
 
-_muzzle_attach = [
+_rail_attach_sniper = [
+   "121_USASOC_Raptar_Laser",
+   "121_USASOC_STORM_SLX_Laser"
 ];
 
-_rifles_grip = [
+_muzzle_attach_rifle = [
+   "rhsusf_acc_SFMB556",
+   "rhsusf_acc_SF3P556"
 ];
 
-_rifles_bipod = [
+_muzzle_attach_marksman = [
+   "rhsusf_acc_SR25S",
+   "rhsusf_acc_aac_762sd_silencer",
+   "rhsusf_acc_aac_762sdn6_silencer",
+   "rhsusf_acc_nt4_black",
+   "rhsusf_acc_nt4_tan"
 ];
+
+_muzzle_attach_sniper = [
+   "121_USASOC_AAC_BLK",
+   "121_USASOC_AAC_TAN",
+];
+
+_muzzle_attach_suppressor = [
+   "rhsusf_acc_nt4_black",
+   "rhsusf_acc_nt4_tan"
+];
+
+_rifle_grip = [
+   "rhsusf_acc_grip3"
+];
+
+_rifle_bipod = [
+   "121_USASOC_Atlas",
+   "121_USASOC_Harris"
+];
+
+_lmg_bipod = [
+   "rhsusf_acc_saw_lw_bipod",
+   "rhsusf_acc_grip4_bipod"
+]
 
 // Uniforms, Vests, helmets, backpacks, facewears
 _uniforms = [
+   "FROG_USMC_KyleGloves_1_w",
+   "FROG_USMC_MexanixGloves_1_w",
+   "FROG_USMC_OakleyGloves_1_w",
+   "FROG_USMC_R_OakleyGloves_1_w",
+   "FROG_USMC_KyleGloves_5_w",
+   "FROG_USMC_MexanixGloves_3_w",
+   "FROG_USMC_OakleyGloves_5_w",
+   "FROG_USMC_R_OakleyGloves_5_w",
+   "FROG_USMC_Base_5_w",
+   "FROG_USMC_MexanixGloves_5_w",
+   "FROG_USMC_R_OakleyGloves_3_w",
+   "FROG_USMC_KyleGloves_3_w",
+   "FROG_USMC_OakleyGloves_3_w",
+   "FROG_USMC_Base_1_w",
+   "FROG_USMC_Base_3_w",
+   "MCCUU_USMC_Cpants_MexanixGloves_1_w",
+   "MCCUU_USMC_Cpants_OakleyGloves_1_w",
+   "MCCUU_USMC_Cpants_1_w",
+   "MCCUU_USMC_Cpants_MexanixGloves_3_w",
+   "MCCUU_USMC_Cpants_OakleyGloves_3_w",
+   "MCCUU_USMC_Cpants_3_w",
+   "MCCUU_USMC_Base_3_w",
+   "MCCUU_USMC_Base_1_w",
+   "MCCUU_USMC_Cpants_TU_1_w",
+   "MCCUU_USMC_Cpants_TU_3_w"
 ];
 
 _uniforms_jetpilot = [
+   "CWU27P_VMFA_533",
+   "CWU27PTan_VMFA_533_GSuit_FG_Rolled",
+   "CWU27P_VMFA_533_GSuit_FG_Rolled",
+   "CWU27PTan_VMFA_533_GSuit_FG",
+   "CWU27P_VMFA_533_GSuit_FG",
+   "CWU27PTan_VMFA_533_GSuit_NG",
+   "CWU27P_VMFA_533_GSuit_NG",
+   "CWU27PTan_VMFA_533_NG",
+   "CWU27P_VMFA_533_NG",
+   "CWU27PTan_VMFA_533_Rolled",
+   "CWU27P_VMFA_533_Rolled",
+   "CWU27PTan_VMFA_533",
+   "CWU27P_USAF_74",
+   "CWU27PTan_USAF_74_GVest_NG",
+   "CWU27P_USAF_74_GVest_NG",
+   "CWU27PTan_USAF_74_GVest_Rolled",
+   "CWU27P_USAF_74_GVest_Rolled",
+   "CWU27PTan_USAF_74_GVest",
+   "CWU27P_USAF_74_GVest",
+   "CWU27P_USAF_74_GSuit_FG_Rolled",
+   "CWU27PTan_USAF_74_GSuit_FG_Rolled",
+   "CWU27PTan_USAF_74_GSuit_FG",
+   "CWU27P_USAF_74_GSuit_FG",
+   "CWU27PTan_USAF_74_GSuit_NG",
+   "CWU27P_USAF_74_GSuit_NG",
+   "CWU27PTan_USAF_74_NG",
+   "CWU27P_USAF_74_NG",
+   "CWU27PTan_USAF_74_Rolled",
+   "CWU27P_USAF_74_Rolled",
+   "CWU27PTan_USAF_74",
+   "CSU13BP_Base",
+   "CSU13BPTan_Base_NG",
+   "CSU13BP_Base_NG",
+   "CSU13BPTan_Base_Rolled",
+   "CSU13BP_Base_Rolled",
+   "CSU15BPTan_Base_FG",
+   "CSU13BPTan_Base",
+   "CSU15BP_Base_FG",
+   "CSU15BPTan_Base_NG",
+   "CSU15BP_Base_NG",
+   "CSU15BPTan_Base_Rolled_FG",
+   "CSU15BP_Base_Rolled_FG",
+   "CWU27P_Base",
+   "CWU27PTan_Base_NG",
+   "CWU27P_Base_NG",
+   "CWU27PTan_Base_Rolled",
+   "CWU27P_Base_Rolled",
+   "CWU27PTan_Base"
 ];
 
-_vests = [
+_vests_rifleman = [
+   "BR_IMTV_USMC_v1_1",
+   "BR_IMTV_USMC_v2_1",
+   "BR_IMTV_USMC_v6_1",
+   "BR_IMTV_USMC_v9_1",
+   "BR_SPC_USMC_v1_1",
+   "BR_SPC_USMC_v2_1",
+   "BR_SPC_USMC_v3_1",
+   "BR_SPC_USMC_v5_1"
+];
+
+_vests_teamleader = [
+   "BR_SPC_USMC_v9_1",
+   "BR_SPC_USMC_v6_1",
+   "BR_IMTV_USMC_v8_1"
+];
+
+_vests_mg = [
+   "BR_IMTV_USMC_v7_1",
+   "BR_SPC_USMC_v4_1"
+];
+
+_vests_medic = [
+   "BR_IMTV_USMC_v4_1"
+];
+
+_vests_rto = [
+   "BR_IMTV_USMC_v3_1",
+   "BR_IMTV_USMC_v5_1",
+   "BR_SPC_USMC_v7_1",
+   "BR_SPC_USMC_v10_1"
+];
+
+_vests_grenadier = [
+   "BR_SPC_USMC_v8_1"
 ];
 
 _vests_pilot = [
+   "UK3CB_V_Pilot_Vest"
+];
+
+_vests_jetpilot = [
+   "SV2B_LPU36P",
+   "SV2B_LPU23P",
+   "SRU21P_Alt",
+   "SRU21P_LPU9P_Alt",
+   "SRU21P",
+   "SRU21P_LPU9P",
+   "SRU21P_LPU9P_PCU15AP_Alt",
+   "SRU21P_LPU9P_PCU15AP",
+   "CMU33PTan",
+   "CMU33P"
 ];
 
 _vests_crewman = [
+   "BR_IMTV_USMC_v10_1"
 ];
 
 _helmets = [
+   "LWH_RM_Goggles_USMC_Preset_1_2",
+   "LWH_Goggles_U_USMC_Preset_1_2",
+   "LWH_Goggles_USMC_Preset_1_2",
+   "LWH_LMG_GUY_Goggles_USMC_Preset_1_3",
+   "LWH_LMG_GUY_Goggles_USMC_Preset_1_4",
+   "LWH_LMG_GUY_USMC_Preset_1_3",
+   "LWH_LMG_GUY_USMC_Preset_1_4",
+   "LWH_USMC_Preset_1_2",
+   "MICH2000_Coverall_USMC_Preset_3_2",
+   "MICH2000_Coverall_USMC_Preset_8_3",
+   "MICH2000_Coverall_USMC_Preset_8_4",
+   "MICH2000_Coverall_USMC_Preset_7_3",
+   "MICH2000_Coverall_USMC_Preset_7_4",
+   "MICH2000_Coverall_USMC_Preset_5_2",
+   "MICH2000_Coverall_USMC_Preset_1_2"
+];
+
+_helmets_comms = [
+   "MICH2000_Coverall_USMC_Preset_4_2",
+   "LWH_Bowman_Goggles_USMC_Preset_1_2",
+   "LWH_Bowman_USMC_Preset_1_2",
+   "MICH2000_Coverall_USMC_Preset_6_2",
+   "MICH2000_Coverall_USMC_Preset_2_2"
+];
+
+_boonie = [
+   "E_Panama_USMC_Preset_1_2"
 ];
 
 _pilot_helmets = [
+   "rhsusf_hgu56p_black",
+   "rhsusf_hgu56p_mask_black",
+   "rhsusf_hgu56p_mask_black_skull",
+   "rhsusf_hgu56p_visor_mask_black",
+   "rhsusf_hgu56p_visor_black",
+   "rhsusf_hgu56p_visor_mask_black_skull",
+   "rhsusf_hgu56p_visor_mask_Empire_black",
+   "rhsusf_hgu56p",
+   "rhsusf_hgu56p_mask",
+   "rhsusf_hgu56p_mask_mo",
+   "rhsusf_hgu56p_mask_skull",
+   "rhsusf_hgu56p_visor",
+   "rhsusf_hgu56p_visor_mask",
+   "rhsusf_hgu56p_visor_mask_mo",
+   "rhsusf_hgu56p_visor_mask_skull"
 ];
 
 _jetpilot_hemlets = [
+   "HGU55P_Amber",
+   "HGU55P_Clear",
+   "HGU55P_NoVisor",
+   "HGU55P_MBU12P_Amber",
+   "HGU55P_MBU12P_Clear",
+   "HGU55P_MBU12P_NoVisor",
+   "HGU55P_MBU12P_Tinted",
+   "HGU55P_MBU20P_Amber",
+   "HGU55P_MBU20P_Clear",
+   "HGU55P_MBU20P_NoVisor",
+   "HGU55P_MBU20P_Tinted",
+   "HGU68P_MBU14P_Amber",
+   "HGU68P_MBU14P_Clear",
+   "HGU68P_MBU14P_Tinted",
+   "HGU68P_MBU23P_Amber",
+   "HGU68P_MBU23P_Clear",
+   "HGU68P_MBU23P_Tinted"
 ];
 
 _crewman_helmets = [
-];
-
-_caps = [
+   "rhsusf_cvc_ess",
+   "rhsusf_cvc_alt_helmet",
+   "rhsusf_cvc_helmet"
 ];
 
 _backpacks = [
+   "BackPack_S_v1_1",
+   "BattleBelt_CrouchGuard_USMC_v5_1",
+   "BattleBelt_CrouchGuard_USMC_v4_1",
+   "BattleBelt_CrouchGuard_USMC_v1_1",
+   "BattleBelt_CrouchGuard_USMC_v2_1",
+   "BattleBelt_CrouchGuard_USMC_v3_1",
+   "BattleBelt_USMC_v1_1",
+   "BattleBelt_USMC_v2_1",
+   "BattleBelt_USMC_v3_1",
+   "Belt_CrouchGuard_USMC_v1_1",
+   "Belt_CrouchGuard_USMC_v2_1",
+   "Belt_USMC_v1_1",
+   "Belt_USMC_v2_1",
+   "CrouchGuard_LBT1476a_FanBag_M203_SPC_USMC_1",
+   "CrouchGuard_LBT1476a_FanBag_M203_SPC_USMC_3",
+   "CrouchGuard_LBT1476a_FanBag_M203_SPC_USMC_2",
+   "CrouchGuard_S_BackPack_FanBag_M203_SPC_USMC_1",
+   "CrouchGuard_FanBag_M203_SPC_USMC_1",
+   "CrouchGuard_FanBag_SPC_USMC_1",
+   "CrouchGuard_LBT1476a_SPC_USMC_1",
+   "CrouchGuard_LBT1476a_SPC_USMC_3",
+   "CrouchGuard_LBT1476a_SPC_USMC_2",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_7",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_9",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_11",
+   "CrouchGuard_NeckArmor_BackPack_S_IMTV_USMC_1",
+   "CrouchGuard_NeckArmor_IMTV_USMC_1",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_8",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_10",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_12",
+   "CrouchGuard_NeckArmor_BackPack_S_IMTV_USMC_2",
+   "CrouchGuard_NeckArmor_IMTV_USMC_2",
+   "CrouchGuard_IMTV_USMC_1",
+   "CrouchGuard_S_BackPack_SPC_USMC_1",
+   "CrouchGuard_SPC_USMC_1",
+   "FanBag_USMC_v1_1",
+   "Belt_ACC_USMC_v1_1",
+   "M203_Belt_USMC_v1_1",
+   "M203_Belt_USMC_v2_1"
 ];
 
-_empty = [
+_backpacks_medic = [
+   "CrouchGuard_NeckArmor_LBT2670_IMTV_USMC_6",
+   "CrouchGuard_NeckArmor_LBT2670_IMTV_USMC_5",
+   "BackPack_LBT2670_v1_1"
 ];
 
-_backpacks_radio = [
-];
-
-_facewears = [
+_facewear = [
+   "USMC_ESS_Ballistic_v1_1",
+   "USMC_ESS_Ballistic_v2_1",
+   "USMC_ScarfMask_v1_1",
+   "USMC_ScarfMask_v1_2",
+   "USMC_ScarfMask_v1_3",
+   "USMC_ScarfMask_v1_4",
+   "USMC_ScarfMask_v1_5",
+   "USMC_ShemaghGrid_ESS_Ballistic_v1_1",
+   "USMC_ShemaghGrid_ESS_Ballistic_v1_2",
+   "USMC_ShemaghGrid_ESS_Ballistic_v1_3",
+   "USMC_ShemaghGrid_ESS_Ballistic_v2_2",
+   "USMC_ShemaghGrid_ESS_Ballistic_v2_1",
+   "USMC_ShemaghGrid_ESS_Ballistic_v2_3",
+   "USMC_ShemaghGrid_ScarfMask_v1_2",
+   "USMC_ShemaghGrid_ScarfMask_v1_4",
+   "USMC_ShemaghGrid_ScarfMask_v1_8",
+   "USMC_ShemaghGrid_ScarfMask_v1_6",
+   "USMC_ShemaghGrid_ScarfMask_v1_1",
+   "USMC_ShemaghGrid_ScarfMask_v1_3",
+   "USMC_ShemaghGrid_ScarfMask_v1_7",
+   "USMC_ShemaghGrid_ScarfMask_v1_5",
+   "USMC_ShemaghGrid_v1_2",
+   "USMC_ShemaghGrid_v1_1",
+   "USMC_ShemaghGrid_v1_3",
+   "rhs_ess_black",
+   "rhs_googles_yellow",
+   "rhs_googles_orange",
+   "rhs_googles_clear",
+   "rhs_googles_black",
+   "rhsusf_oakley_goggles_blk",
+   "rhsusf_oakley_goggles_clr",
+   "rhsusf_oakley_goggles_ylw"
 ];
 
 // Nightvision
 _nvgs = [
+   "USMC_PVS14_MICH_NVG_02",
+   "USMC_PVS14_LWH_NVG_02",
+   "USMC_PVS14_MICH_NVG_01",
+   "USMC_PVS14_LWH_NVG_01",
+   "USMC_RhinoMount_LWH_NVG_01",
+   "USMC_RhinoMount_MICH_NVG_01",
+   "USMC_RhinoMount_LWH_NVG_02",
+   "rhsusf_ANPVS_15"
 ];
 
 // Binoculars
-_common_binos = [
+_binos = [
+   "rhsusf_bino_m24",
+   "rhsusf_bino_m24_ARD",
+   "rhsusf_bino_leopold_mk4",
+   "rhsusf_bino_lerca_1200_tan",
+   "rhsusf_bino_lerca_1200_black",
+   "ACE_VectorDay",
+   "ACE_Vector"
 ];
 
 _laser_binos = [
-];
-
-_camera = [
+   "Laserdesignator"
 ];
 
 // Common tools & medic items
 _ace_common_tools = [
+   "ACE_EntrenchingTool",
+   "ACE_MapTools",
+   "ACE_Flashlight_XL50",
+   "acex_intelitems_notepad",
+   "ACE_SpareBarrel"
 ];
 
 _ace_art_tools = [
+   "ACE_artilleryTable",
+   "ACE_RangeTable_82mm",
+   "ACE_PlottingBoard"
 ];
 
 _acre_items = [
+   "ACRE_VHF30108MAST",
+   "ACRE_VHF30108",
+   "ACRE_VHF30108SPIKE"
 ];
 
 _ace_eng_tools = [
+   "ACE_artilleryTable",
+   "ACE_RangeTable_82mm",
+   "ACE_PlottingBoard",
+   "ace_flags_blue",
+   "ace_flags_green",
+   "ace_flags_orange",
+   "ace_flags_purple",
+   "ace_flags_red",
+   "ace_flags_white",
+   "ace_flags_yellow",
+   "ace_marker_flags_black",
+   "ace_marker_flags_green",
+   "ace_marker_flags_blue",
+   "ace_marker_flags_orange",
+   "ace_marker_flags_purple",
+   "ace_marker_flags_red",
+   "ace_marker_flags_white",
+   "ace_marker_flags_yellow",
+   "ace_flags_black",
+   "ACE_DefusalKit",
+   "iedd_item_notebook",
+   "ACE_SpraypaintYellow",
+   "ACE_SpraypaintWhite",
+   "ACE_SpraypaintRed",
+   "ACE_SpraypaintBlue",
+   "ACE_SpraypaintGreen",
+   "ACE_SpraypaintBlack"
 ];
 
 _ace_common_medical_items = [
+   "ACM_ChestSeal",
+   "ACM_ElasticWrap",
+   "ACM_EmergencyTraumaDressing",
+   "ACM_GuedelTube",
+   "ACM_Paracetamol",
+   "ACM_SAMSplint",
+   "ACM_PressureBandage"
 ];
 
 _ace_medic_items = [
@@ -259,15 +738,36 @@ _ace_medic_items = [
 
 // Items & Communication
 _common_items = [
+   "ACE_CableTie",
+   "ACE_bodyBag",
+   "ACE_Canteen",
+   "ACE_EarPlugs",
+   "ACE_EHP",
+   "ItemcTabHCam",
+   "ACE_Humanitarian_Ration",
+   "ACE_IR_Strobe_Item",
+   "ACE_MapTools",
+   "ACE_rope12",
+   "ACE_rope15",
+   "ACE_rope18",
+   "ACE_rope27",
+   "ACE_rope3",
+   "ACE_rope36",
+   "ACE_rope6",
+   "tsp_sling",
+   "ACE_WaterBottle"
 ];
 
-_radio = [
+_radio_lr = [
+   "ACRE_PRC117F"
 ];
 
-_radio2 = [
+_radio_sr = [
+   "ACRE_PRC152"
 ];
 
 _uav_terminal = [
+   "B_UavTerminal"
 ];
 
 
