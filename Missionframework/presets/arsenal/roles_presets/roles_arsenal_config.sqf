@@ -96,7 +96,7 @@ _mag_sniper = [
    "121_300WM_Berger_OTM_5rnd",
    "rhsusf_mag_10Rnd_STD_50BMG_mk211",
    "rhsusf_mag_10Rnd_STD_50BMG_M33"
-]
+];
 
 _mag_lmg = [
    "rhsusf_100Rnd_556x45_soft_pouch",
@@ -183,7 +183,7 @@ _sniper_optics = [
    "121_USASOC_RVPS_ANPVS30",
    "TOTT_Razor_110_Geissele",
    "TOTT_Razor_16_Geissele"
-]
+];
 
 _mg_optics = [
    "rhsusf_acc_ACOG",
@@ -232,7 +232,7 @@ _muzzle_attach_marksman = [
 
 _muzzle_attach_sniper = [
    "121_USASOC_AAC_BLK",
-   "121_USASOC_AAC_TAN",
+   "121_USASOC_AAC_TAN"
 ];
 
 _muzzle_attach_suppressor = [
@@ -252,7 +252,7 @@ _rifle_bipod = [
 _lmg_bipod = [
    "rhsusf_acc_saw_lw_bipod",
    "rhsusf_acc_grip4_bipod"
-]
+];
 
 // Uniforms, Vests, helmets, backpacks, facewears
 _uniforms = [
@@ -793,20 +793,11 @@ _uav_terminal = [
 // Define roles classnames here
 // For this to work, you will need to change the blufor characters in the editor to match these classnames below
 // Make any chances you want here, just make sure you register them in the switch do command below (after "case")
+_platoon = "rhsusf_usmc_marpat_d_officer";
 
 // Call the arsenal if the right class is provided
 switch (_classRole) do {
-        case _rhsusf_usmc_marpat_d_officer : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _rifles_2 + _pistols);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol + _grenades + _flashbang);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_teamleader + vests_rto + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _laser_binos);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _rhsusf_usmc_marpat_d_officer : {
+        case _platoon : {
         // Put all weapons here
         KPLIB_arsenalWeapons = (_rifles + _rifles_2 + _pistols);
         // Put all Magazines, and throwable items such as grenades
