@@ -418,6 +418,11 @@ _helmets_comms = [
    "MICH2000_Coverall_USMC_Preset_2_2"
 ];
 
+_helmets_fast = [
+   "tsp_gear_fast_mt_tan",
+   "tsp_gear_fast_mt_tan_peltor"
+];
+
 _boonie = [
    "E_Panama_USMC_Preset_1_2"
 ];
@@ -561,6 +566,10 @@ _nvgs = [
    "rhsusf_ANPVS_15"
 ];
 
+_nvgs_pilot = [
+   "rhsusf_ANVIS"
+];
+
 // Binoculars
 _binos = [
    "rhsusf_bino_m24",
@@ -624,7 +633,17 @@ _ace_eng_tools = [
    "ACE_SpraypaintRed",
    "ACE_SpraypaintBlue",
    "ACE_SpraypaintGreen",
-   "ACE_SpraypaintBlack"
+   "ACE_SpraypaintBlack",
+   "Toolkit",
+   "ACE_M26_Clacker",
+   "ACE_Clacker",
+   "tsp_breach_shock"
+];
+
+_sniper_tools = [
+   "ACE_RangeCard",
+   "ACE_Kestrel4500",
+   "ACE_ATragMX"
 ];
 
 _ace_common_medical_items = [
@@ -777,15 +796,15 @@ _uav_terminal = [
 
 // Call the arsenal if the right class is provided
 switch (_classRole) do {
-        case _placeholder : {
+        case _rhsusf_usmc_marpat_d_officer : {
         // Put all weapons here
-        KPLIB_arsenalWeapons = ();
+        KPLIB_arsenalWeapons = (_rifles + _rifles_2 + _pistols);
         // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = ();
+        KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol + _grenades + _flashbang);
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = ();
+        KPLIB_arsenalItems = (_rail_attach + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_teamleader + vests_rto + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _laser_binos);
         // Put only backpacks here
-        KPLIB_arsenalBackpacks = ();
+        KPLIB_arsenalBackpacks = (+_backpacks);
         };
         
         case default {	
