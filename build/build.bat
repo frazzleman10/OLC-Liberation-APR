@@ -3,7 +3,7 @@
 echo - Liberation PBO build script -
 del /f *.pbo  > nul 2>&1
 
-for /f %%i in ('dir /B /A:D ..\maps-OLC\kp_liberation*') do (
+for /f %%i in ('dir /B /A:D ..\maps-OLC\olc*') do (
 	echo.
 	echo Building PBO for map %%i 
 	xcopy /Q /E /Y ..\Missionframework .\%%i\
