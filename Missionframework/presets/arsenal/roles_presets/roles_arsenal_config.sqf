@@ -1,49 +1,37 @@
-/*
-    File: roles_arsenal_config.sqf
-    Author: PIG13BR (https://github.com/PiG13BR)
-    Date: 26/07/2024
-    Updated: 14/07/2025
-
-    Description:
-        Set up your arsenal inventory based on role selection in this file.
-        Make any changes you want here, just don't change the name of variables with KPLIB tags.
-    
-    Parameter(s):
-        _className - classname of the player's entity [STRING, defaults as ""]
-
-    Returns:
-        -
-*/
-
-params["_classRole"];
-
 // ---------------------------------------------------------- Variabes/classification of equipaments to be used for the roles
 // Weapons
 _rifles = [
-   "rhs_weap_m4",
-   "rhs_weap_m4_carryhandle",
    "rhs_weap_m16a4",
    "rhs_weap_m16a4_carryhandle"
 ];
 
-_rifles_grenadier = [
-    "rhs_weap_m16a4_carryhandle_M203",
-    "UK3CB_M16A3_UGL",
-    "rhs_weap_m4_carryhandle_m203",
-    "rhs_weap_m4_carryhandle_m203S",
-    "rhs_weap_m4_m203",
-    "rhs_weap_m4_m203S"
+_rifles_2 = [
+   "rhs_weap_m4",
+   "rhs_weap_m4_carryhandle"
+];
+
+_rifles_ugl = [
+   "rhs_weap_m16a4_carryhandle_M203"
+];
+
+_marksman_rifles = [
+   "rhs_weap_m14ebrri",
+   "rhs_weap_m27iar",
+   "rhs_weap_sr25"
+];
+
+_sniper_rifles = [
+   "121_USASOC_M2010",
+   "rhs_weap_M107",
+   "rhs_weap_M107_d"
 ];
 
 _lmg = [
-   "rhs_weap_m249",
-   "rhs_weap_m249_pip",
-   "rhs_weap_m249_pip_L_para",
-   "rhs_weap_m249_pip_S_para"
+   "rhs_weap_m249_pip_L",
+   "rhs_weap_m249_pip_S"
 ];
 
 _hmg = [
-   "rhs_weap_m240G",
    "rhs_weap_m240B"
 ];
 
@@ -56,67 +44,89 @@ _ace_metal_detector = [
    "ACE_VMM3"
 ];
 
-//Bazookas
-_launchers_HAT = [
+//Launchers
+_launchers_hat = [
+   "rhs_weap_smaw_green",
+   "rhs_weap_smaw",
+   "rhs_weap_maaws",
    "rhs_weap_fgm148"
 ];
 
-_launchers_LAT = [
-   "rhs_weap_M136",
+_launchers_lat = [
+   "rhs_weap_m72a7",
+   "rhs_weap_m136",
    "rhs_weap_M136_hedp",
    "rhs_weap_M136_hp"
 ];
 
-_launchers_AA = [
-   "rhs_weap_fim92"
-];
-
 // Magazines
-_mag_common = [
+_mag_laserdes = [
    "Laserbatteries"
 ];
 
 _mag_rifle = [
-   "rhs_mag_30Rnd_556x45_M855A1_Stanag",
-   "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",
-   "rhs_mag_30Rnd_556x45_M855_Stanag"
+   "TOTT_Stanag_Worn_30rnd_A1",
+   "TOTT_Stanag_Worn_30rnd_A1_TM"
 ];
 
-_mag_grenadier = [
+_mag_ugl = [
    "rhs_mag_M433_HEDP",
-   "rhs_mag_M441_HE",
+   "rhs_mag_M397_HET",
+   "rhs_mag_m713_red",
+   "rhs_mag_m714_white",
+   "rhs_mag_m715_green",
    "rhs_mag_m716_yellow",
-   "rhs_mag_m715_Green",
-   "rhs_mag_m714_White",
-   "rhs_mag_m713_Red",
    "rhs_mag_M583A1_white",
    "rhs_mag_m661_green",
-   "rhs_mag_m662_red",
-   "ACE_40mm_Flare_ir"
+   "rhs_mag_m662_red"
 ];
+
+_mag_marksman = [
+   "rhsusf_20Rnd_762x51_m80_Mag",
+   "rhsusf_20Rnd_762x51_m62_Mag",
+   "rhsusf_20Rnd_762x51_SR25_m118_special_Mag",
+   "rhsusf_20Rnd_762x51_SR25_m62_Mag",
+   "TOTT_Stanag_Worn_30rnd_A1",
+   "TOTT_Stanag_Worn_30rnd_A1_TM"
+];
+
+_mag_sniper = [
+   "121_300WM_Mk248_Mod_1_5rnd",
+   "121_300WM_Mk248_Mod_0_5rnd",
+   "121_300WM_Berger_OTM_5rnd",
+   "rhsusf_mag_10Rnd_STD_50BMG_mk211",
+   "rhsusf_mag_10Rnd_STD_50BMG_M33"
+]
 
 _mag_lmg = [
    "rhsusf_100Rnd_556x45_soft_pouch",
+   "rhsusf_100Rnd_556x45_soft_pouch_ucp",
+   "rhsusf_100Rnd_556x45_soft_pouch_coyote",
    "rhsusf_100Rnd_556x45_mixed_soft_pouch",
+   "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote",
+   "rhsusf_100Rnd_556x45_mixed_soft_pouch_ucp",
    "rhsusf_200Rnd_556x45_box",
    "rhsusf_200rnd_556x45_mixed_box",
+   "rhsusf_200Rnd_556x45_soft_pouch_coyote",
+   "rhsusf_200Rnd_556x45_soft_pouch_ucp",
    "rhsusf_200Rnd_556x45_soft_pouch",
+   "rhsusf_200Rnd_556x45_mixed_soft_pouch_ucp",
+   "rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote",
    "rhsusf_200Rnd_556x45_mixed_soft_pouch"
 ];
 
 _mag_hmg = [
-   "rhsusf_100Rnd_762x51_m62_tracer",
-   "rhsusf_50Rnd_762x51_m62_tracer",
-   "rhsusf_100Rnd_762x51",
-   "rhsusf_50Rnd_762x51"
+   "rhsusf_50Rnd_762x51",
+   "rhsusf_50Rnd_762x51_m62_tracer"
 ];
 
-_mag_launcher_at = [
-   "rhs_fgm148_magazine_AT"
-];
-
-_mag_launcher_aa = [
-   "rhs_fim92_mag"
+_mag_launcher_hat = [
+   "rhs_mag_maaws_HE",
+   "rhs_mag_maaws_HEDP",
+   "rhs_mag_maaws_HEAT",
+   "rhs_fgm148_magazine_AT",
+   "rhs_mag_smaw_HEDP",
+   "rhs_mag_smaw_HEAA"
 ];
 
 _mag_pistol = [
@@ -125,156 +135,247 @@ _mag_pistol = [
 
 // Grenades & explosives
 _grenades = [
-   "rhs_mag_m67",
-   "tsp_flashbang_m84"
-];
-
-_grenades_2 = [
-   "Chemlight_blue",
-   "ACE_Chemlight_HiBlue",
-   "Chemlight_green",
-   "ACE_Chemlight_HiRed",
-   "ACE_Chemlight_HiGreen",
-   "ACE_Chemlight_HiWhite",
-   "ACE_Chemlight_HiYellow",
-   "ACE_Chemlight_Orange",
-   "ACE_Chemlight_IR",
-   "Chemlight_red",
-   "ACE_Chemlight_UltraHiOrange",
-   "ACE_Chemlight_White",
-   "Chemlight_yellow",
+   "HandGrenade",
    "rhs_mag_an_m8hc",
    "rhs_mag_m18_green",
    "rhs_mag_m18_purple",
    "rhs_mag_m18_red",
    "rhs_mag_m18_yellow",
-   "SmokeShellBlue"
+   "Chemlight_blue",
+   "Chemlight_green",
+   "ACE_Chemlight_HiBlue",
+   "ACE_Chemlight_HiGreen",
+   "ACE_Chemlight_HiRed",
+   "ACE_Chemlight_HiWhite",
+   "ACE_Chemlight_HiYellow",
+   "ACE_Chemlight_IR",
+   "ACE_Chemlight_Orange",
+   "Chemlight_red",
+   "ACE_Chemlight_UltraHiOrange",
+   "ACE_Chemlight_White",
+   "Chemlight_yellow"
+];
+
+_flashbang = [
+   "tsp_flashbang_m84"
 ];
 
 _explosives = [
    "rhsusf_m112x4_mag",
-   "rhsusf_m112_mag",
-   "SatchelCharge_Remote_Mag"
+   "rhsusf_m112_mag"
 ];
 
 // Weapons attachment
-_rifles_optics = [
+_rifle_optics = [
+   "rhsusf_acc_eotech_552",
    "rhsusf_acc_ACOG",
+   "rhsusf_acc_ACOG2",
+   "rhsusf_acc_ACOG3",
    "rhsusf_acc_compm4"
 ];
 
+_sniper_optics = [
+   "TOTT_atacr18_nsw",
+   "TOTT_Leu_CQBSS_Geissele",
+   "121_USASOC_PVPS",
+   "121_USASOC_PVPS_ANPVS30",
+   "121_USASOC_RVPS",
+   "121_USASOC_RVPS_ANPVS30",
+   "TOTT_Razor_110_Geissele",
+   "TOTT_Razor_16_Geissele"
+]
+
 _mg_optics = [
+   "rhsusf_acc_ACOG",
+   "rhsusf_acc_ACOG2",
+   "rhsusf_acc_ACOG3",
    "rhsusf_acc_compm4",
-   "rhsusf_acc_ELCAN"
+   "rhsusf_acc_ELCAN",
+   "rhsusf_acc_ELCAN_ard"
 ];
 
-_at_optics = [
+_hat_optics = [
+   "rhs_weap_optic_smaw",
    "rhs_optic_maaws"
 ];
 
 _rail_attach = [
+   "rhsusf_acc_anpeq15side_bk",
+   "rhsusf_acc_anpeq15_bk_top",
+   "rhsusf_acc_anpeq15_bk",
    "rhsusf_acc_anpeq15side",
    "rhsusf_acc_anpeq15_top",
    "rhsusf_acc_anpeq15",
+   "rhsusf_acc_anpeq15_wmx",
+   "rhsusf_acc_anpeq16a",
+   "rhsusf_acc_anpeq16a_top",
    "rhsusf_acc_M952V"
 ];
 
-_muzzle_attach = [
-   "rhsusf_acc_SF3P556",
-   "rhsusf_acc_SFMB556"
+_rail_attach_sniper = [
+   "121_USASOC_Raptar_Laser",
+   "121_USASOC_STORM_SLX_Laser"
 ];
 
-_rifles_grip = [
-   "rhsusf_acc_kac_grip"
+_muzzle_attach_rifle = [
+   "rhsusf_acc_SFMB556",
+   "rhsusf_acc_SF3P556"
 ];
 
-_rifles_bipod = [
-   "rhsusf_acc_saw_bipod",
-   "rhsusf_acc_saw_lw_bipod"
+_muzzle_attach_marksman = [
+   "rhsusf_acc_SR25S",
+   "rhsusf_acc_aac_762sd_silencer",
+   "rhsusf_acc_aac_762sdn6_silencer",
+   "rhsusf_acc_nt4_black",
+   "rhsusf_acc_nt4_tan"
 ];
+
+_muzzle_attach_sniper = [
+   "121_USASOC_AAC_BLK",
+   "121_USASOC_AAC_TAN",
+];
+
+_muzzle_attach_suppressor = [
+   "rhsusf_acc_nt4_black",
+   "rhsusf_acc_nt4_tan"
+];
+
+_rifle_grip = [
+   "rhsusf_acc_grip3"
+];
+
+_rifle_bipod = [
+   "121_USASOC_Atlas",
+   "121_USASOC_Harris"
+];
+
+_lmg_bipod = [
+   "rhsusf_acc_saw_lw_bipod",
+   "rhsusf_acc_grip4_bipod"
+]
 
 // Uniforms, Vests, helmets, backpacks, facewears
 _uniforms = [
-   "U_Simc_DCU_trop",
-   "U_Simc_DCU",
-   "U_Simc_DCU_knee_trop",
-   "U_Simc_DCU_knee",
-   "U_Simc_DCU_gas_knee_trop",
-   "U_Simc_DCU_gas_knee",
-   "U_Simc_DCU_knee_nomex_trop",
-   "U_Simc_DCU_knee_nomex",
-   "U_Simc_DCU_gas_knee_nomex",
-   "U_Simc_DCU_gas_knee_nomex_trop",
-   "U_Simc_DCU_nomex",
-   "U_Simc_DCU_gas_nomex",
-   "U_Simc_DCU_tee"
+   "FROG_USMC_KyleGloves_1_w",
+   "FROG_USMC_MexanixGloves_1_w",
+   "FROG_USMC_OakleyGloves_1_w",
+   "FROG_USMC_R_OakleyGloves_1_w",
+   "FROG_USMC_KyleGloves_5_w",
+   "FROG_USMC_MexanixGloves_3_w",
+   "FROG_USMC_OakleyGloves_5_w",
+   "FROG_USMC_R_OakleyGloves_5_w",
+   "FROG_USMC_Base_5_w",
+   "FROG_USMC_MexanixGloves_5_w",
+   "FROG_USMC_R_OakleyGloves_3_w",
+   "FROG_USMC_KyleGloves_3_w",
+   "FROG_USMC_OakleyGloves_3_w",
+   "FROG_USMC_Base_1_w",
+   "FROG_USMC_Base_3_w",
+   "MCCUU_USMC_Cpants_MexanixGloves_1_w",
+   "MCCUU_USMC_Cpants_OakleyGloves_1_w",
+   "MCCUU_USMC_Cpants_1_w",
+   "MCCUU_USMC_Cpants_MexanixGloves_3_w",
+   "MCCUU_USMC_Cpants_OakleyGloves_3_w",
+   "MCCUU_USMC_Cpants_3_w",
+   "MCCUU_USMC_Base_3_w",
+   "MCCUU_USMC_Base_1_w",
+   "MCCUU_USMC_Cpants_TU_1_w",
+   "MCCUU_USMC_Cpants_TU_3_w"
 ];
 
 _uniforms_jetpilot = [
+   "CWU27P_VMFA_533",
+   "CWU27PTan_VMFA_533_GSuit_FG_Rolled",
+   "CWU27P_VMFA_533_GSuit_FG_Rolled",
+   "CWU27PTan_VMFA_533_GSuit_FG",
+   "CWU27P_VMFA_533_GSuit_FG",
+   "CWU27PTan_VMFA_533_GSuit_NG",
+   "CWU27P_VMFA_533_GSuit_NG",
+   "CWU27PTan_VMFA_533_NG",
+   "CWU27P_VMFA_533_NG",
+   "CWU27PTan_VMFA_533_Rolled",
+   "CWU27P_VMFA_533_Rolled",
+   "CWU27PTan_VMFA_533",
+   "CWU27P_USAF_74",
+   "CWU27PTan_USAF_74_GVest_NG",
+   "CWU27P_USAF_74_GVest_NG",
+   "CWU27PTan_USAF_74_GVest_Rolled",
+   "CWU27P_USAF_74_GVest_Rolled",
+   "CWU27PTan_USAF_74_GVest",
+   "CWU27P_USAF_74_GVest",
+   "CWU27P_USAF_74_GSuit_FG_Rolled",
+   "CWU27PTan_USAF_74_GSuit_FG_Rolled",
+   "CWU27PTan_USAF_74_GSuit_FG",
+   "CWU27P_USAF_74_GSuit_FG",
+   "CWU27PTan_USAF_74_GSuit_NG",
+   "CWU27P_USAF_74_GSuit_NG",
+   "CWU27PTan_USAF_74_NG",
+   "CWU27P_USAF_74_NG",
+   "CWU27PTan_USAF_74_Rolled",
+   "CWU27P_USAF_74_Rolled",
+   "CWU27PTan_USAF_74",
    "CSU13BP_Base",
    "CSU13BPTan_Base_NG",
    "CSU13BP_Base_NG",
    "CSU13BPTan_Base_Rolled",
    "CSU13BP_Base_Rolled",
+   "CSU15BPTan_Base_FG",
    "CSU13BPTan_Base",
    "CSU15BP_Base_FG",
-   "CSU15BPTan_Base_FG",
-   "CSU15BP_Base_NG",
    "CSU15BPTan_Base_NG",
+   "CSU15BP_Base_NG",
    "CSU15BPTan_Base_Rolled_FG",
    "CSU15BP_Base_Rolled_FG",
-   "CWU27PTan_Base_NG",
    "CWU27P_Base",
+   "CWU27PTan_Base_NG",
    "CWU27P_Base_NG",
    "CWU27PTan_Base_Rolled",
    "CWU27P_Base_Rolled",
    "CWU27PTan_Base"
 ];
 
-_vests = [
-   "V_Simc_vest_pasgt_sluit",
-   "V_Simc_vest_pasgt",
-   "V_Simc_vest_pasgt_nade_mc",
-   "V_Simc_vest_pasgt_nade",
-   "V_Simc_vest_pasgt_nade_lc2",
-   "V_Simc_vest_pasgt_lbv_2",
-   "V_Simc_vest_pasgt_lbv_1",
-   "V_Simc_vest_pasgt_lbv_belt_2",
-   "V_Simc_vest_pasgt_lbv_belt_1",
-   "V_Simc_vest_pasgt_lbv_belt_mc_2",
-   "V_Simc_vest_pasgt_lbv_belt_mc_1",
-   "V_Simc_vest_pasgt_lbv_belt_45_2",
-   "V_Simc_vest_pasgt_lbv_belt_45_1",
-   "V_Simc_vest_pasgt_lbv_belt_45_mc_1",
-   "V_Simc_vest_pasgt_lbv_belt_45_mc_2",
-   "V_Simc_vest_pasgt_alice",
-   "V_Simc_vest_pasgt_alice_alt",
-   "V_Simc_vest_pasgt_alice_etool",
-   "V_Simc_vest_pasgt_alice_mc_alt",
-   "V_Simc_vest_pasgt_alice_mc",
-   "V_Simc_vest_pasgt_alice_mc_etool",
-   "V_Simc_vest_pasgt_alice_mc_m56",
-   "V_Simc_vest_pasgt_alice_mc_60",
-   "V_Simc_vest_pasgt_alice_mc_45_ligt",
-   "V_Simc_vest_pasgt_alice_mc_45",
-   "V_Simc_vest_pasgt_alice_m56",
-   "V_Simc_vest_pasgt_alice_60",
-   "V_Simc_vest_pasgt_alice_45_ligt",
-   "V_Simc_vest_pasgt_alice_45",
-   "V_Simc_vest_pasgt_alice_lc2",
-   "V_Simc_vest_pasgt_alice_lc2_alt",
-   "V_Simc_vest_pasgt_alice_mc_249",
-   "V_Simc_vest_pasgt_alice_249",
-   "V_Simc_vest_pasgt_alice_lc2_60",
-   "V_Simc_vest_pasgt_alice_lc2_45_ligt",
-   "V_Simc_vest_pasgt_alice_lc2_45"
+_vests_rifleman = [
+   "BR_IMTV_USMC_v1_1",
+   "BR_IMTV_USMC_v2_1",
+   "BR_IMTV_USMC_v6_1",
+   "BR_IMTV_USMC_v9_1",
+   "BR_SPC_USMC_v1_1",
+   "BR_SPC_USMC_v2_1",
+   "BR_SPC_USMC_v3_1",
+   "BR_SPC_USMC_v5_1"
+];
+
+_vests_teamleader = [
+   "BR_SPC_USMC_v9_1",
+   "BR_SPC_USMC_v6_1",
+   "BR_IMTV_USMC_v8_1"
+];
+
+_vests_mg = [
+   "BR_IMTV_USMC_v7_1",
+   "BR_SPC_USMC_v4_1"
+];
+
+_vests_medic = [
+   "BR_IMTV_USMC_v4_1"
+];
+
+_vests_rto = [
+   "BR_IMTV_USMC_v3_1",
+   "BR_IMTV_USMC_v5_1",
+   "BR_SPC_USMC_v7_1",
+   "BR_SPC_USMC_v10_1"
+];
+
+_vests_grenadier = [
+   "BR_SPC_USMC_v8_1"
 ];
 
 _vests_pilot = [
    "UK3CB_V_Pilot_Vest"
 ];
 
-_vests_jet_pilot = [
+_vests_jetpilot = [
    "SV2B_LPU36P",
    "SV2B_LPU23P",
    "SRU21P_Alt",
@@ -288,24 +389,52 @@ _vests_jet_pilot = [
 ];
 
 _vests_crewman = [
-   "V_Simc_vest_pasgt_dcu",
-   "V_Simc_vest_pasgt",
-   "V_Simc_vest_pasgt_sluit"
+   "BR_IMTV_USMC_v10_1"
 ];
 
 _helmets = [
-   "H_Simc_pasgt_dcu",
-   "H_Simc_pasgt_dcu_b",
-   "H_Simc_pasgt_dcu_SWDG_low_b",
-   "H_Simc_pasgt_dcu_b_SWDG",
-   "H_Simc_pasgt_dcu_scrim",
-   "H_Simc_pasgt_dcu_scrim_alt",
-   "H_Simc_pasgt_dcu_scrim_SWDG",
-   "H_Simc_pasgt_dcu_SWDG_low",
-   "H_Simc_pasgt_dcu_SWDG"
+   "LWH_RM_Goggles_USMC_Preset_1_2",
+   "LWH_Goggles_U_USMC_Preset_1_2",
+   "LWH_Goggles_USMC_Preset_1_2",
+   "LWH_LMG_GUY_Goggles_USMC_Preset_1_3",
+   "LWH_LMG_GUY_Goggles_USMC_Preset_1_4",
+   "LWH_LMG_GUY_USMC_Preset_1_3",
+   "LWH_LMG_GUY_USMC_Preset_1_4",
+   "LWH_USMC_Preset_1_2",
+   "MICH2000_Coverall_USMC_Preset_3_2",
+   "MICH2000_Coverall_USMC_Preset_8_3",
+   "MICH2000_Coverall_USMC_Preset_8_4",
+   "MICH2000_Coverall_USMC_Preset_7_3",
+   "MICH2000_Coverall_USMC_Preset_7_4",
+   "MICH2000_Coverall_USMC_Preset_5_2",
+   "MICH2000_Coverall_USMC_Preset_1_2"
+];
+
+_helmets_comms = [
+   "MICH2000_Coverall_USMC_Preset_4_2",
+   "LWH_Bowman_Goggles_USMC_Preset_1_2",
+   "LWH_Bowman_USMC_Preset_1_2",
+   "MICH2000_Coverall_USMC_Preset_6_2",
+   "MICH2000_Coverall_USMC_Preset_2_2"
+];
+
+_helmets_fast = [
+   "tsp_gear_fast_mt_tan",
+   "tsp_gear_fast_mt_tan_peltor"
+];
+
+_boonie = [
+   "E_Panama_USMC_Preset_1_2"
 ];
 
 _pilot_helmets = [
+   "rhsusf_hgu56p_black",
+   "rhsusf_hgu56p_mask_black",
+   "rhsusf_hgu56p_mask_black_skull",
+   "rhsusf_hgu56p_visor_mask_black",
+   "rhsusf_hgu56p_visor_black",
+   "rhsusf_hgu56p_visor_mask_black_skull",
+   "rhsusf_hgu56p_visor_mask_Empire_black",
    "rhsusf_hgu56p",
    "rhsusf_hgu56p_mask",
    "rhsusf_hgu56p_mask_mo",
@@ -313,27 +442,13 @@ _pilot_helmets = [
    "rhsusf_hgu56p_visor",
    "rhsusf_hgu56p_visor_mask",
    "rhsusf_hgu56p_visor_mask_mo",
-   "rhsusf_hgu56p_visor_mask_skull",
-   "rhsusf_hgu56p_black",
-   "rhsusf_hgu56p_mask_black",
-   "rhsusf_hgu56p_mask_black_skull",
-   "rhsusf_hgu56p_visor_black",
-   "rhsusf_hgu56p_visor_mask_black",
-   "rhsusf_hgu56p_visor_mask_Empire_black",
-   "rhsusf_hgu56p_visor_mask_black_skull",
-   "rhsusf_hgu56p_tan",
-   "rhsusf_hgu56p_mask_tan",
-   "rhsusf_hgu56p_visor_tan",
-   "rhsusf_hgu56p_visor_mask_tan",
-   "rhsusf_hgu56p_mask_smiley",
-   "rhsusf_hgu56p_visor_mask_smiley"
+   "rhsusf_hgu56p_visor_mask_skull"
 ];
 
 _jetpilot_hemlets = [
    "HGU55P_Amber",
    "HGU55P_Clear",
    "HGU55P_NoVisor",
-   "HGU55P_Tinted",
    "HGU55P_MBU12P_Amber",
    "HGU55P_MBU12P_Clear",
    "HGU55P_MBU12P_NoVisor",
@@ -353,143 +468,135 @@ _jetpilot_hemlets = [
 _crewman_helmets = [
    "rhsusf_cvc_ess",
    "rhsusf_cvc_alt_helmet",
-   "rhsusf_cvc_helmet",
-   "rhsusf_cvc_green_ess",
-   "rhsusf_cvc_green_alt_helmet",
-   "rhsusf_cvc_green_helmet"
-];
-
-_caps = [
-   "H_Simc_Hat_MC_m81_dcu",
-   "H_Simc_Hat_Patrol_dcu",
-   "H_Simc_Boon_dcu_5",
-   "H_Simc_Boon_dcu_1",
-   "H_Simc_Boon_dcu_6",
-   "H_Simc_Boon_dcu_8",
-   "H_Simc_Boon_dcu_2",
-   "H_Simc_Boon_dcu_7",
-   "H_Simc_Boon_dcu_4",
-   "H_Simc_Boon_dcu_3"
+   "rhsusf_cvc_helmet"
 ];
 
 _backpacks = [
-   "B_simc_pack_alice_flak_kobel_dcu",
-   "B_simc_pack_alice_kobel_dcu",
-   "B_simc_pack_alice_flak_3",
-   "B_simc_pack_alice_flak_2",
-   "B_simc_pack_alice_flak_1",
-   "B_simc_pack_alice_flak_0",
-   "B_simc_pack_alice_flak_2_alt",
-   "B_simc_pack_alice_flak_frame_1_alt",
-   "B_simc_pack_alice_flak_frame_2_alt",
-   "B_simc_pack_alice_flak_frame_2",
-   "B_simc_pack_alice_flak_frame_1",
-   "B_simc_pack_alice_3",
-   "B_simc_pack_alice_0",
-   "B_simc_pack_alice_2_alt",
-   "B_simc_pack_alice_1",
-   "B_simc_pack_alice_2",
-   "B_simc_pack_alice_frame_1_alt",
-   "B_simc_pack_alice_frame_2_alt",
-   "B_simc_pack_alice_frame_1",
-   "B_simc_pack_alice_frame_2"
+   "BackPack_S_v1_1",
+   "BattleBelt_CrouchGuard_USMC_v5_1",
+   "BattleBelt_CrouchGuard_USMC_v4_1",
+   "BattleBelt_CrouchGuard_USMC_v1_1",
+   "BattleBelt_CrouchGuard_USMC_v2_1",
+   "BattleBelt_CrouchGuard_USMC_v3_1",
+   "BattleBelt_USMC_v1_1",
+   "BattleBelt_USMC_v2_1",
+   "BattleBelt_USMC_v3_1",
+   "Belt_CrouchGuard_USMC_v1_1",
+   "Belt_CrouchGuard_USMC_v2_1",
+   "Belt_USMC_v1_1",
+   "Belt_USMC_v2_1",
+   "CrouchGuard_LBT1476a_FanBag_M203_SPC_USMC_1",
+   "CrouchGuard_LBT1476a_FanBag_M203_SPC_USMC_3",
+   "CrouchGuard_LBT1476a_FanBag_M203_SPC_USMC_2",
+   "CrouchGuard_S_BackPack_FanBag_M203_SPC_USMC_1",
+   "CrouchGuard_FanBag_M203_SPC_USMC_1",
+   "CrouchGuard_FanBag_SPC_USMC_1",
+   "CrouchGuard_LBT1476a_SPC_USMC_1",
+   "CrouchGuard_LBT1476a_SPC_USMC_3",
+   "CrouchGuard_LBT1476a_SPC_USMC_2",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_7",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_9",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_11",
+   "CrouchGuard_NeckArmor_BackPack_S_IMTV_USMC_1",
+   "CrouchGuard_NeckArmor_IMTV_USMC_1",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_8",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_10",
+   "CrouchGuard_NeckArmor_LBT1476a_IMTV_USMC_12",
+   "CrouchGuard_NeckArmor_BackPack_S_IMTV_USMC_2",
+   "CrouchGuard_NeckArmor_IMTV_USMC_2",
+   "CrouchGuard_IMTV_USMC_1",
+   "CrouchGuard_S_BackPack_SPC_USMC_1",
+   "CrouchGuard_SPC_USMC_1",
+   "FanBag_USMC_v1_1",
+   "Belt_ACC_USMC_v1_1",
+   "M203_Belt_USMC_v1_1",
+   "M203_Belt_USMC_v2_1"
 ];
 
-_empty = [
-   ""
+_backpacks_medic = [
+   "CrouchGuard_NeckArmor_LBT2670_IMTV_USMC_6",
+   "CrouchGuard_NeckArmor_LBT2670_IMTV_USMC_5",
+   "BackPack_LBT2670_v1_1"
 ];
 
-_invis_bag = [
-   "UK3CB_B_Invisible"
-];
-
-_backpacks_radio = [
-   "B_simc_pack_alice_flak_frame_rajio",
-   "B_simc_pack_alice_frame_rajio"
-];
-
-_facewears = [
-   "G_Nomex_1_fold",
-   "G_Nomex_1",
-   "G_Nomex_1_lang",
-   "G_Nomex_2_fold",
-   "G_Nomex_2",
-   "G_Nomex_2_fold_cut",
-   "G_Nomex_2_lang_cut",
-   "G_Nomex_2_lang",
-   "G_Nomex_2_cut",
-   "G_Nomex_1_fold_cut",
-   "G_Nomex_1_cut",
-   "G_Nomex_1_lang_cut",
-   "G_Nomex_desu",
-   "G_Nomex_desu_lang",
-   "G_Nomex_desu_fold",
-   "G_Nomex_desu_2_lang",
-   "G_Nomex_desu_2_fold",
-   "G_Nomex_desu_2",
-   "G_Nomex_desu_2_lang_cut",
-   "G_Nomex_desu_2_fold_cut",
-   "G_Nomex_desu_2_cut",
-   "G_Nomex_desu_cut",
-   "G_Nomex_desu_lang_cut",
-   "G_Nomex_desu_fold_cut",
-   "rhs_googles_black",
-   "rhs_googles_clear",
-   "rhs_googles_orange",
-   "rhs_googles_yellow",
+_facewear = [
+   "USMC_ESS_Ballistic_v1_1",
+   "USMC_ESS_Ballistic_v2_1",
+   "USMC_ScarfMask_v1_1",
+   "USMC_ScarfMask_v1_2",
+   "USMC_ScarfMask_v1_3",
+   "USMC_ScarfMask_v1_4",
+   "USMC_ScarfMask_v1_5",
+   "USMC_ShemaghGrid_ESS_Ballistic_v1_1",
+   "USMC_ShemaghGrid_ESS_Ballistic_v1_2",
+   "USMC_ShemaghGrid_ESS_Ballistic_v1_3",
+   "USMC_ShemaghGrid_ESS_Ballistic_v2_2",
+   "USMC_ShemaghGrid_ESS_Ballistic_v2_1",
+   "USMC_ShemaghGrid_ESS_Ballistic_v2_3",
+   "USMC_ShemaghGrid_ScarfMask_v1_2",
+   "USMC_ShemaghGrid_ScarfMask_v1_4",
+   "USMC_ShemaghGrid_ScarfMask_v1_8",
+   "USMC_ShemaghGrid_ScarfMask_v1_6",
+   "USMC_ShemaghGrid_ScarfMask_v1_1",
+   "USMC_ShemaghGrid_ScarfMask_v1_3",
+   "USMC_ShemaghGrid_ScarfMask_v1_7",
+   "USMC_ShemaghGrid_ScarfMask_v1_5",
+   "USMC_ShemaghGrid_v1_2",
+   "USMC_ShemaghGrid_v1_1",
+   "USMC_ShemaghGrid_v1_3",
    "rhs_ess_black",
+   "rhs_googles_yellow",
+   "rhs_googles_orange",
+   "rhs_googles_clear",
+   "rhs_googles_black",
    "rhsusf_oakley_goggles_blk",
    "rhsusf_oakley_goggles_clr",
    "rhsusf_oakley_goggles_ylw"
 ];
 
-_journalist_uniform = [
-   "U_C_Journalist"
-];
-
-_journalist_helmet = [
-   "rhsgref_helmet_pasgt_press"
-];
-
-_journalist_vest = [
-   "rhsgref_helmet_pasgt_press"
-];
-
 // Nightvision
 _nvgs = [
-   "rhsusf_ANPVS_14",
-   "lrss_pvs7_01"
+   "USMC_PVS14_MICH_NVG_02",
+   "USMC_PVS14_LWH_NVG_02",
+   "USMC_PVS14_MICH_NVG_01",
+   "USMC_PVS14_LWH_NVG_01",
+   "USMC_RhinoMount_LWH_NVG_01",
+   "USMC_RhinoMount_MICH_NVG_01",
+   "USMC_RhinoMount_LWH_NVG_02",
+   "rhsusf_ANPVS_15"
+];
+
+_nvgs_pilot = [
+   "rhsusf_ANVIS"
 ];
 
 // Binoculars
-_common_binos = [
+_binos = [
    "rhsusf_bino_m24",
-   "rhsusf_bino_m24_ARD"
+   "rhsusf_bino_m24_ARD",
+   "rhsusf_bino_leopold_mk4",
+   "rhsusf_bino_lerca_1200_tan",
+   "rhsusf_bino_lerca_1200_black",
+   "ACE_VectorDay",
+   "ACE_Vector"
 ];
 
 _laser_binos = [
-   "ACE_VectorDay",
-   "ACE_Vector",
    "Laserdesignator"
-];
-
-_camera = [
-   "Nikon_DSLR_HUD"
 ];
 
 // Common tools & medic items
 _ace_common_tools = [
+   "ACE_EntrenchingTool",
    "ACE_MapTools",
-   "ACE_EarPlugs",
    "ACE_Flashlight_XL50",
-   "ACE_Chemlight_Shield",
-   "ACE_EntrenchingTool"
+   "acex_intelitems_notepad",
+   "ACE_SpareBarrel"
 ];
 
 _ace_art_tools = [
-   "ACE_RangeTable_82mm",
    "ACE_artilleryTable",
-   "ACE_RangeCard",
+   "ACE_RangeTable_82mm",
    "ACE_PlottingBoard"
 ];
 
@@ -500,9 +607,9 @@ _acre_items = [
 ];
 
 _ace_eng_tools = [
-   "ToolKit",
-   "ACE_DefusalKit",
-   "ace_flags_black",
+   "ACE_artilleryTable",
+   "ACE_RangeTable_82mm",
+   "ACE_PlottingBoard",
    "ace_flags_blue",
    "ace_flags_green",
    "ace_flags_orange",
@@ -511,22 +618,42 @@ _ace_eng_tools = [
    "ace_flags_white",
    "ace_flags_yellow",
    "ace_marker_flags_black",
+   "ace_marker_flags_green",
    "ace_marker_flags_blue",
    "ace_marker_flags_orange",
-   "ace_marker_flags_green",
    "ace_marker_flags_purple",
    "ace_marker_flags_red",
+   "ace_marker_flags_white",
    "ace_marker_flags_yellow",
-   "ace_marker_flags_white"
+   "ace_flags_black",
+   "ACE_DefusalKit",
+   "iedd_item_notebook",
+   "ACE_SpraypaintYellow",
+   "ACE_SpraypaintWhite",
+   "ACE_SpraypaintRed",
+   "ACE_SpraypaintBlue",
+   "ACE_SpraypaintGreen",
+   "ACE_SpraypaintBlack",
+   "Toolkit",
+   "ACE_M26_Clacker",
+   "ACE_Clacker",
+   "tsp_breach_shock"
+];
+
+_sniper_tools = [
+   "ACE_RangeCard",
+   "ACE_Kestrel4500",
+   "ACE_ATragMX"
 ];
 
 _ace_common_medical_items = [
-   "ACM_PressureBandage",
-   "ACM_EmergencyTraumaDressing",
    "ACM_ChestSeal",
+   "ACM_ElasticWrap",
+   "ACM_EmergencyTraumaDressing",
+   "ACM_GuedelTube",
    "ACM_Paracetamol",
-   "ACE_tourniquet",
-   "ACM_NPA"
+   "ACM_SAMSplint",
+   "ACM_PressureBandage"
 ];
 
 _ace_medic_items = [
@@ -630,266 +757,67 @@ _ace_medic_items = [
 
 // Items & Communication
 _common_items = [
-   "ItemMap",
-   "ItemCompass",
-   "ItemWatch",
+   "ACE_CableTie",
+   "ACE_bodyBag",
+   "ACE_Canteen",
+   "ACE_EarPlugs",
+   "ACE_EHP",
+   "ItemcTabHCam",
+   "ACE_Humanitarian_Ration",
+   "ACE_IR_Strobe_Item",
+   "ACE_MapTools",
+   "ACE_rope12",
+   "ACE_rope15",
+   "ACE_rope18",
+   "ACE_rope27",
+   "ACE_rope3",
+   "ACE_rope36",
+   "ACE_rope6",
    "tsp_sling",
-   "RS_NVG_CR123_4",
-   "RS_NVG_CR123"
+   "ACE_WaterBottle"
 ];
 
-_radio = [ 
-   "ACRE_PRC117F",
-   "ACRE_PRC148"
+_radio_lr = [
+   "ACRE_PRC117F"
 ];
 
-_radio2 = [
-   "ACRE_PRC148"
+_radio_sr = [
+   "ACRE_PRC152"
 ];
 
 _uav_terminal = [
    "B_UavTerminal"
 ];
 
+
 // Define roles classnames here
 // For this to work, you will need to change the blufor characters in the editor to match these classnames below
 // Make any chances you want here, just make sure you register them in the switch do command below (after "case")
-_platoon = "rhsusf_army_ocp_officer";
-_rto = "B_W_RadioOperator_F";
-_med = "rhsusf_army_ocp_medic";
-_jtac = "rhsusf_army_ocp_jfo";
-_squadlead = "rhsusf_army_ocp_squadleader";
-_teamlead = "rhsusf_army_ocp_teamleader";
-_autorifleman = "rhsusf_army_ocp_autorifleman";
-_grenadier = "rhsusf_army_ocp_grenadier";
-_riflemanat = "rhsusf_army_ocp_riflemanat";
-_mg = "rhsusf_army_ocp_machinegunner";
-_mgasst = "rhsusf_army_ocp_machinegunnera";
-_hat = "rhsusf_army_ocp_javelin";
-_hatasst = "rhsusf_army_ocp_javelin_assistant";
-_mortarman = "rhsusf_army_ocp_riflemanl";
-_crewman = "rhsusf_army_ocp_combatcrewman";
-_engineer = "rhsusf_army_ocp_engineer";
-_helipilot = "rhsusf_army_ocp_helipilot";
-_jetpilot = "rhsusf_airforce_jetpilot";
-_journalist = "B_Survivor_F";
-_ammobearer = "rhsusf_army_ocp_rifleman";
-_aa = "rhsusf_army_ocp_aa";
 
 // Call the arsenal if the right class is provided
 switch (_classRole) do {
-        case _platoon : {
+        case _rhsusf_usmc_marpat_d_officer : {
         // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _pistols);
+        KPLIB_arsenalWeapons = (_rifles + _rifles_2 + _pistols);
         // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _mag_pistol + _grenades_2);
+        KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol + _grenades + _flashbang);
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rifles_optics + _rail_attach + _muzzle_attach + _rifles_grip + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _common_binos + _ace_common_tools + _ace_common_medical_items + _common_items + _radio + _uav_terminal);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks_radio + _backpacks);
-        };
-        case _rto : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _pistols);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _mag_pistol + _grenades_2);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _muzzle_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _common_binos + _ace_common_tools + _ace_common_medical_items + _common_items + _radio + _acre_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks_radio);
-        };
-        case _med : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _pistols);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _mag_pistol + _grenades_2);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _muzzle_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _common_binos + _ace_common_tools + _ace_common_medical_items + _common_items + _ace_medic_items + _rifles_optics + _radio);
+        KPLIB_arsenalItems = (_rail_attach + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_teamleader + vests_rto + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _laser_binos);
         // Put only backpacks here
         KPLIB_arsenalBackpacks = (_backpacks);
         };
-        case _jtac : {
+        case _rhsusf_usmc_marpat_d_officer : {
         // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _pistols + _rifles_grenadier);
+        KPLIB_arsenalWeapons = (_rifles + _rifles_2 + _pistols);
         // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _mag_pistol + _grenades_2 + _mag_grenadier);
+        KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol + _grenades + _flashbang);
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _muzzle_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _common_binos + _ace_common_tools + _ace_common_medical_items + _common_items + _radio + _acre_items + _rifles_optics + _rifles_grip + _laser_binos + _uav_terminal);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks_radio);
-        };
-        case _squadlead : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _pistols);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _mag_pistol + _grenades_2);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _muzzle_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _common_binos + _ace_common_tools + _ace_common_medical_items + _common_items + _radio + _rifles_optics + _rifles_grip);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks_radio);
-        };
-        case _teamlead : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _rifles_grenadier);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2 + _mag_grenadier);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _muzzle_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _common_binos + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _autorifleman : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_lmg);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_lmg + _grenades + _grenades_2);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _grenadier : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles_grenadier);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_grenadier + _grenades + _grenades_2 + _mag_rifle);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _riflemanat : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _launchers_LAT);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _mg : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_hmg + _pistols);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_hmg + _grenades + _grenades_2 + _mag_pistol);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _mgasst : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2 + _mag_hmg);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _hat : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _launchers_HAT);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2 + _mag_launcher_at);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _hatasst : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2 + _mag_launcher_at);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _mortarman : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items + _ace_art_tools);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _crewman : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests_crewman + _crewman_helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_empty);
-        };
-        case _engineer : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items + _ace_eng_tools);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _helipilot : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _pistols);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades_2 + _mag_pistol);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests_pilot + _pilot_helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_empty);
-        };
-        case _jetpilot : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _pistols);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades_2 + _mag_pistol);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms_jetpilot + _jetpilot_helmets + _vests_jet_pilot + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items + _vests_pilot);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_invis_bag);
-        };
-        case _journalist : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_empty);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_empty);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_common_items + _journalist_uniform + _journalist_helmet + _journalist_vest);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_empty);
-        };
-        case _ammobearer : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
-        // Put only backpacks here
-        KPLIB_arsenalBackpacks = (_backpacks);
-        };
-        case _aa : {
-        // Put all weapons here
-        KPLIB_arsenalWeapons = (_rifles + _launchers_AA);
-        // Put all Magazines, and throwable items such as grenades
-        KPLIB_arsenalMagazines = (_mag_common + _mag_rifle + _grenades + _grenades_2 + _mag_launcher_aa);
-        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _uniforms + _vests + _helmets + _caps + _facewears + _nvgs + _ace_common_tools + _ace_common_medical_items + _common_items);
+        KPLIB_arsenalItems = (_rail_attach + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_teamleader + vests_rto + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _laser_binos);
         // Put only backpacks here
         KPLIB_arsenalBackpacks = (_backpacks);
         };
         
-        case default {
+        case default {	
         ["This classname doesn't match with a configurated classname from roles_arsenal_config.sqf"] call bis_fnc_error
         }
 };
