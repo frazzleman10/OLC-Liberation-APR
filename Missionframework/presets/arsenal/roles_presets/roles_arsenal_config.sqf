@@ -562,8 +562,7 @@ _nvgs = [
    "USMC_PVS14_LWH_NVG_01",
    "USMC_RhinoMount_LWH_NVG_01",
    "USMC_RhinoMount_MICH_NVG_01",
-   "USMC_RhinoMount_LWH_NVG_02",
-   "rhsusf_ANPVS_15"
+   "USMC_RhinoMount_LWH_NVG_02"
 ];
 
 _nvgs_pilot = [
@@ -794,6 +793,24 @@ _uav_terminal = [
 // For this to work, you will need to change the blufor characters in the editor to match these classnames below
 // Make any chances you want here, just make sure you register them in the switch do command below (after "case")
 _platoon = "rhsusf_usmc_marpat_d_officer";
+_jtac = "rhsusf_usmc_marpat_d_jfo":
+_squadleader = "rhsusf_usmc_marpat_d_squadleader";
+_teamleader = "rhsusf_usmc_marpat_d_teamleader";
+_autorifleman = "rhsusf_usmc_marpat_d_autorifleman_m249";
+_rifleman = "rhsusf_usmc_marpat_d_rifleman";
+_lat = "rhsusf_usmc_marpat_d_riflemanat";
+_marksman = "rhsusf_usmc_marpat_d_marksman";
+_machinegunner = "rhsusf_usmc_marpat_d_machinegunner";
+_mgassist = "rhsusf_usmc_marpat_d_machinegunner_ass";
+_hat = "rhsusf_usmc_marpat_d_javelin";
+_crew = "rhsusf_usmc_marpat_d_combatcrewman";
+_corpsman = "rhsusf_navy_marpat_d_medic";
+_sniper = "rhsusf_usmc_marpat_d_sniper";
+_spotter = "rhsusf_usmc_marpat_d_spotter";
+_engineer = "rhsusf_usmc_marpat_d_engineer";
+_helicopterpilot = "rhsusf_usmc_marpat_d_helipilot";
+_helicoptercrew = "rhsusf_usmc_marpat_d_helicrew";
+jetpilot = "rhsusf_airforce_jetpilot";
 
 // Call the arsenal if the right class is provided
 switch (_classRole) do {
@@ -803,7 +820,7 @@ switch (_classRole) do {
         // Put all Magazines, and throwable items such as grenades
         KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol + _grenades + _flashbang);
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_teamleader + _vests_rto + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _laser_binos);
+        KPLIB_arsenalItems = (_rail_attach + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_teamleader + _vests_rto + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _laser_binos + _common_items + _radio_lr + _radio_sr + _uav_terminal);
         // Put only backpacks here
         KPLIB_arsenalBackpacks = (_backpacks);
         };
