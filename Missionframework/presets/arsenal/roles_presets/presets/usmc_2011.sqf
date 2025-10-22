@@ -562,8 +562,7 @@ _nvgs = [
    "USMC_PVS14_LWH_NVG_01",
    "USMC_RhinoMount_LWH_NVG_01",
    "USMC_RhinoMount_MICH_NVG_01",
-   "USMC_RhinoMount_LWH_NVG_02",
-   "rhsusf_ANPVS_15"
+   "USMC_RhinoMount_LWH_NVG_02"
 ];
 
 _nvgs_pilot = [
