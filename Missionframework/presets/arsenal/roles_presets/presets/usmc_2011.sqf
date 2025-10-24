@@ -96,7 +96,7 @@ _mag_sniper = [
    "121_300WM_Berger_OTM_5rnd",
    "rhsusf_mag_10Rnd_STD_50BMG_mk211",
    "rhsusf_mag_10Rnd_STD_50BMG_M33"
-]
+];
 
 _mag_lmg = [
    "rhsusf_100Rnd_556x45_soft_pouch",
@@ -183,7 +183,7 @@ _sniper_optics = [
    "121_USASOC_RVPS_ANPVS30",
    "TOTT_Razor_110_Geissele",
    "TOTT_Razor_16_Geissele"
-]
+];
 
 _mg_optics = [
    "rhsusf_acc_ACOG",
@@ -232,7 +232,7 @@ _muzzle_attach_marksman = [
 
 _muzzle_attach_sniper = [
    "121_USASOC_AAC_BLK",
-   "121_USASOC_AAC_TAN",
+   "121_USASOC_AAC_TAN"
 ];
 
 _muzzle_attach_suppressor = [
@@ -252,7 +252,7 @@ _rifle_bipod = [
 _lmg_bipod = [
    "rhsusf_acc_saw_lw_bipod",
    "rhsusf_acc_grip4_bipod"
-]
+];
 
 // Uniforms, Vests, helmets, backpacks, facewears
 _uniforms = [
@@ -776,6 +776,10 @@ _common_items = [
    "ACE_WaterBottle"
 ];
 
+_mg_items = [
+   "ACE_SpareBarrel"
+];
+
 _radio_lr = [
    "ACRE_PRC117F"
 ];
@@ -792,20 +796,201 @@ _uav_terminal = [
 // Define roles classnames here
 // For this to work, you will need to change the blufor characters in the editor to match these classnames below
 // Make any chances you want here, just make sure you register them in the switch do command below (after "case")
+_platoon = "rhsusf_usmc_marpat_d_officer";
+_jtac = "rhsusf_usmc_marpat_d_jfo";
+_squadleader = "rhsusf_usmc_marpat_d_squadleader";
+_teamleader = "rhsusf_usmc_marpat_d_teamleader";
+_autorifleman = "rhsusf_usmc_marpat_d_autorifleman_m249";
+_rifleman = "rhsusf_usmc_marpat_d_rifleman";
+_lat = "rhsusf_usmc_marpat_d_riflemanat";
+_marksman = "rhsusf_usmc_marpat_d_marksman";
+_machinegunner = "rhsusf_usmc_marpat_d_machinegunner";
+_mgassist = "rhsusf_usmc_marpat_d_machinegunner_ass";
+_hat = "rhsusf_usmc_marpat_d_javelin";
+_crew = "rhsusf_usmc_marpat_d_combatcrewman";
+_corpsman = "rhsusf_navy_marpat_d_medic";
+_sniper = "rhsusf_usmc_marpat_d_sniper";
+_spotter = "rhsusf_usmc_marpat_d_spotter";
+_engineer = "rhsusf_usmc_marpat_d_engineer";
+_helicopterpilot = "rhsusf_usmc_marpat_d_helipilot";
+_helicoptercrew = "rhsusf_usmc_marpat_d_helicrew";
+_jetpilot = "rhsusf_airforce_jetpilot";
 
 // Call the arsenal if the right class is provided
 switch (_classRole) do {
-        case _rhsusf_usmc_marpat_d_officer : {
+        case _platoon : {
         // Put all weapons here
         KPLIB_arsenalWeapons = (_rifles + _rifles_2 + _pistols);
         // Put all Magazines, and throwable items such as grenades
         KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol + _grenades + _flashbang);
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_teamleader + vests_rto + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _laser_binos);
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_teamleader + _vests_rto + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _common_items + _radio_lr + _radio_sr + _uav_terminal + _rifle_grip);
         // Put only backpacks here
-        KPLIB_arsenalBackpacks = (+_backpacks);
+        KPLIB_arsenalBackpacks = (_backpacks);
         };
-        
+        case _jtac : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles + _rifles_2 + _pistols + _rifles_ugl);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol + _grenades + _flashbang + _mag_ugl);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_rto + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _laser_binos + _common_items + _radio_lr + _radio_sr + _uav_terminal + _acre_items + _rifle_grip);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _squadleader : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles + _rifles_2 + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol + _grenades + _flashbang);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_teamleader + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _laser_binos + _common_items + _radio_lr + _radio_sr + _rifle_grip);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _teamleader : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles + _rifles_2 + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol + _grenades + _flashbang);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_teamleader + _helmets + _helmets_comms + _facewear + _nvgs + _binos + _common_items + _radio_sr + _rifle_grip);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _autorifleman : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_lmg + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_lmg + _mag_pistol + _grenades + _flashbang);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _mg_optics + _lmg_bipod + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_mg + _helmets + _facewear + _nvgs + _binos + _mg_items + _common_items + _rifle_grip);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _rifleman : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _grenades + _flashbang);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_rifleman + _helmets + _facewear + _nvgs + _binos + _common_items + _rifle_grip);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _lat : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles + _launchers_lat);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _grenades + _flashbang);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_rifleman + _helmets + _facewear + _nvgs + _binos + _common_items + _rifle_grip);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _hat : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles + _launchers_hat);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _grenades + _flashbang + _mag_launcher_hat);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _hat_optics + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_rifleman + _helmets + _facewear + _nvgs + _binos + _common_items + _rifle_grip);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _crew : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles_2 + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _grenades + _mag_pistol);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_crewman + _crewman_helmets + _facewear + _nvgs + _binos + _common_items + _rifle_grip);
+        };
+        case _corpsman : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles_2 + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _grenades + _flashbang + _mag_pistol);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _ace_medic_items + _uniforms + _vests_medic + _helmets + _facewear + _nvgs + _binos + _common_items + _rifle_grip);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks_medic + _backpacks);
+        };
+        case _sniper : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_sniper_rifles + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_sniper + _grenades + _flashbang + _mag_pistol);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach_sniper + _rifle_bipod + _sniper_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_rifleman + _helmets + _boonie + _facewear + _nvgs + _binos + _common_items + _radio_sr + _sniper_tools);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _spotter : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_marksman_rifles + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_marksman + _grenades + _flashbang + _mag_pistol);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach_sniper + _rifle_bipod + _sniper_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_rifleman + _helmets + _boonie + _facewear + _nvgs + _binos + _common_items + _radio_sr + _sniper_tools);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _engineer : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles + _rifles_2 + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _grenades + _flashbang + _mag_pistol);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_rifleman + _helmets + _facewear + _nvgs + _binos + _common_items + _radio_sr + _ace_eng_tools + _explosives + _rifle_grip);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _helicopterpilot : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles_2 + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _grenades + _mag_pistol);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_pilot + _pilot_helmets + _facewear + _nvgs_pilot + _binos + _common_items + _radio_sr);
+        };
+        case _helicoptercrew : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles_2 + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _grenades + _mag_pistol);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_pilot + _pilot_helmets + _facewear + _nvgs_pilot + _binos + _common_items + _radio_sr);
+        };
+        case _jetpilot : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles_2 + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms_jetpilot + _jetpilot_hemlets + _facewear + _nvgs_pilot + _binos + _common_items + _radio_sr);
+        };
+        case _machinegunner : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_hmg + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_hmg + _mag_pistol + _grenades + _flashbang);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _mg_optics + _lmg_bipod + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_mg + _helmets + _facewear + _nvgs + _binos + _mg_items + _common_items);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+        case _mgassist : {
+        // Put all weapons here
+        KPLIB_arsenalWeapons = (_rifles + _pistols);
+        // Put all Magazines, and throwable items such as grenades
+        KPLIB_arsenalMagazines = (_mag_rifle + _mag_pistol + _grenades + _flashbang);
+        // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_rifleman + _helmets + _facewear + _nvgs + _binos + _mg_items + _common_items + _rifle_grip);
+        // Put only backpacks here
+        KPLIB_arsenalBackpacks = (_backpacks);
+        };
+
         case default {	
         ["This classname doesn't match with a configurated classname from roles_arsenal_config.sqf"] call bis_fnc_error
         }

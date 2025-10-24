@@ -102,14 +102,13 @@ _code = {
 	clearMagazineCargoGlobal _supplyCrate;
 	clearItemCargoGlobal _supplyCrate;
 	clearBackpackCargoGlobal _supplyCrate;
-	_supplyCrate addItemCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 20];
-	_supplyCrate addItemCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red", 20];
+	_supplyCrate addItemCargoGlobal ["TOTT_Stanag_Worn_30rnd_A1", 20];
+	_supplyCrate addItemCargoGlobal ["TOTT_Stanag_Worn_30rnd_A1_TM", 20];
 	_supplyCrate addItemCargoGlobal ["rhsusf_mag_15Rnd_9x19_FMJ", 10];
 	_supplyCrate addItemCargoGlobal ["rhs_mag_an_m8hc", 20];
-	_supplyCrate addItemCargoGlobal ["rhs_mag_m67", 20];
+	_supplyCrate addItemCargoGlobal ["HandGrenade", 20];
 	_supplyCrate addItemCargoGlobal ["ACE_EntrenchingTool", 10];
 	_supplyCrate addItemCargoGlobal ["ACE_EarPlugs", 10];
-	_supplyCrate addItemCargoGlobal ["rhsusf_ANPVS_14", 10];
 	_supplyCrate addItemCargoGlobal ["rhsusf_200Rnd_556x45_mixed_soft_pouch", 20];
 	_supplyCrate addItemCargoGlobal ["rhs_weap_M136_hedp", 20];
 	_supplyCrate addItemCargoGlobal ["rhs_mag_M433_HEDP", 10];
@@ -117,7 +116,6 @@ _code = {
 	_supplyCrate addItemCargoGlobal ["rhs_mag_M583A1_white", 10];
 	_supplyCrate addItemCargoGlobal ["ACE_SpareBarrel", 20];
 	_supplyCrate addItemCargoGlobal ["ACE_WaterBottle", 20];
-	_supplyCrate addItemCargoGlobal ["ToolKit", 5];
 	[_caller, _supplyCrate] call ace_dragging_fnc_startCarry;
 };
 _condition = {
@@ -139,18 +137,18 @@ _code = {
 	clearItemCargoGlobal _supplyCrate;
 	clearBackpackCargoGlobal _supplyCrate;
 	_supplyCrate addItemCargoGlobal ["ACE_WaterBottle", 20];
-	_supplyCrate addItemCargoGlobal ["ToolKit", 20];
 	_supplyCrate addItemCargoGlobal ["rhsusf_100Rnd_762x51_m62_tracer", 20];
 	_supplyCrate addItemCargoGlobal ["rhsusf_100Rnd_762x51", 20];
-	_supplyCrate addItemCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10];
+	_supplyCrate addItemCargoGlobal ["TOTT_Stanag_Worn_30rnd_A1", 10];
 	_supplyCrate addItemCargoGlobal ["rhsusf_mag_15Rnd_9x19_FMJ", 10];
 	_supplyCrate addItemCargoGlobal ["rhs_mag_an_m8hc", 20];
-	_supplyCrate addItemCargoGlobal ["rhs_mag_m67", 20];
+	_supplyCrate addItemCargoGlobal ["HandGrenade", 20];
 	_supplyCrate addItemCargoGlobal ["rhs_fgm148_magazine_AT", 10];
+	_supplyCrate addItemCargoGlobal ["rhs_mag_smaw_HEDP", 10];
+	_supplyCrate addItemCargoGlobal ["rhs_mag_smaw_HEDP","rhs_mag_maaws_HEAT", 10];
 	_supplyCrate addItemCargoGlobal ["rhs_weap_M136_hedp", 20];
 	_supplyCrate addItemCargoGlobal ["ACE_SpareBarrel", 20];
 	_supplyCrate addItemCargoGlobal ["ACE_WaterBottle", 20];
-	_supplyCrate addItemCargoGlobal ["ToolKit", 5];
 	[_caller, _supplyCrate] call ace_dragging_fnc_startCarry;
 };
 _condition = {
