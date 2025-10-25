@@ -1,4 +1,8 @@
-// ---------------------------------------------------------- Variabes/classification of equipaments to be used for the roles
+// -- DO NOT DELETE --
+_empty = [""];
+// -- END --
+
+// ---------------------------------------------------------- Variabes/classification of equipment to be used for the roles
 // Weapons
 _rifles = [
    "rhs_weap_m16a4",
@@ -930,7 +934,7 @@ switch (_classRole) do {
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
         KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_crewman + _crewman_helmets + _facewear + _nvgs + _binos + _common_items + _rifle_grip + _radio_sr);
         // Put only backpacks here
-        KPLIB_arsenalBackpacks = ("");
+        KPLIB_arsenalBackpacks = (_empty);
         };
         case _corpsman : {
         // Put all weapons here
@@ -980,7 +984,7 @@ switch (_classRole) do {
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
         KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_pilot + _pilot_helmets + _facewear + _nvgs_pilot + _binos + _common_items + _radio_sr);
         // Put only backpacks here
-        KPLIB_arsenalBackpacks = ("");
+        KPLIB_arsenalBackpacks = (_empty);
         };
         case _helicoptercrew : {
         // Put all weapons here
@@ -990,7 +994,7 @@ switch (_classRole) do {
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
         KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms + _vests_pilot + _pilot_helmets + _facewear + _nvgs_pilot + _binos + _common_items + _radio_sr);
         // Put only backpacks here
-        KPLIB_arsenalBackpacks = ("");
+        KPLIB_arsenalBackpacks = (_empty);
         };
         case _jetpilot : {
         // Put all weapons here
@@ -1000,7 +1004,7 @@ switch (_classRole) do {
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
         KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _uniforms_jetpilot + _jetpilot_hemlets + _facewear + _nvgs_pilot + _binos + _common_items + _radio_sr);
         // Put only backpacks here
-        KPLIB_arsenalBackpacks = ("");
+        KPLIB_arsenalBackpacks = (_empty);
         };
         case _machinegunner : {
         // Put all weapons here
