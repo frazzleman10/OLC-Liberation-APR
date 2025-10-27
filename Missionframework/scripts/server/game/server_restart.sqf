@@ -63,7 +63,7 @@ while {true} do {
                 ["Initiating scheduled server shutdown (12:00 BST / 11:00 UTC)", "RESTART"] call KPLIB_fnc_log;
                 sleep 5;
 
-                private _myPass = getText(configFile >> "CfgServerTime" >> "Settings" >> "myPass");
+                private _myPass = call compile preprocessFileLineNumbers "\userconfig\restart\myPass.hpp";
                 private _shutdownSuccess = _myPass serverCommand "#shutdown";
 
                 if (_shutdownSuccess) then {
