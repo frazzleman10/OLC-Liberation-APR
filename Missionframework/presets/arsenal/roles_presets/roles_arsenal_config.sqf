@@ -942,7 +942,7 @@ switch (_classRole) do {
         // Put all Magazines, and throwable items such as grenades
         KPLIB_arsenalMagazines = (_mag_rifle + _grenades + _flashbang + _mag_pistol);
         // Put here uniforms, vests, facemasks, nvgs, binoculares, medical items, tool items, attachments...
-        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _ace_medic_items + _uniforms + _vests_medic + _helmets + _facewear + _nvgs + _binos + _common_items + _rifle_grip + _helmets_fast + _muzzle_attach_suppressor);
+        KPLIB_arsenalItems = (_rail_attach + _rifle_optics + _ace_common_tools + _ace_common_medical_items + _ace_medic_items + _uniforms + _vests_medic + _helmets + _facewear + _nvgs + _binos + _common_items + _rifle_grip + _helmets_fast + _muzzle_attach_suppressor + _radio_sr);
         // Put only backpacks here
         KPLIB_arsenalBackpacks = (_backpacks_medic + _backpacks);
         };
