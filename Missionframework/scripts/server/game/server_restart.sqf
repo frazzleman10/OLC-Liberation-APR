@@ -24,7 +24,7 @@ while {true} do {
             private _minute = _parsed select 4;
 
             // === DAILY RESET FLAGS ===
-            if ((_hour == 0 && _minute == 0) || (_hour == 11 && _minute == 10)) then {
+            if ((_hour == 0 && _minute == 0) || (_hour == 12 && _minute == 10)) then {
                 _notified30 = false;
                 _notified15 = false;
                 _notified5  = false;
@@ -33,32 +33,32 @@ while {true} do {
             };
 
             // === NOTIFICATIONS (for 12:00 BST = 11:00 UTC) ===
-            if (_hour == 10 && _minute == 30 && !_notified30) then {
+            if (_hour == 11 && _minute == 30 && !_notified30) then {
                 ["lib_restart_30_min"] remoteExecCall ["BIS_fnc_showNotification"];
                 ["30 minutes until daily restart (12:00 BST)", "RESTART"] call KPLIB_fnc_log;
                 _notified30 = true;
             };
 
-            if (_hour == 10 && _minute == 45 && !_notified15) then {
+            if (_hour == 11 && _minute == 45 && !_notified15) then {
                 ["lib_restart_15_min"] remoteExecCall ["BIS_fnc_showNotification"];
                 ["15 minutes until daily restart (12:00 BST)", "RESTART"] call KPLIB_fnc_log;
                 _notified15 = true;
             };
 
-            if (_hour == 10 && _minute == 55 && !_notified5) then {
+            if (_hour == 11 && _minute == 55 && !_notified5) then {
                 ["lib_restart_5_min"] remoteExecCall ["BIS_fnc_showNotification"];
                 ["5 minutes until daily restart (12:00 BST)", "RESTART"] call KPLIB_fnc_log;
                 _notified5 = true;
             };
 
-            if (_hour == 10 && _minute == 59 && !_notified1) then {
+            if (_hour == 11 && _minute == 59 && !_notified1) then {
                 ["lib_restart_60_s"] remoteExecCall ["BIS_fnc_showNotification"];
                 ["1 minute until daily restart (12:00 BST)", "RESTART"] call KPLIB_fnc_log;
                 _notified1 = true;
             };
 
             // === TRIGGER RESTART AT 11:00 UTC (12:00 BST) ===
-            if (_hour == 11 && _minute == 00 && !_restartTriggered) then {
+            if (_hour == 12 && _minute == 00 && !_restartTriggered) then {
                 _restartTriggered = true;
                 ["Initiating scheduled server shutdown (12:00 BST / 11:00 UTC)", "RESTART"] call KPLIB_fnc_log;
                 sleep 5;
