@@ -19,22 +19,39 @@ waitUntil {one_eco_done};
 private _fobPos = [0, 0, 0];
 private _fobDist = 99999;
 private _fobName = "";
+private _startPos = [0, 0, 0];
+private _startDist = 99999;
+private _resourceRange = KPLIB_range_fob;
+private _useStartbase = false;
 
 while {true} do {
-    // FOB distance, name and position
+    // Resource area distance, name and position (FOB or OP/startbase)
     if !(KPLIB_sectors_fob isEqualTo []) then {
         _fobPos = [] call KPLIB_fnc_getNearestFob;
         _fobDist = player distance2d _fobPos;
-        _fobName = ["", ["FOB", [_fobPos] call KPLIB_fnc_getFobName] joinString " "] select (_fobDist < KPLIB_range_fob);
     } else {
         _fobPos = [0, 0, 0];
         _fobDist = 99999;
-        _fobName = "";
+    };
+
+    _startPos = getPosATL startbase;
+    _startDist = player distance2d _startPos;
+    _useStartbase = (_startDist < KPLIB_range_startbaseBuild) && {_startDist < _fobDist || {KPLIB_sectors_fob isEqualTo []}};
+
+    if (_useStartbase) then {
+        _fobPos = _startPos;
+        _fobDist = _startDist;
+        _resourceRange = KPLIB_range_startbaseBuild;
+        _fobName = "OP";
+    } else {
+        _resourceRange = KPLIB_range_fob;
+        _fobName = ["", ["FOB", [_fobPos] call KPLIB_fnc_getFobName] joinString " "] select (_fobDist < KPLIB_range_fob);
     };
     // TODO more self explanatory names, KPLIB_nearestFobDist, KPLIB_currentFobName, KPLIB_nearestFobPos
     player setVariable ["KPLIB_fobDist", _fobDist];
     player setVariable ["KPLIB_fobName", _fobName];
     player setVariable ["KPLIB_fobPos", _fobPos];
+    player setVariable ["KPLIB_fobRange", _resourceRange];
 
     // Direct acces due to config, commander or quartermaster or admin
     player setVariable ["KPLIB_hasDirectAccess", (getPlayerUID player) in KPLIB_whitelist_cmdrActions || {player == ([] call KPLIB_fnc_getCommander)} || {player isEqualto (missionnamespace getVariable ['quartermaster',objNull])} || {serverCommandAvailable "#kick"}];
@@ -54,6 +71,8 @@ while {true} do {
 
     // Is near startbase
     player setVariable ["KPLIB_isNearStart", (player distance2d startbase) < 200];
+    // Is near startbase build area
+    player setVariable ["KPLIB_isNearStartBuild", (player distance2d startbase) < KPLIB_range_startbaseBuild];
 
     // Nearest activated sector and possible production data
     player setVariable ["KPLIB_nearProd", KPLIB_production param [KPLIB_production findIf {(_x select 1) isEqualTo ([100] call KPLIB_fnc_getNearestSector)}, []]];

@@ -16,8 +16,24 @@
 */
 
 params [
-    ["_pos", getPos player, [[]], [2, 3]]
+    ["_pos", getPos player, [[], objNull, locationNull, ""]]
 ];
+
+if (_pos isEqualType "") then {
+    _pos = markerPos _pos;
+};
+
+if (_pos isEqualType objNull) then {
+    _pos = getPos _pos;
+};
+
+if (_pos isEqualType locationNull) then {
+    _pos = locationPosition _pos;
+};
+
+if (!(_pos isEqualType []) || {(count _pos) < 2}) then {
+    _pos = getPos player;
+};
 
 if !(KPLIB_sectors_fob isEqualTo []) then {
     private _fobs = KPLIB_sectors_fob apply {[_pos distance2d _x, _x]};

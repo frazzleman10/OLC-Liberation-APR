@@ -82,7 +82,13 @@ if (dialog) then {closeDialog 0};
 if (dorecycle == 1 && !(isnull _vehToRecycle) && alive _vehToRecycle) then {
     if (!(KPLIB_b_logiStation_near) && ((_price_s + _price_a + _price_f) > 0)) exitWith {hint localize "STR_NORECBUILDING_ERROR";};
 
-    private _storage_areas = (([] call KPLIB_fnc_getNearestFob) nearobjects (KPLIB_range_fob * 1.2)) select {(_x getVariable ["KPLIB_storage_type",-1]) == 0};
+    private _resourcePos = player getVariable ["KPLIB_fobPos", []];
+    private _resourceRange = player getVariable ["KPLIB_fobRange", KPLIB_range_fob];
+    if (_resourcePos isEqualTo []) then {
+        _resourcePos = [] call KPLIB_fnc_getNearestFob;
+        _resourceRange = KPLIB_range_fob;
+    };
+    private _storage_areas = (_resourcePos nearObjects (_resourceRange * 1.2)) select {(_x getVariable ["KPLIB_storage_type",-1]) == 0};
     private _crateSum = (ceil (_price_s / 100)) + (ceil (_price_a / 100)) + (ceil (_price_f / 100));
     private _spaceSum = 0;
 

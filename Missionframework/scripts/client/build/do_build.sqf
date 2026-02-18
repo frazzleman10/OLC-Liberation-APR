@@ -24,6 +24,36 @@ if (isNil "repeatbuild" ) then { repeatbuild = false };
 if (isNil "build_rotation" ) then { build_rotation = 0 };
 if (isNil "build_elevation" ) then { build_elevation = 0 };
 
+private _getResourceAnchor = {
+    private _nearestFob = [] call KPLIB_fnc_getNearestFob;
+    private _nearestFobDist = 10e10;
+    if !(_nearestFob isEqualTo []) then {
+        _nearestFobDist = player distance2d _nearestFob;
+    };
+
+    private _startPos = getPosATL startbase;
+    private _startDist = player distance2d _startPos;
+
+    if ((_startDist <= KPLIB_range_startbaseBuild) && {_startDist < _nearestFobDist || {_nearestFob isEqualTo []}}) then {
+        _startPos
+    } else {
+        _nearestFob
+    };
+};
+
+private _getResourceAreaData = {
+    private _anchorPos = call _getResourceAnchor;
+    private _anchorRange = KPLIB_range_fob;
+
+    if !(_anchorPos isEqualTo []) then {
+        if ((_anchorPos distance2d (getPosATL startbase)) < 2) then {
+            _anchorRange = KPLIB_range_startbaseBuild;
+        };
+    };
+
+    [_anchorPos, _anchorRange]
+};
+
 waitUntil { sleep 0.2; !isNil "dobuild" };
 
 while { true } do {
@@ -40,8 +70,10 @@ while { true } do {
         _price_a = ((KPLIB_buildList select buildtype) select buildindex) select 2;
         _price_f = ((KPLIB_buildList select buildtype) select buildindex) select 3;
 
-        _nearfob = [] call KPLIB_fnc_getNearestFob;
-        _storage_areas = (_nearfob nearobjects (KPLIB_range_fob * 2)) select {(_x getVariable ["KPLIB_storage_type",-1]) == 0};
+        _resourceAreaData = call _getResourceAreaData;
+        _resourceAnchor = _resourceAreaData select 0;
+        _resourceRange = _resourceAreaData select 1;
+        _storage_areas = (_resourceAnchor nearObjects (_resourceRange * 2)) select {(_x getVariable ["KPLIB_storage_type",-1]) == 0};
 
         [_price_s, _price_a, _price_f, _classname, buildtype, _storage_areas] remoteExec ["build_remote_call",2];
     };
@@ -77,7 +109,13 @@ while { true } do {
         } else {
             _posfob = getpos player;
             if (buildtype != 99) then {
-                _posfob = [] call KPLIB_fnc_getNearestFob;
+                _resourceAreaData = call _getResourceAreaData;
+                _posfob = _resourceAreaData select 0;
+                _maxdist = _resourceAreaData select 1;
+                if (_posfob isEqualTo []) then {
+                    _posfob = getPosATL startbase;
+                    _maxdist = KPLIB_range_startbaseBuild;
+                };
             };
 
             _idactcancel = -1;
@@ -149,7 +187,7 @@ while { true } do {
 
                 if !(buildtype isEqualTo 99) then {
                     {
-                        _x setPos (_posfob getPos [KPLIB_range_fob, 10 * _forEachIndex])
+                        _x setPos (_posfob getPos [_maxdist, 10 * _forEachIndex])
                     } forEach _fob_spheres;
                 };
 
@@ -264,13 +302,15 @@ while { true } do {
             {_x setPos [0, 0, 0];} forEach (_object_spheres + _fob_spheres);
 
             if ( !alive player || build_confirmed == 3 ) then {
-                private ["_price_s", "_price_a", "_price_f", "_nearfob", "_storage_areas"];
+                private ["_price_s", "_price_a", "_price_f", "_storage_areas"];
                 _price_s = ((KPLIB_buildList select buildtype) select buildindex) select 1;
                 _price_a = ((KPLIB_buildList select buildtype) select buildindex) select 2;
                 _price_f = ((KPLIB_buildList select buildtype) select buildindex) select 3;
 
-                _nearfob = [] call KPLIB_fnc_getNearestFob;
-                _storage_areas = (_nearfob nearobjects (KPLIB_range_fob * 2)) select {(_x getVariable ["KPLIB_storage_type",-1]) == 0};
+                _resourceAreaData = call _getResourceAreaData;
+                _resourceAnchor = _resourceAreaData select 0;
+                _resourceRange = _resourceAreaData select 1;
+                _storage_areas = (_resourceAnchor nearObjects (_resourceRange * 2)) select {(_x getVariable ["KPLIB_storage_type",-1]) == 0};
 
                 _supplyCrates = ceil (_price_s / 100);
                 _ammoCrates = ceil (_price_a / 100);

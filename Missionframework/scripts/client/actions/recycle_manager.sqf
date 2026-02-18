@@ -17,7 +17,18 @@ veh_action_distance = 10;
 ];
 
 while {true} do {
-    waitUntil {sleep 2; player getVariable ['KPLIB_fobDist', 99999] < KPLIB_range_fob};
+    waitUntil {
+        sleep 2;
+        (player getVariable ['KPLIB_fobDist', 99999] < KPLIB_range_fob)
+        || (player getVariable ['KPLIB_isNearStartBuild', false])
+    };
+
+    private _resourcePos = player getVariable ["KPLIB_fobPos", []];
+    private _resourceRange = player getVariable ["KPLIB_fobRange", KPLIB_range_fob];
+    if (_resourcePos isEqualTo []) then {
+        _resourcePos = [] call KPLIB_fnc_getNearestFob;
+        _resourceRange = KPLIB_range_fob;
+    };
 
     if ([4] call KPLIB_fnc_hasPermission) then {
         private _detected_vehicles = (getPos player) nearObjects veh_action_detect_distance select {
@@ -33,8 +44,7 @@ while {true} do {
                 (((attachedObjects _x) select {!isNull _X}) isEqualTo [])
                 || ((typeOf _x) == "rhsusf_mkvsoc")
             ) &&
-            _x distance2d startbase > 1000 &&
-            (_x distance2d ([] call KPLIB_fnc_getNearestFob)) < KPLIB_range_fob &&
+            (_x distance2d _resourcePos) < _resourceRange &&
             (getObjectType _x) >= 8
         };
 

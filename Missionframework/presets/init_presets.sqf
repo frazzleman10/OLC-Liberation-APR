@@ -94,30 +94,33 @@ if (typeName KPLIB_b_mobileRespawn == typeName "") then {
 };
 
 // Prices for the blufor infantry squads (supplies, ammo, fuel)
-KPLIB_b_allSquads = [
-    [KPLIB_b_squadLight,50,0,0],
-    [KPLIB_b_squadInf,75,25,0],
-    [KPLIB_b_squadAT,50,50,0],
-    [KPLIB_b_squadAA,50,50,0],
-    [KPLIB_b_squadRecon,75,0,0],
-    [KPLIB_b_squadPara,50,0,0]
+// Keep names and build entries aligned and skip empty squad definitions.
+private _squadDefinitions = [
+    [KPLIB_b_squadLight,50,0,0,localize "STR_LIGHT_RIFLE_SQUAD"],
+    [KPLIB_b_squadInf,75,25,0,localize "STR_RIFLE_SQUAD"],
+    [KPLIB_b_squadAT,50,50,0,localize "STR_AT_SQUAD"],
+    [KPLIB_b_squadAA,50,50,0,localize "STR_AA_SQUAD"],
+    [KPLIB_b_squadRecon,75,0,0,localize "STR_RECON_SQUAD"],
+    [KPLIB_b_squadPara,50,0,0,localize "STR_PARA_SQUAD"]
 ];
 
-// Squad names for build menu
-KPLIB_b_squadNames = [
-    localize "STR_LIGHT_RIFLE_SQUAD",
-    localize "STR_RIFLE_SQUAD",
-    localize "STR_AT_SQUAD",
-    localize "STR_AA_SQUAD",
-    localize "STR_RECON_SQUAD",
-    localize "STR_PARA_SQUAD"
-];
+KPLIB_b_allSquads = [];
+KPLIB_b_squadNames = [];
+{
+    if !((_x select 0) isEqualTo []) then {
+        KPLIB_b_allSquads pushBack (_x select [0, 4]);
+        KPLIB_b_squadNames pushBack (_x select 4);
+    };
+} forEach _squadDefinitions;
 
 /*
     Checking all preset arrays for missing mods and sort out not available classnames
 */
 // Blufor
-KPLIB_b_basic_uniform           = getText (configFile >> "CfgVehicles" >> (KPLIB_b_infantry#0)#0 >> "uniformClass");
+KPLIB_b_basic_uniform = getText (configFile >> "CfgVehicles" >> KPLIB_b_crewUnit >> "uniformClass");
+if !(KPLIB_b_infantry isEqualTo []) then {
+    KPLIB_b_basic_uniform = getText (configFile >> "CfgVehicles" >> (KPLIB_b_infantry#0)#0 >> "uniformClass");
+};
 KPLIB_b_infantry                = KPLIB_b_infantry                  select {[( _x select 0)] call KPLIB_fnc_checkClass};
 KPLIB_b_vehLight                = KPLIB_b_vehLight                  select {[( _x select 0)] call KPLIB_fnc_checkClass};
 KPLIB_b_vehHeavy                = KPLIB_b_vehHeavy                  select {[( _x select 0)] call KPLIB_fnc_checkClass};

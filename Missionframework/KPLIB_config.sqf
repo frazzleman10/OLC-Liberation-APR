@@ -182,6 +182,9 @@ KPLIB_save_interval = 60;
 // Build range around the main FOB building.
 KPLIB_range_fob = 800;
 
+// Build range around the startbase resource area.
+KPLIB_range_startbaseBuild = 800;
+
 // Altitude in metres for the HALO jump.
 KPLIB_height_halo = 2500;
 

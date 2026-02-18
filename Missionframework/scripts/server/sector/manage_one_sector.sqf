@@ -307,7 +307,7 @@ if ((!(_sector in KPLIB_sectors_player)) && (([markerPos _sector, [_opforcount, 
 
         // If total units less than min required, block capture
         if (_totalCount < _minPlayers) then {
-            private _nearestFobPos = [_sector] call KPLIB_fnc_getNearestFob;
+            private _nearestFobPos = [markerPos _sector] call KPLIB_fnc_getNearestFob;
             if (isNil "_nearestFobPos" || {_nearestFobPos isEqualTo []}) then {
                 _nearestFobPos = getMarkerPos "KPLIB_respawn_marker";
             };

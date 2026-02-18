@@ -26,9 +26,19 @@ while {true} do {
     private _local_heli_slots = 0;
     private _local_plane_slots = 0;
     private _local_infantry_cap = 50 * KPLIB_param_resourcesMulti;
+    private _resource_areas = +KPLIB_sectors_fob;
+
+    if !(isNil "startbase") then {
+        _resource_areas pushBackUnique (getPosATL startbase);
+    };
 
     {
-        private _fob_buildings = _x nearobjects KPLIB_range_fob;
+        private _areaRange = KPLIB_range_fob;
+        if (!(isNil "startbase") && {(_x distance2d (getPosATL startbase)) < 2}) then {
+            _areaRange = KPLIB_range_startbaseBuild;
+        };
+
+        private _fob_buildings = _x nearObjects _areaRange;
         private _storage_areas = _fob_buildings select {(_x getVariable ["KPLIB_storage_type",-1]) == 0};
         private _heliSlots = {(typeOf _x) == KPLIB_b_slotHeli;} count _fob_buildings;
         private _planeSlots = {(typeOf _x) == KPLIB_b_slotPlane;} count _fob_buildings;
@@ -60,7 +70,7 @@ while {true} do {
         _local_fuel_global = _local_fuel_global + _fuelValue;
         _local_heli_slots = _local_heli_slots + _heliSlots;
         _local_plane_slots = _local_plane_slots + _planeSlots;
-    } forEach KPLIB_sectors_fob;
+    } forEach _resource_areas;
 
     {
         if ( _x in KPLIB_sectors_city ) then {

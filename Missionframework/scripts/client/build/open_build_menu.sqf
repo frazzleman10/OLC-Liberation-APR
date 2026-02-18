@@ -1,6 +1,6 @@
 scriptName "open_build_menu";
 
-private [ "_oldbuildtype", "_cfg", "_initindex", "_dialog", "_iscommandant", "_squadname", "_buildpages", "_build_list", "_classnamevar", "_entrytext", "_icon", "_affordable", "_affordable_crew", "_selected_item", "_linked", "_linked_unlocked", "_base_link", "_link_color", "_link_str", "_nearfob", "_actual_fob"];
+private [ "_oldbuildtype", "_cfg", "_initindex", "_dialog", "_iscommandant", "_squadname", "_buildpages", "_build_list", "_classnamevar", "_entrytext", "_icon", "_affordable", "_affordable_crew", "_selected_item", "_linked", "_linked_unlocked", "_base_link", "_link_color", "_link_str", "_resourceAreaPos", "_actual_fob"];
 
 if (([ getpos player , 300 , KPLIB_side_enemy ] call KPLIB_fnc_getUnitsCount ) > 4 ) exitWith { hint localize "STR_BUILD_ENEMIES_NEARBY";};
 
@@ -35,8 +35,44 @@ localize "STR_BUILD7",
 localize "STR_BUILD8"
 ];
 
-_nearfob = [] call KPLIB_fnc_getNearestFob;
-_actual_fob = KPLIB_fob_resources select {((_x select 0) distance _nearfob) < KPLIB_range_fob};
+private _selectResourceArea = {
+    private _nearestFob = [] call KPLIB_fnc_getNearestFob;
+    private _nearestFobDist = 10e10;
+    if !(_nearestFob isEqualTo []) then {
+        _nearestFobDist = player distance2d _nearestFob;
+    };
+
+    private _startPos = getPosATL startbase;
+    private _startDist = player distance2d _startPos;
+
+    if ((_startDist <= KPLIB_range_startbaseBuild) && {_startDist < _nearestFobDist || {_nearestFob isEqualTo []}}) then {
+        _startPos
+    } else {
+        _nearestFob
+    };
+};
+
+private _getAreaResourceData = {
+    params ["_resourcePos"];
+
+    private _defaultResourceData = [[0, 0, 0], 0, 0, 0, false, false, false];
+    if (_resourcePos isEqualTo []) exitWith {_defaultResourceData};
+
+    private _areaRange = KPLIB_range_fob;
+    if ((_resourcePos distance2d (getPosATL startbase)) < 2) then {
+        _areaRange = KPLIB_range_startbaseBuild;
+    };
+
+    private _resourceAreas = KPLIB_fob_resources select {((_x select 0) distance2d _resourcePos) < _areaRange};
+    if (_resourceAreas isEqualTo []) exitWith {_defaultResourceData};
+
+    _resourceAreas = _resourceAreas apply {[((_x select 0) distance2d _resourcePos), _x]};
+    _resourceAreas sort true;
+    (_resourceAreas select 0) select 1
+};
+
+_resourceAreaPos = call _selectResourceArea;
+_actual_fob = [_resourceAreaPos] call _getAreaResourceData;
 
 while {dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
     _build_list = KPLIB_buildList select buildtype;
@@ -44,7 +80,11 @@ while {dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
     if (_oldbuildtype != buildtype || synchro_done) then {
         synchro_done = false;
         _oldbuildtype = buildtype;
-        _actual_fob = KPLIB_fob_resources select {((_x select 0) distance _nearfob) < KPLIB_range_fob};
+        _resourceAreaPos = call _selectResourceArea;
+        _actual_fob = [_resourceAreaPos] call _getAreaResourceData;
+        KPLIB_b_airControl_near = _actual_fob select 4;
+        KPLIB_b_logiStation_near = _actual_fob select 5;
+        KPLIB_medical_facilities_near = _actual_fob select 6;
 
         lbClear 110;
         {
@@ -107,9 +147,9 @@ while {dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 
             _affordable = true;
             if (
-                ((_x select 1 > 0) && ((_x select 1) > ((_actual_fob select 0) select 1))) ||
-                ((_x select 2 > 0) && ((_x select 2) > ((_actual_fob select 0) select 2))) ||
-                ((_x select 3 > 0) && ((_x select 3) > ((_actual_fob select 0) select 3)))
+                ((_x select 1 > 0) && ((_x select 1) > (_actual_fob select 1))) ||
+                ((_x select 2 > 0) && ((_x select 2) > (_actual_fob select 2))) ||
+                ((_x select 3 > 0) && ((_x select 3) > (_actual_fob select 3)))
             ) then {
                 _affordable = false;
             };
@@ -155,9 +195,9 @@ while {dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
     if (dobuild == 0 && _selected_item != -1 && (_selected_item < (count _build_list))) then {
         _build_item = _build_list select _selected_item;
         if (
-            ((_build_item select 1 == 0 ) || ((_build_item select 1) <= ((_actual_fob select 0) select 1))) &&
-            ((_build_item select 2 == 0 ) || ((_build_item select 2) <= ((_actual_fob select 0) select 2))) &&
-            ((_build_item select 3 == 0 ) || ((_build_item select 3) <= ((_actual_fob select 0) select 3)))
+            ((_build_item select 1 == 0 ) || ((_build_item select 1) <= (_actual_fob select 1))) &&
+            ((_build_item select 2 == 0 ) || ((_build_item select 2) <= (_actual_fob select 2))) &&
+            ((_build_item select 3 == 0 ) || ((_build_item select 3) <= (_actual_fob select 3)))
         ) then {
             if !((_build_item select 0) isEqualType []) then {
                 if ((toLowerANSI (_build_item select 0)) in KPLIB_b_air_classes && !([_build_item select 0] call KPLIB_fnc_isClassUAV)) then {

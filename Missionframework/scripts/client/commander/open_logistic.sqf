@@ -11,11 +11,18 @@ _detailControls = [
     758019,758020,758021,758022,758023,758024,758025,758026,758027,758028,758029,758030,758031,
     758032,758080,758081
 ];
-_nearfob = [] call KPLIB_fnc_getNearestFob;
+_nearfob = player getVariable ["KPLIB_fobPos", []];
+if (_nearfob isEqualTo []) then {
+    _nearfob = [] call KPLIB_fnc_getNearestFob;
+};
 _logi_destinations = [];
 
 {
-    _logi_destinations pushBack [(format ["FOB %1", KPLIB_militaryAlphabet select _forEachIndex]), (_x select 0), (_x select 1), (_x select 2), (_x select 3)];
+    private _name = format ["FOB %1", KPLIB_militaryAlphabet select _forEachIndex];
+    if (((_x select 0) distance2d (getPosATL startbase)) < 2) then {
+        _name = "OP";
+    };
+    _logi_destinations pushBack [_name, (_x select 0), (_x select 1), (_x select 2), (_x select 3)];
 } forEach KPLIB_fob_resources;
 
 {

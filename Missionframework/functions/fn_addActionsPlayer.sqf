@@ -132,7 +132,10 @@ _player addAction [
     "
         isNull (objectParent _originalTarget)
         && {alive _originalTarget}
-        && {_originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.8)}
+        && {
+            _originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.8)
+            || {_originalTarget getVariable ['KPLIB_isNearStartBuild', false]}
+        }
         && {
             _originalTarget getVariable ['KPLIB_hasDirectAccess', false]
             || {[3] call KPLIB_fnc_hasPermission}
@@ -267,7 +270,10 @@ _player addAction [
     "",
     "
         alive _originalTarget
-        && {_originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.8)}
+        && {
+            _originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.8)
+            || {_originalTarget getVariable ['KPLIB_isNearStartBuild', false]}
+        }
         && {build_confirmed isEqualTo 0}
     "
 ];
@@ -288,6 +294,7 @@ _player addAction [
         && {!(KPLIB_production isEqualTo [])}
         && {
             _originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.8)
+            || {_originalTarget getVariable ['KPLIB_isNearStartBuild', false]}
             || {!(_originalTarget getVariable ['KPLIB_nearProd', []] isEqualTo [])}
         }
         && {build_confirmed isEqualTo 0}
@@ -308,11 +315,11 @@ _player addAction [
         && {_originalTarget getVariable ['KPLIB_hasDirectAccess', false]}
         && {isNull (objectParent _originalTarget)}
         && {alive _originalTarget}
-        && {_originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.8)}
-        && {!(
-            KPLIB_sectors_fob isEqualTo []
-            || KPLIB_production isEqualTo []
-        )}
+        && {
+            _originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.8)
+            || {_originalTarget getVariable ['KPLIB_isNearStartBuild', false]}
+        }
+        && {!(KPLIB_production isEqualTo [])}
         && {build_confirmed isEqualTo 0}
     "
 ];
@@ -356,7 +363,7 @@ if (player == ([] call KPLIB_fnc_getCommander)) then {
 // Create small FOB clearance
 _player addAction [
     ["<t color='#FFFF00'>", localize "STR_CLEARANCE_ACTION", "</t>"] joinString "",
-    {[player getVariable ["KPLIB_fobPos", [0, 0, 0]], KPLIB_range_fob * 0.4, true] call KPLIB_fnc_createClearanceConfirm;},
+    {[player getVariable ["KPLIB_fobPos", [0, 0, 0]], (player getVariable ["KPLIB_fobRange", KPLIB_range_fob]) * 0.4, true] call KPLIB_fnc_createClearanceConfirm;},
     nil,
     -850,
     false,
@@ -366,7 +373,7 @@ _player addAction [
         _originalTarget getVariable ['KPLIB_hasDirectAccess', false]
         && {isNull (objectParent _originalTarget)}
         && {alive _originalTarget}
-        && {_originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.4)}
+        && {_originalTarget getVariable ['KPLIB_fobDist', 99999] < ((_originalTarget getVariable ['KPLIB_fobRange', KPLIB_range_fob]) * 0.4)}
         && {build_confirmed isEqualTo 0}
     "
 ];
@@ -374,7 +381,7 @@ _player addAction [
 // Create big FOB clearance
 _player addAction [
     ["<t color='#FFFF00'>", localize "STR_BIG_CLEARANCE_ACTION", "</t>"] joinString "",
-    {[player getVariable ["KPLIB_fobPos", [0, 0, 0]], KPLIB_range_fob * 0.8, true] call KPLIB_fnc_createClearanceConfirm;},
+    {[player getVariable ["KPLIB_fobPos", [0, 0, 0]], (player getVariable ["KPLIB_fobRange", KPLIB_range_fob]) * 0.8, true] call KPLIB_fnc_createClearanceConfirm;},
     nil,
     -851,
     false,
@@ -384,7 +391,7 @@ _player addAction [
         _originalTarget getVariable ['KPLIB_hasDirectAccess', false]
         && {isNull (objectParent _originalTarget)}
         && {alive _originalTarget}
-        && {_originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.8)}
+        && {_originalTarget getVariable ['KPLIB_fobDist', 99999] < ((_originalTarget getVariable ['KPLIB_fobRange', KPLIB_range_fob]) * 0.8)}
         && {build_confirmed isEqualTo 0}
     "
 ];
@@ -403,7 +410,10 @@ _player addAction [
         && _originalTarget getVariable ['KPLIB_hasDirectAccess', false]
         && {isNull (objectParent _originalTarget)}
         && {alive _originalTarget}
-        && {_originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.8)}
+        && {
+            _originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.8)
+            || {_originalTarget getVariable ['KPLIB_isNearStartBuild', false]}
+        }
         && {build_confirmed isEqualTo 0}
     "
 ];
@@ -440,7 +450,7 @@ _player addAction [
 // Full Heal
 _player addAction [
     ["<t color='#80FF80'>", localize "STR_FULLHEAL_ACTION", "</t> <img size='2' image='res\ui_fullheal.paa'/>"] joinString "",
-    {[player getVariable ["KPLIB_fobPos", [0, 0, 0]], KPLIB_range_fob * 0.9, player] call KPLIB_fnc_fullheal;},
+    {[player getVariable ["KPLIB_fobPos", [0, 0, 0]], (player getVariable ["KPLIB_fobRange", KPLIB_range_fob]) * 0.9, player] call KPLIB_fnc_fullheal;},
     nil,
     -690,
     false,
@@ -451,7 +461,7 @@ _player addAction [
         && KPLIB_medical_facilities_near
         && {isNull (objectParent _originalTarget)}
         && {alive _originalTarget}
-        && {_originalTarget getVariable ['KPLIB_fobDist', 99999] < (KPLIB_range_fob * 0.5)}
+        && {_originalTarget getVariable ['KPLIB_fobDist', 99999] < ((_originalTarget getVariable ['KPLIB_fobRange', KPLIB_range_fob]) * 0.5)}
         && {build_confirmed isEqualTo 0}
     "
 ];

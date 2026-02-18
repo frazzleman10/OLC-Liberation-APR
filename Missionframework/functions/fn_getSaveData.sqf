@@ -33,9 +33,19 @@ private _allBlueGroups = allGroups select {
 
 // Fetch all objects and AI groups near each FOB
 private ["_fobPos", "_fobObjects", "_grpUnits", "_fobMines"];
+private _saveAreas = +KPLIB_sectors_fob;
+if !(isNil "startbase") then {
+    _saveAreas pushBackUnique (getPosATL startbase);
+};
+
 {
     _fobPos = _x;
-    _fobObjects = (_fobPos nearObjects (KPLIB_range_fob * 1.2)) select {
+    private _areaRange = KPLIB_range_fob;
+    if (!(isNil "startbase") && {(_fobPos distance2d (getPosATL startbase)) < 2}) then {
+        _areaRange = KPLIB_range_startbaseBuild;
+    };
+
+    _fobObjects = (_fobPos nearObjects (_areaRange * 1.2)) select {
         ((toLowerANSI (typeof _x)) in KPLIB_classnamesToSave) &&        // Exclude classnames which are not in the presets
         {alive _x} &&                                               // Exclude dead or broken objects
         {getObjectType _x >= 8} &&                                  // Exclude preplaced terrain objects
@@ -56,17 +66,17 @@ private ["_fobPos", "_fobObjects", "_grpUnits", "_fobMines"];
         _grpUnits = (units _x) select {!(isPlayer _x) && (alive _x) && !((typeOf _x) in KPLIB_o_inf_classes) && !((typeOf _x) in KPLIB_o_militiaInfantry)};
         // Add to save array
         _aiGroups pushBack [getPosATL (leader _x), (_grpUnits apply {typeOf _x})];
-    } forEach (_allBlueGroups select {(_fobPos distance2D (leader _x)) < (KPLIB_range_fob * 1.2)});
+    } forEach (_allBlueGroups select {(_fobPos distance2D (leader _x)) < (_areaRange * 1.2)});
 
     // Save all mines around FOB
-    _fobMines = allMines inAreaArray [_fobPos, KPLIB_range_fob * 1.2, KPLIB_range_fob * 1.2];
+    _fobMines = allMines inAreaArray [_fobPos, _areaRange * 1.2, _areaRange * 1.2];
     _allMines append (_fobMines apply {[
         getPosWorld _x,
         [vectorDirVisual _x, vectorUpVisual _x],
         typeOf _x,
         _x mineDetectedBy KPLIB_side_player
     ]});
-} forEach KPLIB_sectors_fob;
+} forEach _saveAreas;
 
 // Save all fetched objects
 private ["_savedPos", "_savedVecDir", "_savedVecUp", "_class", "_hasCrew"];
