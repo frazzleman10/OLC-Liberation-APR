@@ -9,11 +9,12 @@
     Custom player preset for a 2010 GWOT setting
 
     Needed Mods:
-    - AH64D Classic
-    - Hatchet H60
+    - Perals AH1Z
+    - XYI USMC
 	- RHSUSAF
 	- USAF Utility
 	- USAF Fighters
+    - OLC Extra
 */
 
 /*
@@ -24,16 +25,16 @@
 */
 KPLIB_b_fobBuilding     = "Land_Cargo_HQ_V1_F";                         // This is the main FOB HQ building.
 KPLIB_b_fobBox          = "B_Slingload_01_Cargo_F";                     // This is the FOB Container.
-KPLIB_b_fobTruck        = "rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy";       // This is the FOB Vehicle.
+KPLIB_b_fobTruck        = "B_Truck_01_box_F";                           // This is the FOB Vehicle.
 KPLIB_b_arsenal         = "B_supplyCrate_F";                            // This is the virtual arsenal as portable supply crates.
 KPLIB_b_mobileRespawn   = ["B_Truck_01_medical_F","B_T_Truck_01_medical_F"];
-KPLIB_b_potato01        = "RHS_CH_47F";                                 // This is the mobile respawn huron, however it can be defined as anything if the mobile respawn functionality is disabled.
+KPLIB_b_potato01        = "rhsusf_CH53E_USMC_D";                        // This is the mobile respawn huron, however it can be defined as anything if the mobile respawn functionality is disabled.
 KPLIB_b_crewUnit        = "B_crew_F";                                   // This defines the crew for vehicles.
 KPLIB_b_heliPilotUnit   = "B_Helipilot_F";                              // This defines the pilot for helicopters.
 KPLIB_b_crewStatic      = "B_Soldier_F";                                // This defines the crew for static weapons and light vehicles.
-KPLIB_b_addHeli         = "vtx_UH60M";                                  // This is an additional helicopter
-KPLIB_b_addBoat         = "rhsusf_m1151_m2_v1_usarmy_wd";               // These are boats, however you can put any vehicle here.
-KPLIB_b_logiTruck       = "rhsusf_M977A4_BKIT_usarmy_wd";               // These are the trucks which are used in the logistic convoy system.
+KPLIB_b_addHeli         = "RHS_UH1Y_d";                                 // This is an additional helicopter
+KPLIB_b_addBoat         = "rhsusf_m1151_m2_v3_usmc_d";                  // These are boats, however you can put any vehicle here.
+KPLIB_b_logiTruck       = "B_Truck_01_transport_F";                     // These are the trucks which are used in the logistic convoy system. Unused.
 KPLIB_b_smallStorage    = "ContainmentArea_02_sand_F";                  // A small storage area for resources.
 KPLIB_b_largeStorage    = "ContainmentArea_01_sand_F";                  // A large storage area for resources.
 KPLIB_b_logiStation     = "Land_RepairDepot_01_tan_F";                  // The building defined to unlock FOB recycling functionality.
@@ -56,15 +57,24 @@ KPLIB_b_infantry = [
 ];
 
 KPLIB_b_vehLight = [
-    ["rhsusf_m1151_usarmy_wd",150,0,100],                 //M1151A1 Unarmed
-    ["rhsusf_m1151_m2crows_usarmy_wd",300,100,100],       //M1151A1 CROWS M2
-    ["rhsusf_m1151_mk19crows_usarmy_wd",300,150,100],     //M1151A1 CROWS MK19
-    ["rhsusf_m1151_m2_v1_usarmy_wd",200,100,100],         //M1151A1 GPK/M2
-    ["rhsusf_m1151_m240_v1_usarmy_wd",200,50,100],        //M1151A1 GPK/M240
-    ["rhsusf_m1151_mk19_v1_usarmy_wd",250,150,100],       //M1151A1 GPK/MK19
-    ["rhsusf_m1151_m2_v2_usarmy_wd",250,100,100],         //M1151A1 O-GPK/M2
-    ["rhsusf_m1151_m240_v2_usarmy_wd",250,100,100],       //M1151A1 O-GPK/M240
-    ["rhsusf_m1151_mk19_v2_usarmy_wd",250,150,100],       //M1151A1 O-GPK/MK19   
+    ["rhsusf_m1151_m2_v3_usmc_d",250,250,250],             //M1151A1 MCTAGS/M2
+    ["rhsusf_m1151_m240_v3_usmc_d",250,150,250],           //M1151A1 MCTAGS/M240
+    ["rhsusf_m1151_mk19_v3_usmc_d",250,350,250],           //M1151A1 MCTAGS/MK19
+    ["rhsusf_m1045_d_s",250,500,250],                      //M1045A2 M220A2
+    ["rhsusf_m1151_usmc_d",150,0,250],                     //M1151A1
+    ["rhsusf_CGRCAT1A2_M2_usmc_d",350,250,350],            //CGR CAT1 A2 MCTAGS/M2
+    ["rhsusf_CGRCAT1A2_Mk19_usmc_d",350,350,350],          //CGR CAT1 A2 MCTAGS/MK19
+    ["rhsusf_CGRCAT1A2_usmc_d",250,0,350],                 //CGR CAT1 A2
+    ["rhsusf_m1240a1_m2_usmc_d",350,250,350],              //M1240 O-GPK/M2
+    ["rhsusf_m1240a1_m240_usmc_d",350,150,350],            //M1240 O-GPK/M240
+    ["rhsusf_m1240a1_mk19_usmc_d",350,350,350],            //M1240 O-GPK/MK19
+    ["rhsusf_m1240a1_m2crows_usmc_d",450,250,350],         //M1277 CROWS/M2
+    ["rhsusf_m1240a1_mk19crows_usmc_d",450,350,350],       //M1277 CROWS/MK19
+    ["rhsusf_m1240a1_usmc_d",350,350,350],                 //M1240
+	["B_Truck_01_cargo_F",250,0,400],                      //HEMTT
+    ["B_Truck_01_fuel_F",250,0,1000],                      //HEMTT (Fuel)
+    ["B_Truck_01_ammo_F",250,1000,400],                    //HEMTT (Ammo)
+    ["B_Truck_01_Repair_F",500,0,400]                      //HEMTT (Repair)
 ];
 
 KPLIB_b_vehHeavy = [
